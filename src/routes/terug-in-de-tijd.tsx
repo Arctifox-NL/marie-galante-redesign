@@ -1,0 +1,123 @@
+import { createFileRoute } from "@tanstack/react-router";
+import SiteLayout from "@/components/SiteLayout";
+
+export const Route = createFileRoute("/terug-in-de-tijd")({
+  component: HistoryPage,
+  head: () => ({
+    meta: [
+      { title: "Terug in de tijd · Marie Galante" },
+      { name: "description", content: "De geschiedenis van zeillogger Marie Galante, gebouwd in 1915. Van visserschip onder Duitse, Deense en Zweedse vlag tot zeilend passagiersschip op de Oostzee." },
+    ],
+  }),
+});
+
+const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639051074.jpg?resize=720%2C960&ssl=1";
+
+type Entry = {
+  year: string;
+  title: string;
+  body?: string;
+  images?: string[];
+};
+
+const timeline: Entry[] = [
+  {
+    year: "2025",
+    title: "Marie Galante — See the Sea",
+    body: "Het nieuwe tijdperk is aangebroken: Marie Galante mocht weer weg van de kade, naar de werf, uit het water en grondig onder de loep. Met trots treden de nieuwe eigenaren aan: Lex van der Linden en Lotte van Boesschoten. Samen hebben ze een missie om Marie Galante weer onder keur te brengen.",
+    images: [
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/300125_frakeker-4.jpg?resize=683%2C1024&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/rotterdam-franiken-2.jpg?resize=1024%2C683&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/PXL_20250130_1038026962.jpg?resize=772%2C1024&ssl=1",
+    ],
+  },
+  {
+    year: "2016",
+    title: "Naar Rotterdam",
+    body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
+    images: [
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-3.jpeg?resize=1024%2C768&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-12.jpeg?resize=1024%2C768&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-31.jpeg?resize=1024%2C768&ssl=1",
+    ],
+  },
+  {
+    year: "2014",
+    title: "Stichting Loggerbehoud",
+    body: "Na Kees Rol neemt stichting Loggerbehoud het stokje over. De stichting neemt zowel de Tradewind als de Marie Galante onder haar hoede. Ze straalt nog zeker twee jaar tijdens evenementen op de Oostzee, zoals tijdens de Kieler Woche van 2014.",
+    images: [
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639051074.jpg?resize=720%2C960&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639457085.jpg?resize=683%2C1024&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639478554.jpg?resize=960%2C540&ssl=1",
+    ],
+  },
+  {
+    year: "1980",
+    title: "Het Marie Galante-tijdperk breekt aan",
+    body: "Kees Rol koopt het schip en bouwt haar om tot zeilend passagiersschip. Er komen hutten en een bar in. Met thuishaven Enkhuizen en onder de Nederlandse vlag vaart ze in de zomer op de Baltische zee — Denemarken en Duitsland — en in de winter terug naar Nederland.",
+    images: [
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0004.jpg?resize=1024%2C686&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0027.jpg?resize=1024%2C749&ssl=1",
+      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0078.jpg?resize=1024%2C720&ssl=1",
+    ],
+  },
+  { year: "1978", title: "Spica", body: "Verkocht aan H. J. H. Hansen, omgedoopt tot Spica met thuishaven Stege. Varend onder Deense vlag." },
+  { year: "1974", title: "Metrig", body: "Verkocht aan Eigil Christensen, omgedoopt tot Metrig met thuishaven Hov. Varend onder Deense vlag." },
+  { year: "1971", title: "Wiston", body: "Verkocht aan J. Pedersen, omgedoopt tot Wiston met thuishaven Vejle. Varend onder Deense vlag." },
+  { year: "1963", title: "Edca", body: "Verkocht aan C.P. Hendriksen, omgedoopt tot Edca en geregistreerd in Svendborg en later Odense. Varend onder Deense vlag." },
+  { year: "1958", title: "Nieuw bedrijf, nieuwe rol", body: "Het schip wordt geregistreerd onder Thorvald Olofson uit Skärhamm. De zeilen zijn vanaf nu op papier de secundaire voortstuwingsmethode." },
+  { year: "1951", title: "Ornen", body: "Verkocht aan G. E. Olssen, omgedoopt tot Ornen, varend onder de Zweedse vlag met Uetersen als thuishaven." },
+  { year: "1945", title: "Naar Uetersen", body: "De eigenaren ontsnappen van Stettin naar Uetersen. Uetersen is vanaf nu de nieuwe thuishaven." },
+  { year: "1940", title: "Wilhelm Schiermann", body: "Verkocht aan Heinrich Sandkamp uit Stettin. Een sterkere motor wordt geplaatst en het schip omgedoopt tot Wilhelm Schiermann. Ze blijft onder Duitse vlag varen." },
+  { year: "1931", title: "Bremen-Vegesacker Fischerei", body: "Varend voor de Bremen-Vegesacker Fischerei Gesellschaft (1931–1939)." },
+  { year: "1926", title: "Eerste motor", body: "Installatie van de eerste motor aan boord." },
+  { year: "1915", title: "Gebouwd als Elsfleth", body: "In 1915 werd de Elsfleth gebouwd bij C. Lühring. De komende jaren zal ze als zeilend visserijschip dienen." },
+];
+
+function HistoryPage() {
+  return (
+    <SiteLayout>
+      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-primary/65" />
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
+          <div className="eyebrow text-background/70">Sinds 1915</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Terug in de tijd</h1>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:px-10">
+        <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
+          Er is een globale levensweg van het schip bekend. Maar nog veel verhalen ontbreken. Heb je iets bij te dragen? Een bijzondere reis meegemaakt?
+        </p>
+        <a href="mailto:info@marie-galante.nl" className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
+          Deel je verhaal — info@marie-galante.nl
+        </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-32 md:px-10">
+        <ol className="relative space-y-20 md:space-y-28 md:border-l md:border-border md:pl-16">
+          {timeline.map((e) => (
+            <li key={e.year} className="relative">
+              <div className="absolute -left-[4.4rem] top-2 hidden h-2 w-2 rounded-full bg-accent md:block" />
+              <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:gap-10">
+                <div className="font-display text-5xl text-accent md:w-28 md:text-6xl">{e.year}</div>
+                <div className="flex-1">
+                  <h3 className="font-display text-2xl text-primary md:text-3xl">{e.title}</h3>
+                  {e.body && <p className="mt-4 max-w-2xl text-foreground/80">{e.body}</p>}
+                </div>
+              </div>
+              {e.images && (
+                <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-5">
+                  {e.images.map((src) => (
+                    <img key={src} src={src} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  ))}
+                </div>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    </SiteLayout>
+  );
+}

@@ -1,0 +1,90 @@
+import { createFileRoute } from "@tanstack/react-router";
+import SiteLayout from "@/components/SiteLayout";
+
+export const Route = createFileRoute("/boek-jouw-avontuur")({
+  component: BoekPage,
+  head: () => ({
+    meta: [
+      { title: "Boek je avontuur · Marie Galante" },
+      { name: "description", content: "Overnacht aan boord van de Marie Galante in de Veerhaven Rotterdam, organiseer een feestje of vaar binnenkort mee op de Oostzee." },
+    ],
+  }),
+});
+
+const HERO = "https://marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg";
+
+const options = [
+  {
+    eyebrow: "Bed & Breakfast",
+    title: "Overnachten in de Veerhaven",
+    body: "Slaap in een van de historische hutten aan dek. Wakker worden met uitzicht op de Erasmusbrug en koffie in de salon — een bijzondere overnachting midden in Rotterdam.",
+    img: "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
+    cta: "Reserveer via Airbnb",
+  },
+  {
+    eyebrow: "Privé & evenementen",
+    title: "Een feestje aan boord",
+    body: "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 30 personen.",
+    img: "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
+    cta: "Vraag de mogelijkheden aan",
+  },
+  {
+    eyebrow: "Vanaf 2026",
+    title: "Meevaren op de Oostzee",
+    body: "Zodra het tuig erop staat en de keuring rond is, varen we weer. Schrijf je in voor de wachtlijst en wees als eerste op de hoogte van data en bestemmingen.",
+    img: "https://marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
+    cta: "Zet me op de wachtlijst",
+  },
+];
+
+function BoekPage() {
+  return (
+    <SiteLayout>
+      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-primary/55" />
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
+          <div className="eyebrow text-background/70">Aan boord</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Boek je avontuur</h1>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
+        <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
+          Of je nu een nacht aan de kade wilt doorbrengen, een feestje wilt vieren of binnenkort wilt meevaren — Marie Galante biedt drie manieren om aan boord te zijn.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl space-y-28 px-6 pb-32 md:px-10 md:space-y-40">
+        {options.map((o, i) => (
+          <article key={o.title} className="grid items-center gap-12 md:grid-cols-12 md:gap-20">
+            <div className={`md:col-span-6 ${i % 2 ? "md:order-2" : ""}`}>
+              <img src={o.img} alt={o.title} className="aspect-[4/3] w-full object-cover" />
+            </div>
+            <div className={`md:col-span-6 ${i % 2 ? "md:order-1" : ""}`}>
+              <div className="eyebrow">{o.eyebrow}</div>
+              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{o.title}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-foreground/80">{o.body}</p>
+              <a href="mailto:info@marie-galante.nl" className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
+                {o.cta} →
+              </a>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="bg-primary py-24 text-primary-foreground">
+        <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
+          <div className="eyebrow text-primary-foreground/60">Vragen?</div>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">Stuur ons een bericht</h2>
+          <p className="mt-6 text-primary-foreground/80">
+            We denken graag mee over de mogelijkheden — een avond aan de kade, een week op de Oostzee of iets daar tussenin.
+          </p>
+          <a href="mailto:info@marie-galante.nl" className="mt-10 inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent">
+            info@marie-galante.nl
+          </a>
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}

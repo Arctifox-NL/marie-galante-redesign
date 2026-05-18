@@ -1,26 +1,131 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
+import SiteLayout from "@/components/SiteLayout";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Marie Galante — Zeillogger uit 1915 · Rotterdam" },
+      { name: "description", content: "Ontdek de wereld van het zeilen op de historische logger Marie Galante. Overnacht aan boord, vaar mee of vier een feestje aan de Veerhaven Rotterdam." },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+const HERO = "https://marie-galante.nl/wp-content/uploads/2025/09/Website-deader-1024x576.png";
+const PORTRAIT = "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250130_1038026962-edited.jpg";
+const GALLERY = [
+  "https://marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg",
+  "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
+  "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
+  "https://marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
+  "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_102306490-1024x692.jpg",
+  "https://marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-33-1024x768.jpeg",
+];
+
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <SiteLayout>
+      {/* HERO */}
+      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+        <img src={HERO} alt="Marie Galante in de Veerhaven Rotterdam" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/10 to-primary/70" />
+        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 md:px-10 md:pb-32">
+          <div className="eyebrow text-background/70">Sinds 1915 · Zeillogger</div>
+          <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] text-background md:text-7xl lg:text-8xl">
+            Marie Galante
+          </h1>
+          <p className="mt-6 max-w-xl text-background/85 md:text-lg">
+            Ontdek de wereld van het zeilen op deze historische logger. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor een nieuw hoofdstuk.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link to="/boek-jouw-avontuur" className="rounded-none border border-accent bg-accent px-7 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent">
+              Boek je avontuur
+            </Link>
+            <Link to="/terug-in-de-tijd" className="rounded-none border border-background/70 px-7 py-3 text-xs uppercase tracking-[0.25em] text-background transition-colors hover:bg-background hover:text-primary">
+              Onze geschiedenis
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRO / ABOUT */}
+      <section className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-40">
+        <div className="grid gap-16 md:grid-cols-12 md:gap-20">
+          <div className="md:col-span-5">
+            <img src={PORTRAIT} alt="Lex & Lotte" className="w-full object-cover shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)]" />
+          </div>
+          <div className="md:col-span-7 md:pt-12">
+            <div className="eyebrow">Dit zijn wij</div>
+            <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
+              <em className="font-light">Lex van der Linden</em> &amp; <em className="font-light">Lotte van Boesschoten</em>
+            </h2>
+            <p className="mt-8 text-lg leading-relaxed text-foreground/80">
+              In april 2025 kochten we samen het zeilschip Marie Galante. Sinds 2015 ligt het schip in de Veerhaven in Rotterdam — en samen willen we haar terugbrengen naar de Oostzee, om daar gasten een actieve zeilvakantie te bieden.
+            </p>
+            <p className="mt-6 text-foreground/70">
+              Volg het avontuur, kom een nachtje slapen aan boord, of duik mee in de bijzondere historie van dit schip.
+            </p>
+            <div className="mt-10 grid grid-cols-3 border-t border-border pt-8">
+              <Stat k="1915" v="Gebouwd als logger" />
+              <Stat k="1980" v="Verbouwd tot zeilschip" />
+              <Stat k="2025" v="Nieuwe eigenaren" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OVERNACHTEN GALLERY */}
+      <section className="bg-primary py-28 text-primary-foreground md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="eyebrow text-primary-foreground/60">Aan de kade in Rotterdam</div>
+              <h2 className="mt-4 font-display text-4xl md:text-6xl">Overnachten aan boord</h2>
+            </div>
+            <Link to="/boek-jouw-avontuur" className="text-xs uppercase tracking-[0.25em] text-accent hover:underline">
+              Bekijk de mogelijkheden →
+            </Link>
+          </div>
+          <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+            {GALLERY.map((src, i) => (
+              <div key={src} className={`overflow-hidden ${i === 1 ? "md:row-span-2 md:col-span-1" : ""}`}>
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className={`h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${i === 1 ? "md:aspect-[3/4]" : "aspect-[4/3]"}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INSTAGRAM CTA */}
+      <section className="mx-auto max-w-7xl px-6 py-28 text-center md:px-10 md:py-36">
+        <div className="eyebrow">Volg het avontuur</div>
+        <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight text-primary md:text-6xl">
+          Van de werf tot de Oostzee — elke week een nieuw verhaal.
+        </h2>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <a href="https://www.instagram.com/mariegalante1915/" target="_blank" rel="noreferrer" className="border border-primary bg-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary">
+            Volg ons op Instagram
+          </a>
+          <Link to="/logboek" className="border border-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
+            Lees het logboek
+          </Link>
+        </div>
+      </section>
+    </SiteLayout>
   );
 }
 
-function Index() {
-  return <PlaceholderIndex />;
+function Stat({ k, v }: { k: string; v: string }) {
+  return (
+    <div>
+      <div className="font-display text-3xl text-primary md:text-4xl">{k}</div>
+      <div className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">{v}</div>
+    </div>
+  );
 }
