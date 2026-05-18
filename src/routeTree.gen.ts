@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TerugInDeTijdRouteImport } from './routes/terug-in-de-tijd'
+import { Route as LogboekRouteImport } from './routes/logboek'
+import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TerugInDeTijdRoute = TerugInDeTijdRouteImport.update({
+  id: '/terug-in-de-tijd',
+  path: '/terug-in-de-tijd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LogboekRoute = LogboekRouteImport.update({
+  id: '/logboek',
+  path: '/logboek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoekJouwAvontuurRoute = BoekJouwAvontuurRouteImport.update({
+  id: '/boek-jouw-avontuur',
+  path: '/boek-jouw-avontuur',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,66 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
+  '/logboek': typeof LogboekRoute
+  '/terug-in-de-tijd': typeof TerugInDeTijdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
+  '/logboek': typeof LogboekRoute
+  '/terug-in-de-tijd': typeof TerugInDeTijdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
+  '/logboek': typeof LogboekRoute
+  '/terug-in-de-tijd': typeof TerugInDeTijdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/boek-jouw-avontuur' | '/logboek' | '/terug-in-de-tijd'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/boek-jouw-avontuur' | '/logboek' | '/terug-in-de-tijd'
+  id:
+    | '__root__'
+    | '/'
+    | '/boek-jouw-avontuur'
+    | '/logboek'
+    | '/terug-in-de-tijd'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BoekJouwAvontuurRoute: typeof BoekJouwAvontuurRoute
+  LogboekRoute: typeof LogboekRoute
+  TerugInDeTijdRoute: typeof TerugInDeTijdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terug-in-de-tijd': {
+      id: '/terug-in-de-tijd'
+      path: '/terug-in-de-tijd'
+      fullPath: '/terug-in-de-tijd'
+      preLoaderRoute: typeof TerugInDeTijdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logboek': {
+      id: '/logboek'
+      path: '/logboek'
+      fullPath: '/logboek'
+      preLoaderRoute: typeof LogboekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/boek-jouw-avontuur': {
+      id: '/boek-jouw-avontuur'
+      path: '/boek-jouw-avontuur'
+      fullPath: '/boek-jouw-avontuur'
+      preLoaderRoute: typeof BoekJouwAvontuurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +109,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BoekJouwAvontuurRoute: BoekJouwAvontuurRoute,
+  LogboekRoute: LogboekRoute,
+  TerugInDeTijdRoute: TerugInDeTijdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
