@@ -1,4 +1,4 @@
-import { Link, Outlet } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 const nav = [
@@ -98,13 +98,11 @@ export function SiteFooter() {
   );
 }
 
-export default function SiteLayout() {
+export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SiteHeader />
-      <main>
-        <Outlet />
-      </main>
+      <main>{children}</main>
       <SiteFooter />
     </>
   );
