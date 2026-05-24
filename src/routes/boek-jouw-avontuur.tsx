@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import zeilendImg from "@/assets/photos/marie-galante-zeilend.jpg";
 
@@ -20,8 +20,9 @@ const options = [
     title: "Meevaren op de Oostzee",
     body: "Het tuig staat, de keuring is rond — het avontuur begint. Stap aan boord voor een zeilreis over de Oostzee, ontdek verborgen havensteden en vaar mee op een historisch schip met een verhaal.",
     img: zeilendImg,
-    cta: "Zet me op de wachtlijst",
-    ctaHref: "mailto:info@marie-galante.nl",
+    cta: "Meer info",
+    ctaHref: "/meevaren-oostzee",
+    internal: true,
   },
   {
     eyebrow: "Bed & Breakfast",
@@ -67,11 +68,25 @@ function BoekPage() {
             </div>
             <div className={`md:col-span-6 ${i % 2 ? "md:order-1" : ""}`}>
               <div className="eyebrow">{o.eyebrow}</div>
-              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{o.title}</h2>
+              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">
+                {o.internal ? (
+                  <Link to={o.ctaHref} className="transition-colors hover:text-accent">
+                    {o.title}
+                  </Link>
+                ) : (
+                  o.title
+                )}
+              </h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">{o.body}</p>
-              <a href={o.ctaHref} target={o.ctaHref.startsWith('http') ? '_blank' : undefined} rel={o.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined} className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
-                {o.cta} →
-              </a>
+              {o.internal ? (
+                <Link to={o.ctaHref} className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
+                  {o.cta} →
+                </Link>
+              ) : (
+                <a href={o.ctaHref} target={o.ctaHref.startsWith('http') ? '_blank' : undefined} rel={o.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined} className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
+                  {o.cta} →
+                </a>
+              )}
             </div>
           </article>
         ))}

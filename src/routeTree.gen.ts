@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TerugInDeTijdRouteImport } from './routes/terug-in-de-tijd'
+import { Route as MeevarenOostzeeRouteImport } from './routes/meevaren-oostzee'
 import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,6 +19,11 @@ import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 const TerugInDeTijdRoute = TerugInDeTijdRouteImport.update({
   id: '/terug-in-de-tijd',
   path: '/terug-in-de-tijd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeevarenOostzeeRoute = MeevarenOostzeeRouteImport.update({
+  id: '/meevaren-oostzee',
+  path: '/meevaren-oostzee',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LogboekRoute = LogboekRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/logboek': typeof LogboekRoute
+  '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/logboek': typeof LogboekRoute
+  '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/logboek': typeof LogboekRoute
+  '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
 }
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boek-jouw-avontuur'
     | '/logboek'
+    | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
     | '/logboek/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boek-jouw-avontuur'
     | '/logboek'
+    | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
     | '/logboek/$slug'
   id:
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boek-jouw-avontuur'
     | '/logboek'
+    | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
     | '/logboek_/$slug'
   fileRoutesById: FileRoutesById
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BoekJouwAvontuurRoute: typeof BoekJouwAvontuurRoute
   LogboekRoute: typeof LogboekRoute
+  MeevarenOostzeeRoute: typeof MeevarenOostzeeRoute
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
 }
@@ -102,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/terug-in-de-tijd'
       fullPath: '/terug-in-de-tijd'
       preLoaderRoute: typeof TerugInDeTijdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meevaren-oostzee': {
+      id: '/meevaren-oostzee'
+      path: '/meevaren-oostzee'
+      fullPath: '/meevaren-oostzee'
+      preLoaderRoute: typeof MeevarenOostzeeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/logboek': {
@@ -139,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BoekJouwAvontuurRoute: BoekJouwAvontuurRoute,
   LogboekRoute: LogboekRoute,
+  MeevarenOostzeeRoute: MeevarenOostzeeRoute,
   TerugInDeTijdRoute: TerugInDeTijdRoute,
   LogboekSlugRoute: LogboekSlugRoute,
 }
