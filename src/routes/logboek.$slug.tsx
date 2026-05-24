@@ -56,7 +56,7 @@ export const Route = createFileRoute("/logboek/$slug")({
 });
 
 function PostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: LogPost };
   const idx = posts.findIndex((p) => p.slug === post.slug);
   const prev = idx < posts.length - 1 ? posts[idx + 1] : null;
   const next = idx > 0 ? posts[idx - 1] : null;
