@@ -47,14 +47,14 @@ function BoekPage() {
         <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
-          <div className="eyebrow text-background/70">Aan boord</div>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Boek je avontuur</h1>
+        <div className="eyebrow text-background/70">Klaar voor het echte werk?</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Ga mee op avontuur</h1>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Of je nu een nacht aan de kade wilt doorbrengen, een feestje wilt vieren of binnenkort wilt meevaren — Marie Galante biedt drie manieren om aan boord te zijn.
+          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
         </p>
       </section>
 
