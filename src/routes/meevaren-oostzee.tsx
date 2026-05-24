@@ -116,7 +116,7 @@ function MeevarenPage() {
               <div className="relative aspect-[4/3] w-full overflow-hidden border border-foreground/15 bg-background">
                 <iframe
                   title="Vaargebied Oostzee"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.0%2C53.5%2C30.5%2C66.0&layer=mapnik"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.0%2C54.0%2C14.0%2C57.5&layer=mapnik"
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
                 />
