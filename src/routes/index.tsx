@@ -2,6 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import heroImg from "@/assets/photos/hero.jpg";
+import interior1 from "@/assets/photos/interior-1.jpg";
+import interior2 from "@/assets/photos/interior-2.jpg";
+import interior3 from "@/assets/photos/interior-3.jpg";
+import interior4 from "@/assets/photos/interior-4.jpg";
+import interior5 from "@/assets/photos/interior-5.jpg";
+import interior6 from "@/assets/photos/interior-6.jpg";
+import interior7 from "@/assets/photos/interior-7.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,14 +22,7 @@ export const Route = createFileRoute("/")({
 
 const HERO = heroImg;
 const PORTRAIT = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250130_1038026962-edited.jpg";
-const GALLERY = [
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg",
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_102306490-1024x692.jpg",
-  "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-33-1024x768.jpeg",
-];
+const GALLERY = [interior1, interior2, interior3, interior4, interior5, interior6, interior7];
 
 function Index() {
   return (
