@@ -68,7 +68,7 @@ function BoekPage() {
               <div className="eyebrow">{o.eyebrow}</div>
               <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{o.title}</h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">{o.body}</p>
-              <a href="mailto:info@marie-galante.nl" className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
+              <a href={o.ctaHref} target={o.ctaHref.startsWith('http') ? '_blank' : undefined} rel={o.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined} className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
                 {o.cta} →
               </a>
             </div>
