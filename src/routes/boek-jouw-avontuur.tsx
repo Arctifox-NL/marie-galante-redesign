@@ -15,9 +15,17 @@ const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/mari
 
 const options = [
   {
+    eyebrow: "Vanaf 2026",
+    title: "Meevaren op de Oostzee",
+    body: "Het tuig staat, de keuring is rond — het avontuur begint. Stap aan boord voor een zeilreis over de Oostzee, ontdek verborgen havensteden en vaar mee op een historisch schip met een verhaal.",
+    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
+    cta: "Zet me op de wachtlijst",
+    ctaHref: "mailto:info@marie-galante.nl",
+  },
+  {
     eyebrow: "Bed & Breakfast",
     title: "Overnachten in de Veerhaven",
-    body: "Slaap in een van de historische hutten aan dek. Wakker worden met uitzicht op de Erasmusbrug en koffie in de salon — een bijzondere overnachting midden in Rotterdam.",
+    body: "In de wintermaanden ligt Marie Galante aan de kade in Rotterdam. Slaap in een van de historische hutten aan dek, wakker worden met uitzicht op de Erasmusbrug en geniet van koffie in de salon — een bijzondere overnachting midden in de stad.",
     img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
     cta: "Reserveer via Airbnb",
     ctaHref: "https://www.airbnb.nl/rooms/1384088957429815841?adults=9&check_in=2026-06-01&check_out=2026-06-03&guests=9&search_mode=regular_search&children=0&infants=0&pets=0&source_impression_id=p3_1779624526_P3RrNrx8c-HVOh24&previous_page_section_name=1000&federated_search_id=071b7654-629a-479f-b10f-a542e57acfc3",
@@ -30,14 +38,6 @@ const options = [
     cta: "Vraag de mogelijkheden aan",
     ctaHref: "mailto:info@marie-galante.nl",
   },
-  {
-    eyebrow: "Vanaf 2026",
-    title: "Meevaren op de Oostzee",
-    body: "Zodra het tuig erop staat en de keuring rond is, varen we weer. Schrijf je in voor de wachtlijst en wees als eerste op de hoogte van data en bestemmingen.",
-    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
-    cta: "Zet me op de wachtlijst",
-    ctaHref: "mailto:info@marie-galante.nl",
-  },
 ];
 
 function BoekPage() {
@@ -47,14 +47,14 @@ function BoekPage() {
         <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
-          <div className="eyebrow text-background/70">Aan boord</div>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Boek je avontuur</h1>
+        <div className="eyebrow text-background/70">Klaar voor het echte werk?</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Ga mee op avontuur</h1>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Of je nu een nacht aan de kade wilt doorbrengen, een feestje wilt vieren of binnenkort wilt meevaren — Marie Galante biedt drie manieren om aan boord te zijn.
+          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
         </p>
       </section>
 
