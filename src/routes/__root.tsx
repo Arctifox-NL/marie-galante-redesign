@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Marie Galante — Zeillogger uit 1915" },
-      { name: "description", content: "Ontdek de wereld van het zeilen op de historische logger Marie Galante. Vaar mee, vier een feest aan boord of overnacht in de Veerhaven Rotterdam." },
+      { title: "Marie Galante" },
+      { name: "description", content: "Ontdek de wereld van het zeilen op de historische logger Marie Galante." },
       { name: "author", content: "Marie Galante" },
-      { property: "og:title", content: "Marie Galante — Zeillogger uit 1915" },
-      { property: "og:description", content: "Een historisch zeilschip, terug op de Oostzee. Vaar mee, overnacht of volg ons avontuur." },
+      { property: "og:title", content: "Marie Galante" },
+      { property: "og:description", content: "Ontdek de wereld van het zeilen op de historische logger Marie Galante." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Marie Galante" },
+      { name: "twitter:description", content: "Ontdek de wereld van het zeilen op de historische logger Marie Galante." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d8823d5-2e5e-436b-8e08-20ed8c8a6b1d/id-preview-a292e944--51208e8d-4569-48a2-9bd8-81571f8091be.lovable.app-1779624930870.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7d8823d5-2e5e-436b-8e08-20ed8c8a6b1d/id-preview-a292e944--51208e8d-4569-48a2-9bd8-81571f8091be.lovable.app-1779624930870.png" },
     ],
     links: [
       {
