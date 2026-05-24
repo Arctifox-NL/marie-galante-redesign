@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -13,8 +14,9 @@ export function SiteHeader() {
   return (
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-8">
-        <Link to="/" className="font-display text-xl tracking-[0.3em] text-background md:text-2xl">
-          MARIE&nbsp;GALANTE
+        <Link to="/" className="flex items-center gap-3 font-display text-xl tracking-[0.3em] text-background md:text-2xl">
+          <img src={logo} alt="Marie Galante logo" className="h-12 w-12 brightness-0 invert md:h-14 md:w-14" />
+          <span className="hidden sm:inline">MARIE&nbsp;GALANTE</span>
         </Link>
         <nav className="hidden items-center gap-10 md:flex">
           {nav.slice(1).map((n) => (
@@ -63,7 +65,10 @@ export function SiteFooter() {
     <footer className="mt-32 bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-3 md:px-10">
         <div>
-          <div className="font-display text-2xl tracking-[0.25em]">MARIE GALANTE</div>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Marie Galante logo" className="h-14 w-14 brightness-0 invert" />
+            <span className="font-display text-2xl tracking-[0.25em]">MARIE GALANTE</span>
+          </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
             Een zeillogger uit 1915. Terug op weg naar de Oostzee, vanuit de Veerhaven in Rotterdam.
           </p>
