@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
 
 const HERO = heroImg;
 const PORTRAIT = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250130_1038026962-edited.jpg";
-const GALLERY = [interior1, interior2, interior3, interior4, interior5, interior6, interior7];
+const GALLERY = [interior1, interior2, interior7, interior3, interior4, interior5, interior6];
 
 function Index() {
   return (
