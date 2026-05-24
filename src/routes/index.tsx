@@ -88,14 +88,14 @@ function Index() {
               Bekijk de mogelijkheden →
             </Link>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-            {GALLERY.map((src, i) => (
-              <div key={src} className={`overflow-hidden ${i === 1 ? "md:row-span-2 md:col-span-1" : ""}`}>
+          <div className="mt-16 columns-1 gap-3 sm:columns-2 md:columns-3 md:gap-5">
+            {GALLERY.map((src) => (
+              <div key={src} className="mb-3 break-inside-avoid overflow-hidden md:mb-5">
                 <img
                   src={src}
                   alt=""
                   loading="lazy"
-                  className={`h-full w-full object-cover transition-transform duration-700 hover:scale-105 ${i === 1 ? "md:aspect-[3/4]" : "aspect-[4/3]"}`}
+                  className="h-auto w-full transition-transform duration-700 hover:scale-105"
                 />
               </div>
             ))}
