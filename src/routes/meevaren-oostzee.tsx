@@ -52,10 +52,10 @@ const gallery = [
   { src: sfeerBagenkop, alt: "Zeilboot vaart de haven van Bagenkop binnen" },
   { src: sfeerZeekaart, alt: "Zeekaart van de Kieler Bucht met passer en koersliniaal" },
   { src: sfeerKust, alt: "Stille rotskust aan de Oostzee" },
+  { src: sfeerHavenSunset, alt: "Haven bij zonsondergang met silhouetten van masten" },
   { src: sfeerBloemenveld, alt: "Aan land tussen bloemen en korenvelden" },
   { src: sfeerEckernforde, alt: "Blauw-gele vuurtoren aan de kade van Eckernförde" },
   { src: sfeerSunsetCouple, alt: "Twee bemanningsleden kijken naar de zonsondergang" },
-  { src: sfeerHavenSunset, alt: "Haven bij zonsondergang met silhouetten van masten" },
 ];
 
 function MeevarenPage() {
