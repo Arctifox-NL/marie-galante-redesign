@@ -104,6 +104,39 @@ function Index() {
         </div>
       </section>
 
+      {/* LIVE TRACKER PREVIEW */}
+      <section className="bg-secondary py-28 md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="grid gap-12 md:grid-cols-12 md:gap-16">
+            <div className="md:col-span-5">
+              <div className="eyebrow">Live aan boord</div>
+              <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
+                Volg het schip live op de kaart
+              </h2>
+              <p className="mt-6 text-foreground/75">
+                Benieuwd waar de Marie Galante nu vaart of voor anker ligt? Bekijk de live positie via MarineTraffic — realtime en overal te volgen.
+              </p>
+              <Link to="/tracker" className="mt-10 inline-block border border-primary bg-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary">
+                Open de live tracker
+              </Link>
+            </div>
+            <div className="md:col-span-7">
+              <Link to="/tracker" className="group block aspect-[4/3] w-full overflow-hidden border border-border bg-muted shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)]">
+                <iframe
+                  src="https://www.marinetraffic.com/en/ais/embed/zoom:7/centery:54.5/centerx:11/maptype:4/shownames:true/mmsi:5096743/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:false/remember:false"
+                  title="Live positie Marie Galante"
+                  width="100%"
+                  height="100%"
+                  frameBorder={0}
+                  scrolling="no"
+                  className="pointer-events-none h-full w-full"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INSTAGRAM CTA */}
       <section className="mx-auto max-w-7xl px-6 py-28 text-center md:px-10 md:py-36">
         <div className="eyebrow">Volg het avontuur</div>

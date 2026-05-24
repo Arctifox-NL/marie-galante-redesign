@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrackerRouteImport } from './routes/tracker'
 import { Route as TerugInDeTijdRouteImport } from './routes/terug-in-de-tijd'
 import { Route as MeevarenOostzeeRouteImport } from './routes/meevaren-oostzee'
 import { Route as LogboekRouteImport } from './routes/logboek'
@@ -16,6 +17,11 @@ import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuu
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 
+const TrackerRoute = TrackerRouteImport.update({
+  id: '/tracker',
+  path: '/tracker',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TerugInDeTijdRoute = TerugInDeTijdRouteImport.update({
   id: '/terug-in-de-tijd',
   path: '/terug-in-de-tijd',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
+  '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
+  '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
+  '/tracker': typeof TrackerRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/logboek'
     | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
+    | '/tracker'
     | '/logboek/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/logboek'
     | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
+    | '/tracker'
     | '/logboek/$slug'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/logboek'
     | '/meevaren-oostzee'
     | '/terug-in-de-tijd'
+    | '/tracker'
     | '/logboek_/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -105,11 +117,19 @@ export interface RootRouteChildren {
   LogboekRoute: typeof LogboekRoute
   MeevarenOostzeeRoute: typeof MeevarenOostzeeRoute
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
+  TrackerRoute: typeof TrackerRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/tracker': {
+      id: '/tracker'
+      path: '/tracker'
+      fullPath: '/tracker'
+      preLoaderRoute: typeof TrackerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terug-in-de-tijd': {
       id: '/terug-in-de-tijd'
       path: '/terug-in-de-tijd'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   LogboekRoute: LogboekRoute,
   MeevarenOostzeeRoute: MeevarenOostzeeRoute,
   TerugInDeTijdRoute: TerugInDeTijdRoute,
+  TrackerRoute: TrackerRoute,
   LogboekSlugRoute: LogboekSlugRoute,
 }
 export const routeTree = rootRouteImport
