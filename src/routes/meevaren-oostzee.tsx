@@ -103,14 +103,13 @@ function MeevarenPage() {
           <div className="grid items-center gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
               <div className="eyebrow">Het vaargebied</div>
-              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Van Kiel tot Tallinn</h2>
+              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Duitse kust & Deense eilanden</h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-                We varen door de Deense Sont, langs de Zweedse zuidkust en de scherenkust bij Stockholm, met uitstapjes naar Gotland, de Ålandeilanden en de Baltische staten. Elke reis is anders — de wind bepaalt de koers.
+                We volgen de wind langs de Duitse kust en zetten koers naar de Deense eilanden. Elke reis is anders — de wind bepaalt waar we aanleggen. We blijven onder Gotenburg, dus het avontuur blijft compact en overzichtelijk.
               </p>
               <ul className="mt-8 space-y-2 text-sm uppercase tracking-[0.2em] text-foreground/70">
-                <li>· Kiel — Kopenhagen — Stockholm</li>
-                <li>· Gotland — Visby — Ålandeilanden</li>
-                <li>· Helsinki — Tallinn — Riga</li>
+                <li>· Mommark · Marstal · Middelfart</li>
+                <li>· Kopenhagen · Svendborg · Heiligenhafen</li>
               </ul>
             </div>
             <div className="md:col-span-7">
