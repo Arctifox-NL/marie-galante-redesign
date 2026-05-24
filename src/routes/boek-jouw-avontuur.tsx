@@ -11,14 +11,14 @@ export const Route = createFileRoute("/boek-jouw-avontuur")({
   }),
 });
 
-const HERO = "https://marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg";
+const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg";
 
 const options = [
   {
     eyebrow: "Bed & Breakfast",
     title: "Overnachten in de Veerhaven",
     body: "Slaap in een van de historische hutten aan dek. Wakker worden met uitzicht op de Erasmusbrug en koffie in de salon — een bijzondere overnachting midden in Rotterdam.",
-    img: "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
+    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
     cta: "Reserveer via Airbnb",
     ctaHref: "https://www.airbnb.nl/rooms/1384088957429815841?adults=9&check_in=2026-06-01&check_out=2026-06-03&guests=9&search_mode=regular_search&children=0&infants=0&pets=0&source_impression_id=p3_1779624526_P3RrNrx8c-HVOh24&previous_page_section_name=1000&federated_search_id=071b7654-629a-479f-b10f-a542e57acfc3",
   },
@@ -26,7 +26,7 @@ const options = [
     eyebrow: "Privé & evenementen",
     title: "Een feestje aan boord",
     body: "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 30 personen.",
-    img: "https://marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
+    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
     cta: "Vraag de mogelijkheden aan",
     ctaHref: "mailto:info@marie-galante.nl",
   },
@@ -34,7 +34,7 @@ const options = [
     eyebrow: "Vanaf 2026",
     title: "Meevaren op de Oostzee",
     body: "Zodra het tuig erop staat en de keuring rond is, varen we weer. Schrijf je in voor de wachtlijst en wees als eerste op de hoogte van data en bestemmingen.",
-    img: "https://marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
+    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
     cta: "Zet me op de wachtlijst",
     ctaHref: "mailto:info@marie-galante.nl",
   },
