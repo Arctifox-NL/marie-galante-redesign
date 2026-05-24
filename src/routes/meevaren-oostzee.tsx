@@ -44,16 +44,16 @@ const indeling = [
   { label: "Tuig", value: "Twee masten, gaffeltuig — gebouwd in 1915" },
 ];
 
-// Volgorde van licht & koel naar warm & avond — de boog van een vaardag
+// Afwisseling van portret & landschap, opbouw van dag naar avond
 const gallery = [
-  { src: sfeerZeekaart, alt: "Zeekaart van de Kieler Bucht met passer en koersliniaal" },
   { src: sfeerSchleimunde, alt: "Groen-witte vuurtoren van Schleimünde" },
-  { src: sfeerEckernforde, alt: "Blauw-gele vuurtoren aan de kade van Eckernförde" },
-  { src: sfeerBagenkop, alt: "Zeilboot vaart de haven van Bagenkop binnen" },
   { src: sfeerCliffs, alt: "Witte krijtrotsen aan de Deense kust" },
+  { src: sfeerKoe, alt: "Nieuwsgierige Jersey-koe in een Deens weiland" },
+  { src: sfeerBagenkop, alt: "Zeilboot vaart de haven van Bagenkop binnen" },
+  { src: sfeerZeekaart, alt: "Zeekaart van de Kieler Bucht met passer en koersliniaal" },
   { src: sfeerKust, alt: "Stille rotskust aan de Oostzee" },
   { src: sfeerBloemenveld, alt: "Aan land tussen bloemen en korenvelden" },
-  { src: sfeerKoe, alt: "Nieuwsgierige Jersey-koe in een Deens weiland" },
+  { src: sfeerEckernforde, alt: "Blauw-gele vuurtoren aan de kade van Eckernförde" },
   { src: sfeerSunsetCouple, alt: "Twee bemanningsleden kijken naar de zonsondergang" },
   { src: sfeerHavenSunset, alt: "Haven bij zonsondergang met silhouetten van masten" },
 ];
@@ -147,7 +147,7 @@ function MeevarenPage() {
             Vroege ochtenden met koffie op dek, lange dagen onder zeil en avonden in onbekende havens waar het bier lokaal is en de zon pas laat ondergaat.
           </p>
         </div>
-        <div className="mt-12 columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4">
+        <div className="mt-12 columns-1 gap-4 sm:columns-2 md:columns-3">
           {gallery.map((img) => (
             <img
               key={img.src}
