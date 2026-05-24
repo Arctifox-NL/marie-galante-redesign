@@ -1,15 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
-import g1 from "@/assets/photos/g1.jpeg";
-import g2 from "@/assets/photos/g2.jpg";
-import g3 from "@/assets/photos/g3.jpg";
-import g4 from "@/assets/photos/g4.avif";
-import g5 from "@/assets/photos/g5.jpg";
-import g6 from "@/assets/photos/g6.jpeg";
 import interior1 from "@/assets/photos/interior-1.jpg";
 import interior2 from "@/assets/photos/interior-2.jpg";
 import interior3 from "@/assets/photos/interior-3.jpg";
+import sfeerZeekaart from "@/assets/photos/sfeer-zeekaart.jpg";
+import sfeerSchleimunde from "@/assets/photos/sfeer-schleimunde.jpg";
+import sfeerEckernforde from "@/assets/photos/sfeer-eckernforde.jpg";
+import sfeerBagenkop from "@/assets/photos/sfeer-bagenkop.jpg";
+import sfeerCliffs from "@/assets/photos/sfeer-cliffs.jpg";
+import sfeerKust from "@/assets/photos/sfeer-kust.jpg";
+import sfeerBloemenveld from "@/assets/photos/sfeer-bloemenveld.jpg";
+import sfeerKoe from "@/assets/photos/sfeer-koe.jpg";
+import sfeerSunsetCouple from "@/assets/photos/sfeer-sunset-couple.jpg";
+import sfeerHavenSunset from "@/assets/photos/sfeer-haven-sunset.jpg";
 
 export const Route = createFileRoute("/meevaren-oostzee")({
   component: MeevarenPage,
@@ -40,13 +44,18 @@ const indeling = [
   { label: "Tuig", value: "Twee masten, gaffeltuig — gebouwd in 1915" },
 ];
 
-const collage = [
-  { src: g1, alt: "Zeilen op open water" },
-  { src: g2, alt: "Haven bij zonsondergang" },
-  { src: g3, alt: "Aan dek tijdens de overtocht" },
-  { src: g4, alt: "Aanleggen in een Oostzeehaven" },
-  { src: g5, alt: "Vol in de zeilen" },
-  { src: g6, alt: "Sfeer aan boord" },
+// Volgorde van licht & koel naar warm & avond — de boog van een vaardag
+const gallery = [
+  { src: sfeerZeekaart, alt: "Zeekaart van de Kieler Bucht met passer en koersliniaal" },
+  { src: sfeerSchleimunde, alt: "Groen-witte vuurtoren van Schleimünde" },
+  { src: sfeerEckernforde, alt: "Blauw-gele vuurtoren aan de kade van Eckernförde" },
+  { src: sfeerBagenkop, alt: "Zeilboot vaart de haven van Bagenkop binnen" },
+  { src: sfeerCliffs, alt: "Witte krijtrotsen aan de Deense kust" },
+  { src: sfeerKust, alt: "Stille rotskust aan de Oostzee" },
+  { src: sfeerBloemenveld, alt: "Aan land tussen bloemen en korenvelden" },
+  { src: sfeerKoe, alt: "Nieuwsgierige Jersey-koe in een Deens weiland" },
+  { src: sfeerSunsetCouple, alt: "Twee bemanningsleden kijken naar de zonsondergang" },
+  { src: sfeerHavenSunset, alt: "Haven bij zonsondergang met silhouetten van masten" },
 ];
 
 function MeevarenPage() {
@@ -138,13 +147,16 @@ function MeevarenPage() {
             Vroege ochtenden met koffie op dek, lange dagen onder zeil en avonden in onbekende havens waar het bier lokaal is en de zon pas laat ondergaat.
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-          <img src={collage[0].src} alt={collage[0].alt} className="col-span-2 row-span-2 aspect-square w-full object-cover" />
-          <img src={collage[1].src} alt={collage[1].alt} className="aspect-square w-full object-cover" />
-          <img src={collage[2].src} alt={collage[2].alt} className="aspect-square w-full object-cover" />
-          <img src={collage[3].src} alt={collage[3].alt} className="aspect-[4/5] w-full object-cover md:aspect-square" />
-          <img src={collage[4].src} alt={collage[4].alt} className="aspect-[4/5] w-full object-cover md:aspect-square" />
-          <img src={collage[5].src} alt={collage[5].alt} className="col-span-2 aspect-[2/1] w-full object-cover md:col-span-2 md:aspect-square" />
+        <div className="mt-12 columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4">
+          {gallery.map((img) => (
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              className="mb-3 block w-full break-inside-avoid object-cover md:mb-4"
+            />
+          ))}
         </div>
       </section>
 
