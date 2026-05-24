@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 
-const MMSI = "5096743";
+const MMSI = "244556000";
 const EMBED_URL = `https://www.marinetraffic.com/en/ais/embed/zoom:8/centery:54.5/centerx:11/maptype:4/shownames:true/mmsi:${MMSI}/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:false/remember:false`;
 const FULL_URL = `https://www.marinetraffic.com/en/ais/details/ships/mmsi:${MMSI}`;
 

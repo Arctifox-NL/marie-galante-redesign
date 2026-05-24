@@ -123,7 +123,7 @@ function Index() {
             <div className="md:col-span-7">
               <Link to="/tracker" className="group block aspect-[4/3] w-full overflow-hidden border border-border bg-muted shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)]">
                 <iframe
-                  src="https://www.marinetraffic.com/en/ais/embed/zoom:7/centery:54.5/centerx:11/maptype:4/shownames:true/mmsi:5096743/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:false/remember:false"
+                  src="https://www.marinetraffic.com/en/ais/embed/zoom:7/centery:54.5/centerx:11/maptype:4/shownames:true/mmsi:244556000/shipid:0/fleet:/fleet_id:/vtypes:/showmenu:false/remember:false"
                   title="Live positie Marie Galante"
                   width="100%"
                   height="100%"
