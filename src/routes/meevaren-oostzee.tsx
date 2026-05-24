@@ -33,10 +33,9 @@ export const Route = createFileRoute("/meevaren-oostzee")({
 });
 
 const indeling = [
-  { label: "Hutten", value: "5 historische hutten · 10 kooien" },
-  { label: "Salon", value: "Ruime kombuis & eetzaal voor de hele bemanning" },
-  { label: "Dek", value: "Open dek met stuurhut, kuip en zonneplek voor" },
-  { label: "Sanitair", value: "Twee toiletten en een warme douche aan boord" },
+  { label: "Hutten", value: "7 hutten · 18 bedden" },
+  { label: "Salon", value: "Ruime kombuis, Bibliotheek, Bar en Eetzaal voor de hele bemanning" },
+  { label: "Sanitair", value: "Twee toiletten en twee warme douches" },
   { label: "Lengte", value: "27 meter over alles · 6,5 meter breed" },
   { label: "Tuig", value: "Twee masten, gaffeltuig — gebouwd in 1915" },
 ];
