@@ -74,7 +74,7 @@ function MeevarenPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Het ritme van de wind, de geur van teer en zout, de horizon die elke dag verschuift. Stap aan boord van Marie Galante voor een week zeilen langs de kust van de Oostzee — van Deense fjorden tot Zweedse scherenkusten en stille Estse havens.
+          Het ritme van de wind en zout, de horizon die elke dag verschuift. Stap aan boord van Marie Galante voor een week zeilen langs de kust van de Oostzee.
         </p>
       </section>
 
