@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
+import heroImg from "@/assets/photos/hero.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/Website-deader-1024x576.png";
+const HERO = heroImg;
 const PORTRAIT = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250130_1038026962-edited.jpg";
 const GALLERY = [
   "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/marie-galante-rotterdam-pic-7-1024x768.jpeg",
