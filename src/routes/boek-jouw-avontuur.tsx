@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
+import zeilendImg from "@/assets/photos/marie-galante-zeilend.jpg";
 
 export const Route = createFileRoute("/boek-jouw-avontuur")({
   component: BoekPage,
@@ -18,7 +19,7 @@ const options = [
     eyebrow: "Vanaf 2026",
     title: "Meevaren op de Oostzee",
     body: "Het tuig staat, de keuring is rond — het avontuur begint. Stap aan boord voor een zeilreis over de Oostzee, ontdek verborgen havensteden en vaar mee op een historisch schip met een verhaal.",
-    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/ca206699-5027-48e4-9cc7-15082b0e21cb-1024x576.avif",
+    img: zeilendImg,
     cta: "Zet me op de wachtlijst",
     ctaHref: "mailto:info@marie-galante.nl",
   },
