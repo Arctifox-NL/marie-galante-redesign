@@ -77,33 +77,6 @@ function Index() {
         </div>
       </section>
 
-      {/* OVERNACHTEN GALLERY */}
-      <section className="bg-primary py-28 text-primary-foreground md:py-36">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <div className="eyebrow text-primary-foreground/60">Aan de kade in Rotterdam</div>
-              <h2 className="mt-4 font-display text-4xl md:text-6xl">Overnachten aan boord</h2>
-            </div>
-            <Link to="/boek-jouw-avontuur" className="text-xs uppercase tracking-[0.25em] text-accent hover:underline">
-              Bekijk de mogelijkheden →
-            </Link>
-          </div>
-          <div className="mt-16 columns-1 gap-3 sm:columns-2 md:columns-3 md:gap-5">
-            {GALLERY.map((src) => (
-              <div key={src} className="mb-3 break-inside-avoid overflow-hidden md:mb-5">
-                <img
-                  src={src}
-                  alt=""
-                  loading="lazy"
-                  className="h-auto w-full transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* LIVE TRACKER PREVIEW */}
       <section className="bg-secondary py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
@@ -133,6 +106,33 @@ function Index() {
                 />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OVERNACHTEN GALLERY */}
+      <section className="bg-primary py-28 text-primary-foreground md:py-36">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <div className="eyebrow text-primary-foreground/60">Aan de kade in Rotterdam</div>
+              <h2 className="mt-4 font-display text-4xl md:text-6xl">Overnachten aan boord</h2>
+            </div>
+            <Link to="/boek-jouw-avontuur" className="text-xs uppercase tracking-[0.25em] text-accent hover:underline">
+              Bekijk de mogelijkheden →
+            </Link>
+          </div>
+          <div className="mt-16 columns-1 gap-3 sm:columns-2 md:columns-3 md:gap-5">
+            {GALLERY.map((src) => (
+              <div key={src} className="mb-3 break-inside-avoid overflow-hidden md:mb-5">
+                <img
+                  src={src}
+                  alt=""
+                  loading="lazy"
+                  className="h-auto w-full transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
