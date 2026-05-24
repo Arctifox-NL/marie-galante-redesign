@@ -13,7 +13,7 @@ import { Route as TerugInDeTijdRouteImport } from './routes/terug-in-de-tijd'
 import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as LogboekSlugRouteImport } from './routes/logboek.$slug'
+import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 
 const TerugInDeTijdRoute = TerugInDeTijdRouteImport.update({
   id: '/terug-in-de-tijd',
@@ -36,22 +36,22 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const LogboekSlugRoute = LogboekSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => LogboekRoute,
+  id: '/logboek_/$slug',
+  path: '/logboek/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/logboek': typeof LogboekRouteWithChildren
+  '/logboek': typeof LogboekRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/logboek': typeof LogboekRouteWithChildren
+  '/logboek': typeof LogboekRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/logboek/$slug': typeof LogboekSlugRoute
 }
@@ -59,9 +59,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/logboek': typeof LogboekRouteWithChildren
+  '/logboek': typeof LogboekRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
-  '/logboek/$slug': typeof LogboekSlugRoute
+  '/logboek_/$slug': typeof LogboekSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -84,14 +84,15 @@ export interface FileRouteTypes {
     | '/boek-jouw-avontuur'
     | '/logboek'
     | '/terug-in-de-tijd'
-    | '/logboek/$slug'
+    | '/logboek_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BoekJouwAvontuurRoute: typeof BoekJouwAvontuurRoute
-  LogboekRoute: typeof LogboekRouteWithChildren
+  LogboekRoute: typeof LogboekRoute
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
+  LogboekSlugRoute: typeof LogboekSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -124,33 +125,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/logboek/$slug': {
-      id: '/logboek/$slug'
-      path: '/$slug'
+    '/logboek_/$slug': {
+      id: '/logboek_/$slug'
+      path: '/logboek/$slug'
       fullPath: '/logboek/$slug'
       preLoaderRoute: typeof LogboekSlugRouteImport
-      parentRoute: typeof LogboekRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface LogboekRouteChildren {
-  LogboekSlugRoute: typeof LogboekSlugRoute
-}
-
-const LogboekRouteChildren: LogboekRouteChildren = {
-  LogboekSlugRoute: LogboekSlugRoute,
-}
-
-const LogboekRouteWithChildren =
-  LogboekRoute._addFileChildren(LogboekRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BoekJouwAvontuurRoute: BoekJouwAvontuurRoute,
-  LogboekRoute: LogboekRouteWithChildren,
+  LogboekRoute: LogboekRoute,
   TerugInDeTijdRoute: TerugInDeTijdRoute,
+  LogboekSlugRoute: LogboekSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
