@@ -7,6 +7,7 @@ const nav = [
   { to: "/boek-jouw-avontuur", label: "Boek je avontuur" },
   { to: "/terug-in-de-tijd", label: "Terug in de tijd" },
   { to: "/logboek", label: "Logboek" },
+  { to: "/tracker", label: "Live tracker" },
 ];
 
 export function SiteHeader() {
