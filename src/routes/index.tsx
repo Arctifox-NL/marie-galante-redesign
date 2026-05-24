@@ -9,6 +9,7 @@ import interior4 from "@/assets/photos/interior-4.jpg";
 import interior5 from "@/assets/photos/interior-5.jpg";
 import interior6 from "@/assets/photos/interior-6.jpg";
 import interior7 from "@/assets/photos/interior-7.jpg";
+import portraitImg from "@/assets/photos/lex-lotte.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/")({
 });
 
 const HERO = heroImg;
-const PORTRAIT = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250130_1038026962-edited.jpg";
+const PORTRAIT = portraitImg;
 const GALLERY = [interior1, interior2, interior7, interior3, interior4, interior5, interior6];
 
 function Index() {
