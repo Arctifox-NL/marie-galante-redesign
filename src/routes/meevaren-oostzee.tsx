@@ -105,7 +105,7 @@ function MeevarenPage() {
               <div className="eyebrow">Het vaargebied</div>
               <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Duitse kust & Deense eilanden</h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-                We volgen de wind langs de Duitse kust en zetten koers naar de Deense eilanden. Elke reis is anders — de wind bepaalt waar we aanleggen. We blijven onder Gotenburg, dus het avontuur blijft compact en overzichtelijk.
+                We volgen de wind langs de Duitse kust en zetten koers naar de Deense eilanden. Elke reis is anders — de wind bepaalt waar we aanleggen.
               </p>
               <ul className="mt-8 space-y-2 text-sm uppercase tracking-[0.2em] text-foreground/70">
                 <li>· Mommark · Marstal · Middelfart</li>
