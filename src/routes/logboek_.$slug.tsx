@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import { posts, type LogPost } from "@/data/logbook";
 
-export const Route = createFileRoute("/logboek/$slug")({
+export const Route = createFileRoute("/logboek_/$slug")({
   component: PostPage,
   loader: ({ params }) => {
     const post = posts.find((p) => p.slug === params.slug);
