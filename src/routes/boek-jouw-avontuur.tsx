@@ -5,7 +5,6 @@ import veerhaven1 from "@/assets/photos/veerhaven-1.jpg";
 import veerhaven2 from "@/assets/photos/veerhaven-2.jpg";
 import veerhaven3 from "@/assets/photos/veerhaven-3.jpg";
 import veerhaven4 from "@/assets/photos/veerhaven-4.jpg";
-import veerhaven5 from "@/assets/photos/veerhaven-5.jpg";
 import veerhaven6 from "@/assets/photos/veerhaven-6.jpg";
 
 export const Route = createFileRoute("/boek-jouw-avontuur")({
@@ -37,7 +36,7 @@ const options = [
     img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
     cta: "Reserveer via Airbnb",
     ctaHref: "https://www.airbnb.nl/rooms/1384088957429815841?adults=9&check_in=2026-06-01&check_out=2026-06-03&guests=9&search_mode=regular_search&children=0&infants=0&pets=0&source_impression_id=p3_1779624526_P3RrNrx8c-HVOh24&previous_page_section_name=1000&federated_search_id=071b7654-629a-479f-b10f-a542e57acfc3",
-    collage: [veerhaven1, veerhaven2, veerhaven3, veerhaven4, veerhaven5, veerhaven6],
+    collage: [veerhaven1, veerhaven2, veerhaven3, veerhaven4, veerhaven6],
   },
   {
     eyebrow: "Privé & evenementen",
@@ -79,7 +78,7 @@ function BoekPage() {
                       src={src}
                       alt={`${o.title} ${idx + 1}`}
                       loading="lazy"
-                      className={`w-full object-cover ${idx === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"}`}
+                      className={`w-full object-cover ${idx === 0 ? "col-span-2 aspect-square" : "aspect-square"}`}
                     />
                   ))}
                 </div>
