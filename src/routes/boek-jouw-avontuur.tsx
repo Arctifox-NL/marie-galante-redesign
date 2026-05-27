@@ -40,7 +40,7 @@ const options = [
   {
     eyebrow: "Privé & evenementen",
     title: "Een feestje aan boord",
-    body: "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 30 personen.",
+    body: "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 36 personen voor partijen.",
     img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
     cta: "Vraag de mogelijkheden aan",
     ctaHref: "mailto:info@marie-galante.nl",
