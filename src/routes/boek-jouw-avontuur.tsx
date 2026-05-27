@@ -77,7 +77,7 @@ function BoekPage() {
                       src={src}
                       alt={`${o.title} ${idx + 1}`}
                       loading="lazy"
-                      className={`w-full object-cover ${idx === 0 ? "col-span-2 aspect-square" : "aspect-square"}`}
+                      className="w-full aspect-square object-cover"
                     />
                   ))}
                 </div>
