@@ -36,7 +36,7 @@ const options = [
     img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_115326725-1024x576.jpg",
     cta: "Reserveer via Airbnb",
     ctaHref: "https://www.airbnb.nl/rooms/1384088957429815841?adults=9&check_in=2026-06-01&check_out=2026-06-03&guests=9&search_mode=regular_search&children=0&infants=0&pets=0&source_impression_id=p3_1779624526_P3RrNrx8c-HVOh24&previous_page_section_name=1000&federated_search_id=071b7654-629a-479f-b10f-a542e57acfc3",
-    collage: [veerhaven1, veerhaven2, veerhaven3, veerhaven4, veerhaven5, veerhaven6],
+    collage: [veerhaven1, veerhaven2, veerhaven3, veerhaven4, veerhaven6],
   },
   {
     eyebrow: "Privé & evenementen",
