@@ -5,7 +5,6 @@ import veerhaven1 from "@/assets/photos/veerhaven-1.jpg";
 import veerhaven2 from "@/assets/photos/veerhaven-2.jpg";
 import veerhaven3 from "@/assets/photos/veerhaven-3.jpg";
 import veerhaven4 from "@/assets/photos/veerhaven-4.jpg";
-import veerhaven5 from "@/assets/photos/veerhaven-5.jpg";
 import veerhaven6 from "@/assets/photos/veerhaven-6.jpg";
 
 export const Route = createFileRoute("/boek-jouw-avontuur")({
