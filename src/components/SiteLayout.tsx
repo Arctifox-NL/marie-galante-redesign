@@ -72,7 +72,7 @@ export function SiteFooter() {
             <span className="font-display text-2xl tracking-[0.25em]">MARIE GALANTE</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
-            Een zeillogger uit 1915. Terug op weg naar de Oostzee, vanuit de Veerhaven in Rotterdam.
+            Een zeillogger uit 1915, klaar voor een nieuw avontuur.
           </p>
         </div>
         <div>
