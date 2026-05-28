@@ -3,6 +3,9 @@ import SiteLayout from "@/components/SiteLayout";
 import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
 import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
 import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
+import photo2024Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
+import photo2024Dek from "@/assets/photos/2014-dek-evenement.jpg";
+import photo2024Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
