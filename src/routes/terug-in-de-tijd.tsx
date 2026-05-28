@@ -6,6 +6,9 @@ import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
 import photo2014Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
 import photo2014Dek from "@/assets/photos/2014-dek-evenement.jpg";
 import photo2014Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
+import photo2016Bow from "@/assets/photos/2016-rotterdam-bow.jpg";
+import photo2016Dek from "@/assets/photos/2016-rotterdam-dek.jpg";
+import photo2016Stuurhut from "@/assets/photos/2016-rotterdam-stuurhut.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -42,9 +45,9 @@ const timeline: Entry[] = [
     title: "Naar Rotterdam",
     body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
     images: [
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-3.jpeg?resize=1024%2C768&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-12.jpeg?resize=1024%2C768&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-31.jpeg?resize=1024%2C768&ssl=1",
+      photo2016Bow,
+      photo2016Dek,
+      photo2016Stuurhut,
     ],
   },
   {
