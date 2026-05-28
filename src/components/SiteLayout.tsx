@@ -31,11 +31,11 @@ export function SiteHeader() {
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 transition-all duration-300 ${
         scrolled ? "py-3 md:py-4" : "py-6 md:py-8"
       }`}>
-        <Link to="/" className="flex items-center gap-3 font-display text-xl tracking-[0.3em] text-background md:text-2xl">
+        <Link to="/" className="flex shrink-0 items-center gap-3 font-display text-xl tracking-[0.3em] text-background md:text-2xl">
           <img src={logo} alt="Marie Galante logo" className="h-12 w-12 object-contain brightness-0 invert md:h-14 md:w-14" />
-          <span className="hidden sm:inline">MARIE&nbsp;GALANTE</span>
+          <span className="hidden md:inline">MARIE&nbsp;GALANTE</span>
         </Link>
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {nav.slice(1).map((n) => (
             <Link
               key={n.to}
@@ -48,7 +48,7 @@ export function SiteHeader() {
           ))}
           <a
             href="mailto:info@marie-galante.nl"
-            className="border border-accent bg-accent px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent"
+            className="border border-accent bg-accent px-4 py-2 text-[0.7rem] uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent"
           >
             Ik wil mee
           </a>
@@ -61,14 +61,14 @@ export function SiteHeader() {
             Ik wil mee
           </a>
           <button
-          onClick={() => setOpen(!open)}
+            onClick={() => setOpen(!open)}
             className="text-background"
-          aria-label="Menu"
-        >
-          <span className="block h-px w-7 bg-current" />
-          <span className="mt-1.5 block h-px w-7 bg-current" />
-          <span className="mt-1.5 block h-px w-5 bg-current" />
-        </button>
+            aria-label="Menu"
+          >
+            <span className="block h-px w-7 bg-current" />
+            <span className="mt-1.5 block h-px w-7 bg-current" />
+            <span className="mt-1.5 block h-px w-5 bg-current" />
+          </button>
         </div>
       </div>
       {open && (
