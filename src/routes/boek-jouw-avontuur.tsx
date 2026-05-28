@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import zeilendImg from "@/assets/photos/marie-galante-zeilend.jpg";
+import dagtochtenImg from "@/assets/photos/g3.jpg";
 import veerhaven1 from "@/assets/photos/veerhaven-1.jpg";
 import veerhaven2 from "@/assets/photos/veerhaven-2.jpg";
 import veerhaven4 from "@/assets/photos/veerhaven-4.jpg";
