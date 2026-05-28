@@ -10,7 +10,7 @@ export const Route = createFileRoute("/dagtochten")({
       {
         name: "description",
         content:
-          "Boek een ticket voor een dagtocht aan boord van de Marie Galante — een historische zeillogger uit 1915, vertrekkend vanuit de Veerhaven in Rotterdam.",
+          "Boek een ticket voor een dagtocht aan boord van de Marie Galante — een historische zeillogger uit 1915, vertrekkend vanuit een van de badplaatsen aan de Oostzee.",
       },
       { property: "og:title", content: "Dagtochten · Marie Galante" },
       {
