@@ -72,7 +72,7 @@ function BoekPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
+          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, een dagtocht vanuit een badplaats, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
         </p>
       </section>
 
