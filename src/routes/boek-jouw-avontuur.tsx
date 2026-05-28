@@ -31,6 +31,15 @@ const options = [
     internal: true,
   },
   {
+    eyebrow: "Tickets",
+    title: "Dagtochten",
+    body: "Vaar een dag mee vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt — geen ervaring nodig.",
+    img: dagtochtenImg,
+    cta: "Bekijk data & tickets",
+    ctaHref: "/dagtochten",
+    internal: true,
+  },
+  {
     eyebrow: "Bed & Breakfast",
     title: "Overnachten in de Veerhaven",
     body: "In de wintermaanden ligt Marie Galante aan de kade in Rotterdam. Slaap in een van de historische hutten aan dek, wakker worden met uitzicht op de Erasmusbrug en geniet van koffie in de salon — een bijzondere overnachting midden in de stad.",
