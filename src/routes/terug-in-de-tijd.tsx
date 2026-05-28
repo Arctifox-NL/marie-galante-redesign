@@ -3,9 +3,9 @@ import SiteLayout from "@/components/SiteLayout";
 import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
 import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
 import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
-import photo2024Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
-import photo2024Dek from "@/assets/photos/2014-dek-evenement.jpg";
-import photo2024Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
+import photo2014Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
+import photo2014Dek from "@/assets/photos/2014-dek-evenement.jpg";
+import photo2014Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -38,15 +38,6 @@ const timeline: Entry[] = [
     ],
   },
   {
-    year: "2024",
-    title: "Onder zeil",
-    images: [
-      photo2024Bow,
-      photo2024Dek,
-      photo2024Zeilen,
-    ],
-  },
-  {
     year: "2016",
     title: "Naar Rotterdam",
     body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
@@ -61,9 +52,9 @@ const timeline: Entry[] = [
     title: "Stichting Loggerbehoud",
     body: "Na Kees Rol neemt stichting Loggerbehoud het stokje over. De stichting neemt zowel de Tradewind als de Marie Galante onder haar hoede. Ze straalt nog zeker twee jaar tijdens evenementen op de Oostzee, zoals tijdens de Kieler Woche van 2014.",
     images: [
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639051074.jpg?resize=720%2C960&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639457085.jpg?resize=683%2C1024&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639478554.jpg?resize=960%2C540&ssl=1",
+      photo2014Bow,
+      photo2014Dek,
+      photo2014Zeilen,
     ],
   },
   {
