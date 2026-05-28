@@ -51,6 +51,45 @@ function Index() {
         </div>
       </section>
 
+      {/* BASISINFO SCHIP */}
+      <section className="mx-auto max-w-7xl px-6 pt-28 md:px-10 md:pt-40">
+        <div className="grid gap-16 md:grid-cols-12 md:gap-20">
+          <div className="md:col-span-5">
+            <div className="eyebrow">Het schip</div>
+            <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
+              Marie Galante
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+              Een historische zeillogger met karakter. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor nieuwe avonturen.
+            </p>
+          </div>
+          <div className="md:col-span-7">
+            <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Naam</dt>
+                <dd className="col-span-2 text-foreground/85">Marie Galante</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Bouwjaar</dt>
+                <dd className="col-span-2 text-foreground/85">1915</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Type</dt>
+                <dd className="col-span-2 text-foreground/85">Zeillogger — gaffeltuig, twee masten</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Afmetingen</dt>
+                <dd className="col-span-2 text-foreground/85">27 meter lang · 6,5 meter breed</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Thuishaven</dt>
+                <dd className="col-span-2 text-foreground/85">Rotterdam — Veerhaven</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       {/* INTRO / ABOUT */}
       <section className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-40">
         <div className="grid gap-16 md:grid-cols-12 md:gap-20">
