@@ -58,10 +58,6 @@ const faq = [
     a: "Vroege ochtend met koffie op dek, daarna zeilen we naar de volgende haven of ankerplaats. Onderweg lunchen we aan boord, 's avonds eten we samen — in de haven of voor anker.",
   },
   {
-    q: "Wat zit er bij de reis inbegrepen?",
-    a: "Overnachting in een hut, alle maaltijden aan boord, koffie en thee. Drankjes aan land en eventuele havengelden voor extra excursies regel je zelf.",
-  },
-  {
     q: "Wat moet ik meenemen?",
     a: "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, schoenen met lichte zool, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur.",
   },
