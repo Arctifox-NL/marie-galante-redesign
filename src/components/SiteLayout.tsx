@@ -5,6 +5,7 @@ import logo from "@/assets/logo.png";
 const nav = [
   { to: "/", label: "Home" },
   { to: "/boek-jouw-avontuur", label: "Boek je avontuur" },
+  { to: "/dagtochten", label: "Dagtochten" },
   { to: "/terug-in-de-tijd", label: "Terug in de tijd" },
   { to: "/logboek", label: "Logboek" },
   { to: "/tracker", label: "Live tracker" },
