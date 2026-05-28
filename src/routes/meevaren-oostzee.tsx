@@ -51,7 +51,7 @@ const faq = [
   },
   {
     q: "Wat kost een reis?",
-    a: "De prijzen voor 2026 zijn nog niet definitief. Stuur ons een mail met je interesse en gewenste periode, dan sturen we je een indicatie zodra die bekend is.",
+    a: "De prijzen hangen af van de duur en de soort reis. Neem vrijblijvend contact op voor de actuele prijzen.",
   },
   {
     q: "Hoe ziet een dag aan boord eruit?",
