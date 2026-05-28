@@ -57,7 +57,7 @@ function Index() {
           <div className="md:col-span-5">
             <div className="eyebrow">Het schip</div>
             <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
-              Marie Galante
+              Marie Galante (PFTM)
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">
               Een historische zeillogger met karakter. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor nieuwe avonturen.
@@ -80,6 +80,14 @@ function Index() {
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Afmetingen</dt>
                 <dd className="col-span-2 text-foreground/85">27 meter lang · 6,5 meter breed</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten dagtocht</dt>
+                <dd className="col-span-2 text-foreground/85">36 personen</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten meerdaags</dt>
+                <dd className="col-span-2 text-foreground/85">18 personen</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Thuishaven</dt>
