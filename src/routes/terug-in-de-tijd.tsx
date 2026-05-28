@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
+import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
+import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
+import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -56,9 +59,9 @@ const timeline: Entry[] = [
     title: "Het Marie Galante-tijdperk breekt aan",
     body: "Kees Rol koopt het schip en bouwt haar om tot zeilend passagiersschip. Er komen hutten en een bar in. Met thuishaven Enkhuizen en onder de Nederlandse vlag vaart ze in de zomer op de Baltische zee — Denemarken en Duitsland — en in de winter terug naar Nederland.",
     images: [
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0004.jpg?resize=1024%2C686&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0027.jpg?resize=1024%2C749&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/IMG_20251127_0078.jpg?resize=1024%2C720&ssl=1",
+      photo1980SpicaStege,
+      photo1980AutoRuim,
+      photo1980AutoHijsen,
     ],
   },
   { year: "1978", title: "Spica", body: "Verkocht aan H. J. H. Hansen, omgedoopt tot Spica met thuishaven Stege. Varend onder Deense vlag." },
