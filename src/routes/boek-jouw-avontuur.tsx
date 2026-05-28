@@ -5,6 +5,7 @@ import veerhaven1 from "@/assets/photos/veerhaven-1.jpg";
 import veerhaven2 from "@/assets/photos/veerhaven-2.jpg";
 import veerhaven4 from "@/assets/photos/veerhaven-4.jpg";
 import veerhaven6 from "@/assets/photos/veerhaven-6.jpg";
+import feestjeImg from "@/assets/photos/feestje-aan-boord.jpg";
 
 export const Route = createFileRoute("/boek-jouw-avontuur")({
   component: BoekPage,
@@ -41,7 +42,7 @@ const options = [
     eyebrow: "Privé & evenementen",
     title: "Een feestje aan boord",
     body: "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 36 personen.",
-    img: "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/PXL_20250423_110817989-1024x742.jpg",
+    img: feestjeImg,
     cta: "Vraag de mogelijkheden aan",
     ctaHref: "mailto:info@marie-galante.nl",
   },
