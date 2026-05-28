@@ -48,8 +48,9 @@ function DagtochtenPage() {
             <div className="eyebrow">Praktisch</div>
             <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Wat je kunt verwachten</h2>
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-              Een dag op het water onder leiding van Lex en Lotte. Geen ervaring nodig — meehelpen mag, toekijken ook.
+              Een dag op het water onder leiding van Lex en Lotte. Geen ervaring nodig — meehelpen mag, toekijken ook. Neem warme kleding en zonnebrand mee, want op zee kan het fris waaien en de zon fel schijnen. Drankjes zijn aan boord verkrijgbaar en worden contant afgerekend.
             </p>
+
           </div>
           <div className="md:col-span-7">
             <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
