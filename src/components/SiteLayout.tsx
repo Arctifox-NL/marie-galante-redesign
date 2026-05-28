@@ -61,14 +61,14 @@ export function SiteHeader() {
             Ik wil mee
           </a>
           <button
-          onClick={() => setOpen(!open)}
+            onClick={() => setOpen(!open)}
             className="text-background"
-          aria-label="Menu"
-        >
-          <span className="block h-px w-7 bg-current" />
-          <span className="mt-1.5 block h-px w-7 bg-current" />
-          <span className="mt-1.5 block h-px w-5 bg-current" />
-        </button>
+            aria-label="Menu"
+          >
+            <span className="block h-px w-7 bg-current" />
+            <span className="mt-1.5 block h-px w-7 bg-current" />
+            <span className="mt-1.5 block h-px w-5 bg-current" />
+          </button>
         </div>
       </div>
       {open && (
