@@ -63,7 +63,7 @@ const faq = [
   },
   {
     q: "Met hoeveel gasten varen we?",
-    a: "Maximaal 18 gasten in 7 hutten, plus de vaste bemanning. Hutten zijn voor 2 of 3 personen — we proberen zoveel mogelijk rekening te houden met je voorkeur.",
+    a: "Maximaal 18 gasten in 7 hutten, plus de vaste bemanning. Hutten zijn voor 2 of 3 personen.",
   },
   {
     q: "Word ik zeeziek?",
