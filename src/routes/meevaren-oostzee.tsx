@@ -164,13 +164,13 @@ function MeevarenPage() {
       <section className="bg-primary py-24 text-primary-foreground">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
           <div className="eyebrow text-primary-foreground/60">Vanaf 2026</div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">Vaar mee de eerste reis</h2>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">Vaar mee in 2026</h2>
           <p className="mt-6 text-primary-foreground/80">
-            We stellen de eerste reizen samen — laat weten dat je interesse hebt en we houden je op de hoogte van data, route en prijzen.
+            In 2026 hijsen we voor het eerst sinds 10 jaar de zeilen. Ga je met ons mee? Stuur ons een e-mail en we kijken samen naar de beschikbaarheid.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="mailto:info@marie-galante.nl" className="inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent">
-              Zet me op de wachtlijst
+              Ik wil mee
             </a>
             <Link to="/boek-jouw-avontuur" className="inline-block border border-primary-foreground/40 px-8 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:border-accent hover:text-accent">
               Terug naar overzicht
