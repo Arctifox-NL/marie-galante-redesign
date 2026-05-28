@@ -9,6 +9,9 @@ import photo2014Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
 import photo2016Bow from "@/assets/photos/2016-rotterdam-bow.jpg";
 import photo2016Dek from "@/assets/photos/2016-rotterdam-dek.jpg";
 import photo2016Stuurhut from "@/assets/photos/2016-rotterdam-stuurhut.jpg";
+import photo2025Werf from "@/assets/photos/2025-werf.jpg";
+import photo2025Masten from "@/assets/photos/2025-masten-eraf.jpg";
+import photo2025Mist from "@/assets/photos/2025-rotterdam-mist.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -33,11 +36,11 @@ const timeline: Entry[] = [
   {
     year: "2025",
     title: "Marie Galante — See the Sea",
-    body: "Het nieuwe tijdperk is aangebroken: Marie Galante mocht weer weg van de kade, naar de werf, uit het water en grondig onder de loep. Met trots treden de nieuwe eigenaren aan: Lex van der Linden en Lotte van Boesschoten. Samen hebben ze een missie om Marie Galante weer onder keur te brengen.",
+    body: "Het nieuwe tijdperk is aangebroken: Marie Galante mocht weer weg van de kade voor de verkoop keur. De masten zijn eraf gehaald en de huiddikte gemeten. Met trots treden de nieuwe eigenaren aan: Lex van der Linden en Lotte van Boesschoten. Met een flinke to do lijst, veel energie en het voornemen hard te werken beginnen ze aan het avontuur om de Marie Galante weer onder keur te brengen.",
     images: [
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/300125_frakeker-4.jpg?resize=683%2C1024&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/rotterdam-franiken-2.jpg?resize=1024%2C683&ssl=1",
-      "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/PXL_20250130_1038026962.jpg?resize=772%2C1024&ssl=1",
+      photo2025Werf,
+      photo2025Masten,
+      photo2025Mist,
     ],
   },
   {
