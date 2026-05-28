@@ -38,6 +38,15 @@ const timeline: Entry[] = [
     ],
   },
   {
+    year: "2024",
+    title: "Onder zeil",
+    images: [
+      photo2024Bow,
+      photo2024Dek,
+      photo2024Zeilen,
+    ],
+  },
+  {
     year: "2016",
     title: "Naar Rotterdam",
     body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
