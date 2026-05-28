@@ -3,6 +3,9 @@ import SiteLayout from "@/components/SiteLayout";
 import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
 import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
 import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
+import photo2024Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
+import photo2024Dek from "@/assets/photos/2014-dek-evenement.jpg";
+import photo2024Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -32,6 +35,15 @@ const timeline: Entry[] = [
       "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/300125_frakeker-4.jpg?resize=683%2C1024&ssl=1",
       "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/09/rotterdam-franiken-2.jpg?resize=1024%2C683&ssl=1",
       "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/PXL_20250130_1038026962.jpg?resize=772%2C1024&ssl=1",
+    ],
+  },
+  {
+    year: "2024",
+    title: "Onder zeil",
+    images: [
+      photo2024Bow,
+      photo2024Dek,
+      photo2024Zeilen,
     ],
   },
   {
