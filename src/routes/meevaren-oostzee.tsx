@@ -59,7 +59,7 @@ const faq = [
   },
   {
     q: "Wat moet ik meenemen?",
-    a: "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, schoenen met lichte zool, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur.",
+    a: "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur — en vergeet je tandenborstel niet. Die kun je thuis niet zo makkelijk lenen.",
   },
   {
     q: "Met hoeveel gasten varen we?",
