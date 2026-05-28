@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import SiteLayout from "@/components/SiteLayout";
 import zeilendImg from "@/assets/photos/marie-galante-zeilend.jpg";
+import dagtochtenImg from "@/assets/photos/g3.jpg";
 import veerhaven1 from "@/assets/photos/veerhaven-1.jpg";
 import veerhaven2 from "@/assets/photos/veerhaven-2.jpg";
 import veerhaven4 from "@/assets/photos/veerhaven-4.jpg";
@@ -27,6 +28,15 @@ const options = [
     img: zeilendImg,
     cta: "Meer info",
     ctaHref: "/meevaren-oostzee",
+    internal: true,
+  },
+  {
+    eyebrow: "Tickets",
+    title: "Dagtochten",
+    body: "Vaar een dag mee vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt — geen ervaring nodig.",
+    img: dagtochtenImg,
+    cta: "Bekijk data & tickets",
+    ctaHref: "/dagtochten",
     internal: true,
   },
   {
@@ -62,7 +72,7 @@ function BoekPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
+          De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, een dagtocht vanuit een badplaats, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.
         </p>
       </section>
 
