@@ -41,6 +41,7 @@ const timeline: Entry[] = [
     year: "2016",
     title: "Naar Rotterdam",
     body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
+    body: "Na een bewogen tijd en een intense werfperiode komt er een einde aan het tijdperk van de stichting. Een schip dat stilligt gaat snel achteruit — gelukkig was daar Pieter Boot. Als ervaren charteraar ontstond het idee om het schip naar Rotterdam te brengen, waar ze als Airbnb-locatie aan de kade zou liggen met als doel terug in de vaart te komen.",
     images: [
       "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-3.jpeg?resize=1024%2C768&ssl=1",
       "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2025/11/marie-galante-rotterdam-pic-12.jpeg?resize=1024%2C768&ssl=1",
