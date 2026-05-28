@@ -12,6 +12,7 @@ import photo2016Stuurhut from "@/assets/photos/2016-rotterdam-stuurhut.jpg";
 import photo2025Werf from "@/assets/photos/2025-werf.jpg";
 import photo2025Masten from "@/assets/photos/2025-masten-eraf.jpg";
 import photo2025Mist from "@/assets/photos/2025-rotterdam-mist.jpg";
+import heroImage from "@/assets/photos/hero-terug-in-de-tijd.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
@@ -23,7 +24,7 @@ export const Route = createFileRoute("/terug-in-de-tijd")({
   }),
 });
 
-const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/FB_IMG_1770639051074.jpg?resize=720%2C960&ssl=1";
+const HERO = heroImage;
 
 type Entry = {
   year: string;
