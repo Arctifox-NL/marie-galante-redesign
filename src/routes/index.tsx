@@ -82,6 +82,14 @@ function Index() {
                 <dd className="col-span-2 text-foreground/85">27 meter lang · 6,5 meter breed</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten dagtocht</dt>
+                <dd className="col-span-2 text-foreground/85">36 personen</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten meerdaags</dt>
+                <dd className="col-span-2 text-foreground/85">18 personen</dd>
+              </div>
+              <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Thuishaven</dt>
                 <dd className="col-span-2 text-foreground/85">Rotterdam — Veerhaven</dd>
               </div>
