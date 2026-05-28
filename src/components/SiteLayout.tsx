@@ -88,8 +88,9 @@ export function SiteFooter() {
         <div>
           <div className="eyebrow text-primary-foreground/60">Contact</div>
           <ul className="mt-4 space-y-2 text-sm">
+            <li>See the Sea</li>
+            <li>+316 2705249</li>
             <li><a href="mailto:info@marie-galante.nl" className="hover:text-accent">info@marie-galante.nl</a></li>
-            <li>Veerhaven, Rotterdam</li>
             <li>
               <a href="https://www.instagram.com/mariegalante1915/" target="_blank" rel="noreferrer" className="hover:text-accent">
                 Instagram @mariegalante1915
