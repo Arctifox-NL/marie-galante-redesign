@@ -44,6 +44,37 @@ const indeling = [
   { label: "Tuig", value: "Twee masten, gaffeltuig — gebouwd in 1915" },
 ];
 
+const faq = [
+  {
+    q: "Heb ik zeilervaring nodig?",
+    a: "Nee. Iedereen is welkom, van complete beginner tot ervaren zeiler. De vaste bemanning vaart het schip — jij mag zoveel meedoen als je zelf wilt, van het zeilhijsen tot aan het roer.",
+  },
+  {
+    q: "Wat kost een reis?",
+    a: "De prijzen voor 2026 zijn nog niet definitief. Stuur ons een mail met je interesse en gewenste periode, dan sturen we je een indicatie zodra die bekend is.",
+  },
+  {
+    q: "Hoe ziet een dag aan boord eruit?",
+    a: "Vroege ochtend met koffie op dek, daarna zeilen we naar de volgende haven of ankerplaats. Onderweg lunchen we aan boord, 's avonds eten we samen — in de haven of voor anker.",
+  },
+  {
+    q: "Wat zit er bij de reis inbegrepen?",
+    a: "Overnachting in een hut, alle maaltijden aan boord, koffie en thee. Drankjes aan land en eventuele havengelden voor extra excursies regel je zelf.",
+  },
+  {
+    q: "Wat moet ik meenemen?",
+    a: "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, schoenen met lichte zool, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur.",
+  },
+  {
+    q: "Met hoeveel gasten varen we?",
+    a: "Maximaal 18 gasten in 7 hutten, plus de vaste bemanning. Hutten zijn voor 2 of 3 personen — we proberen zoveel mogelijk rekening te houden met je voorkeur.",
+  },
+  {
+    q: "Word ik zeeziek?",
+    a: "De Oostzee is een relatief beschutte zee. We varen veel langs de kust en tussen de eilanden door, dus heftige golven zijn zeldzaam. Twijfel je? Neem zeeziektepillen mee voor de eerste dag.",
+  },
+];
+
 // Afwisseling van portret & landschap, opbouw van dag naar avond
 const gallery = [
   { src: sfeerSchleimunde, alt: "Groen-witte vuurtoren van Schleimünde" },
@@ -157,6 +188,30 @@ function MeevarenPage() {
               className="mb-3 block w-full break-inside-avoid object-cover md:mb-4"
             />
           ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-secondary/40 py-24">
+        <div className="mx-auto max-w-5xl px-6 md:px-10">
+          <div className="max-w-2xl">
+            <div className="eyebrow">Veelgestelde vragen</div>
+            <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Goed om te weten</h2>
+            <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+              De meest gestelde vragen op een rij. Staat je vraag er niet bij? Stuur ons gerust een mail.
+            </p>
+          </div>
+          <dl className="mt-12 divide-y divide-foreground/15 border-y border-foreground/15">
+            {faq.map((item) => (
+              <details key={item.q} className="group py-6">
+                <summary className="flex cursor-pointer items-start justify-between gap-6 list-none">
+                  <dt className="font-display text-xl text-primary md:text-2xl">{item.q}</dt>
+                  <span className="mt-1 shrink-0 text-2xl text-foreground/50 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <dd className="mt-4 max-w-3xl text-foreground/80 leading-relaxed">{item.a}</dd>
+              </details>
+            ))}
+          </dl>
         </div>
       </section>
 

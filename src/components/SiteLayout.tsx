@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 
 const nav = [
@@ -13,9 +13,24 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="absolute top-0 left-0 right-0 z-30">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-8">
+    <header
+      className={`fixed top-0 left-0 right-0 z-30 transition-colors duration-300 ${
+        scrolled ? "bg-primary/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+      }`}
+    >
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 transition-all duration-300 ${
+        scrolled ? "py-3 md:py-4" : "py-6 md:py-8"
+      }`}>
         <Link to="/" className="flex items-center gap-3 font-display text-xl tracking-[0.3em] text-background md:text-2xl">
           <img src={logo} alt="Marie Galante logo" className="h-12 w-12 object-contain brightness-0 invert md:h-14 md:w-14" />
           <span className="hidden sm:inline">MARIE&nbsp;GALANTE</span>
@@ -31,16 +46,30 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
+          <a
+            href="mailto:info@marie-galante.nl"
+            className="border border-accent bg-accent px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent"
+          >
+            Ik wil mee
+          </a>
         </nav>
-        <button
+        <div className="flex items-center gap-4 md:hidden">
+          <a
+            href="mailto:info@marie-galante.nl"
+            className="border border-accent bg-accent px-3 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-accent-foreground"
+          >
+            Ik wil mee
+          </a>
+          <button
           onClick={() => setOpen(!open)}
-          className="text-background md:hidden"
+            className="text-background"
           aria-label="Menu"
         >
           <span className="block h-px w-7 bg-current" />
           <span className="mt-1.5 block h-px w-7 bg-current" />
           <span className="mt-1.5 block h-px w-5 bg-current" />
         </button>
+        </div>
       </div>
       {open && (
         <div className="md:hidden">
