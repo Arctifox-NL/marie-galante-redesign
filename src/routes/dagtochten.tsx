@@ -37,7 +37,7 @@ function DagtochtenPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Stap aan boord van Marie Galante voor een dagtocht vanuit de Veerhaven in Rotterdam. Help mee met de zeilen, voel de wind en ervaar hoe een historische logger uit 1915 over het water glijdt.
+          Stap aan boord van de Marie Galante voor een tocht vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt.
         </p>
       </section>
 
