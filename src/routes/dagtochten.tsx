@@ -55,7 +55,7 @@ function DagtochtenPage() {
             <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Vertrek</dt>
-                <dd className="col-span-2 text-foreground/85">Veerhaven, Rotterdam</dd>
+                <dd className="col-span-2 text-foreground/85">Badplaatsen aan de Oostzee</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Duur</dt>
