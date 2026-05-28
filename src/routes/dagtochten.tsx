@@ -10,7 +10,7 @@ export const Route = createFileRoute("/dagtochten")({
       {
         name: "description",
         content:
-          "Boek een ticket voor een dagtocht aan boord van de Marie Galante — een historische zeillogger uit 1915, vertrekkend vanuit de Veerhaven in Rotterdam.",
+          "Boek een ticket voor een dagtocht aan boord van de Marie Galante — een historische zeillogger uit 1915, vertrekkend vanuit een van de badplaatsen aan de Oostzee.",
       },
       { property: "og:title", content: "Dagtochten · Marie Galante" },
       {
@@ -37,7 +37,7 @@ function DagtochtenPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Stap aan boord van Marie Galante voor een dagtocht vanuit de Veerhaven in Rotterdam. Help mee met de zeilen, voel de wind en ervaar hoe een historische logger uit 1915 over het water glijdt.
+          Stap aan boord van de Marie Galante voor een tocht vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt.
         </p>
       </section>
 
@@ -55,7 +55,7 @@ function DagtochtenPage() {
             <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Vertrek</dt>
-                <dd className="col-span-2 text-foreground/85">Veerhaven, Rotterdam</dd>
+                <dd className="col-span-2 text-foreground/85">Badplaatsen aan de Oostzee</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Duur</dt>
