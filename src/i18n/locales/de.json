@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Home",
+    "boek": "Buche dein Abenteuer",
+    "dagtochten": "Tagestörns",
+    "geschiedenis": "Zurück in der Zeit",
+    "logboek": "Logbuch",
+    "tracker": "Live-Tracker",
+    "ikWilMee": "Ich will mit",
+    "menu": "Menü"
+  },
+  "footer": {
+    "tagline": "Ein Segellogger von 1915, bereit für ein neues Abenteuer.",
+    "navigatie": "Navigation",
+    "contact": "Kontakt",
+    "credits": "Lex van der Linden & Lotte van Boesschoten · seit 2025"
+  },
+  "lang": { "label": "Sprache", "nl": "NL", "en": "EN", "de": "DE" },
+  "home": {
+    "heroEyebrow": "Seit 1915 · Segellogger",
+    "heroIntro": "Entdecke die Welt des Segelns an Bord dieses historischen Loggers. 1915 als Fischereischiff gebaut, 1980 zum Passagierschiff umgebaut — und nun bereit für ein neues Kapitel.",
+    "ctaBoek": "Buche dein Abenteuer",
+    "ctaHistory": "Unsere Geschichte",
+    "shipEyebrow": "Das Schiff",
+    "shipTitle": "Marie Galante (PFTM)",
+    "shipBody": "Ein historischer Segellogger mit Charakter. 1915 als Fischereischiff gebaut, 1980 zum Passagierschiff umgebaut — und bereit für neue Abenteuer.",
+    "spec": {
+      "naam": "Name",
+      "bouwjaar": "Baujahr",
+      "type": "Typ",
+      "typeVal": "Segellogger — Gaffeltakelung, zwei Masten",
+      "afmetingen": "Maße",
+      "afmetingenVal": "27 Meter lang · 6,5 Meter breit",
+      "gastenDag": "Gäste Tagestörn",
+      "gastenDagVal": "36 Personen",
+      "gastenMeer": "Gäste mehrtägig",
+      "gastenMeerVal": "18 Personen",
+      "thuishaven": "Heimathafen",
+      "thuishavenVal": "Rotterdam — Veerhaven"
+    },
+    "aboutEyebrow": "Das sind wir",
+    "aboutBody": "Im April 2025 haben wir gemeinsam das Segelschiff Marie Galante gekauft. Seit 2015 liegt das Schiff im Veerhaven in Rotterdam — und zusammen wollen wir es zurück in die Ostsee bringen, um dort Gästen einen aktiven Segelurlaub zu bieten.",
+    "aboutBody2": "Folge dem Abenteuer, komm eine Nacht an Bord schlafen oder tauche ein in die besondere Geschichte dieses Schiffes.",
+    "stat1": "Als Logger gebaut",
+    "stat2": "Zum Segelschiff umgebaut",
+    "stat3": "Neue Eigentümer",
+    "trackerEyebrow": "Live an Bord",
+    "trackerTitle": "Verfolge das Schiff live auf der Karte",
+    "trackerBody": "Neugierig, wo die Marie Galante gerade segelt oder vor Anker liegt? Live-Position über MarineTraffic — in Echtzeit, von überall.",
+    "trackerCta": "Öffne den Live-Tracker",
+    "galleryEyebrow": "Am Kai in Rotterdam",
+    "galleryTitle": "Übernachten an Bord",
+    "galleryLink": "Die Möglichkeiten ansehen →",
+    "instaEyebrow": "Folge dem Abenteuer",
+    "instaTitle": "Von der Werft bis zur Ostsee — jede Woche eine neue Geschichte.",
+    "instaCta": "Folge uns auf Instagram",
+    "instaLog": "Lies das Logbuch"
+  },
+  "boek": {
+    "heroEyebrow": "Bereit fürs Echte?",
+    "heroTitle": "Komm mit aufs Abenteuer",
+    "intro": "Wind in den Segeln, Horizont vor dir — Marie Galante wartet auf dich. Wähle eine Segelreise über die Ostsee, einen Tagestörn ab einem Seebad, eine Übernachtung im Winter an Bord in Rotterdam oder feier ein Fest auf einem historischen Schiff.",
+    "options": {
+      "oostzee": {
+        "eyebrow": "Ab 2026",
+        "title": "Mitsegeln auf der Ostsee",
+        "body": "Das Rigg steht, die Abnahme ist durch — das Abenteuer beginnt. Komm an Bord für eine Segelreise auf der Ostsee, entdecke verborgene Hafenstädte und segle mit auf einem historischen Schiff mit Geschichte.",
+        "cta": "Mehr Infos"
+      },
+      "dag": {
+        "eyebrow": "Tickets",
+        "title": "Tagestörns",
+        "body": "Segle einen Tag mit ab einem der Seebäder an der Ostsee. Setze die Segel, spüre den Wind und erlebe, wie ein historischer Logger durchs Wasser gleitet — keine Erfahrung nötig.",
+        "cta": "Termine & Tickets ansehen"
+      },
+      "bnb": {
+        "eyebrow": "Bed & Breakfast",
+        "title": "Übernachten im Veerhaven",
+        "body": "In den Wintermonaten liegt Marie Galante am Kai in Rotterdam. Schlafe in einer der historischen Kabinen unter Deck, wache mit Blick auf die Erasmusbrücke auf und genieße Kaffee im Salon — eine besondere Übernachtung mitten in der Stadt.",
+        "cta": "Buchen über Airbnb"
+      },
+      "feest": {
+        "eyebrow": "Privat & Events",
+        "title": "Eine Feier an Bord",
+        "body": "Geburtstag, Firmenausflug oder Hochzeit — Marie Galante bietet eine einzigartige Location am Kai. Bar, Deck und Salon stehen für Gruppen bis 36 Personen bereit.",
+        "cta": "Möglichkeiten anfragen"
+      }
+    },
+    "ctaEyebrow": "Fragen?",
+    "ctaTitle": "Schreib uns eine Nachricht",
+    "ctaBody": "Wir denken gern mit — ein Abend am Kai, eine Woche auf der Ostsee oder etwas dazwischen."
+  },
+  "dag": {
+    "heroEyebrow": "Tickets",
+    "heroTitle": "Segle einen Tag mit",
+    "intro": "Komm an Bord der Marie Galante für einen Törn ab einem der Seebäder an der Ostsee. Setze die Segel, spüre den Wind und erlebe, wie ein historischer Logger durchs Wasser gleitet.",
+    "praktischEyebrow": "Praktisch",
+    "praktischTitle": "Was dich erwartet",
+    "praktischBody": "Ein Tag auf dem Wasser mit Lex und Lotte am Ruder. Keine Erfahrung nötig — mitanpacken ist willkommen, zusehen auch. Bring warme Kleidung und Sonnencreme mit; auf See kann es frisch wehen und die Sonne stark scheinen. Getränke sind an Bord erhältlich und werden bar bezahlt.",
+    "spec": {
+      "vertrek": "Abfahrt",
+      "vertrekVal": "Seebäder an der Ostsee",
+      "duur": "Dauer",
+      "duurVal": "Etwa ein ganzer Tag",
+      "inbegrepen": "Inklusive",
+      "inbegrepenVal": "Kaffee, Tee und Mittagessen an Bord",
+      "ervaring": "Erfahrung",
+      "ervaringVal": "Nicht nötig — alle willkommen"
+    },
+    "ticketsEyebrow": "Tickets buchen",
+    "ticketsTitle": "Wähle dein Datum",
+    "ticketsBody": "Unsere Tickets werden über Weeztix verkauft. Sobald die ersten Termine feststehen, erscheint der Ticketshop hier unten.",
+    "shopEyebrow": "Ticketshop",
+    "shopBody": "Hier kommt der Weeztix-Ticketshop hin. Schick uns den Embed-Code, sobald dein Shop bereit ist, und wir setzen ihn hier ein.",
+    "shopCta": "Nach den ersten Terminen fragen"
+  },
+  "meevaren": {
+    "heroEyebrow": "Ab 2026",
+    "heroTitle": "Eine Woche auf der Ostsee",
+    "intro": "Komm an Bord der Marie Galante für eine Woche Segeln mit einer Gruppe Freunde. Zusammen Segel setzen, zusammen einen Ankerplatz suchen, zusammen Urlaub machen. Wind durch die Haare, die dänischen Inseln vorbeiziehend, jeden Tag eine neue Aussicht.",
+    "indelingEyebrow": "An Bord",
+    "indelingTitle": "Schiffsaufteilung",
+    "indelingBody": "Marie Galante ist keine Luxusyacht — sie ist ein Arbeitsschiff mit Charakter. Holzvertäfelung, Messinglampen und Kojen, in denen du das Wasser am Rumpf hörst.",
+    "indeling": {
+      "hutten": "Kabinen",
+      "huttenVal": "7 Kabinen · 18 Betten",
+      "salon": "Salon",
+      "salonVal": "Geräumige Kombüse, Bibliothek, Bar und Essbereich für die ganze Crew",
+      "sanitair": "Sanitär",
+      "sanitairVal": "Zwei Toiletten und zwei warme Duschen",
+      "lengte": "Länge",
+      "lengteVal": "27 Meter über alles · 6,5 Meter breit",
+      "tuig": "Takelung",
+      "tuigVal": "Zwei Masten, Gaffeltakelung — gebaut 1915"
+    },
+    "gebiedEyebrow": "Das Fahrtgebiet",
+    "gebiedTitle": "Deutsche Küste & dänische Inseln",
+    "gebiedBody": "Wir folgen dem Wind entlang der deutschen Küste und nehmen Kurs auf die dänischen Inseln. Jede Reise ist anders — der Wind entscheidet, wo wir festmachen.",
+    "gebiedNote": "Indikatives Fahrtgebiet — die genaue Route folgt Wind und Wetter",
+    "sfeerEyebrow": "Eine Woche an Bord",
+    "sfeerTitle": "Häfen, Segel und Stille",
+    "sfeerBody": "Frühe Morgen mit Kaffee auf Deck, lange Tage unter Segeln und Abende in unbekannten Häfen, wo das Bier lokal ist und die Sonne erst spät untergeht.",
+    "faqEyebrow": "Häufige Fragen",
+    "faqTitle": "Gut zu wissen",
+    "faqBody": "Die häufigsten Fragen auf einen Blick. Deine Frage nicht dabei? Schreib uns eine Mail.",
+    "faq": {
+      "q1": "Brauche ich Segelerfahrung?",
+      "a1": "Nein. Alle sind willkommen, von Anfänger:innen bis erfahrenen Segler:innen. Die feste Crew segelt das Schiff — du kannst so viel mitmachen, wie du willst, vom Segelsetzen bis ans Ruder.",
+      "q2": "Was kostet eine Reise?",
+      "a2": "Die Preise hängen von Dauer und Reisetyp ab. Frag unverbindlich nach den aktuellen Preisen.",
+      "q3": "Wie sieht ein Tag an Bord aus?",
+      "a3": "Früher Morgen mit Kaffee auf Deck, dann segeln wir zum nächsten Hafen oder Ankerplatz. Unterwegs essen wir an Bord zu Mittag, abends essen wir gemeinsam — im Hafen oder vor Anker.",
+      "q4": "Was soll ich mitnehmen?",
+      "a4": "Warme Kleidung im Zwiebelprinzip, Regenjacke, Segel- oder wasserdichte Hose, Sonnenbrille, Schlafsack oder Bettzeug (das geben wir vorab Bescheid) und gute Laune — und vergiss deine Zahnbürste nicht. Die leiht man sich zu Hause nicht so leicht aus.",
+      "q5": "Mit wie vielen Gästen segeln wir?",
+      "a5": "Maximal 18 Gäste in 7 Kabinen, dazu die feste Crew. Kabinen sind für 2 oder 3 Personen.",
+      "q6": "Werde ich seekrank?",
+      "a6": "Die Ostsee ist eine relativ geschützte See. Wir segeln viel an der Küste und zwischen den Inseln — heftiger Seegang ist selten. Unsicher? Nimm für den ersten Tag Tabletten gegen Seekrankheit mit."
+    },
+    "ctaEyebrow": "Ab 2026",
+    "ctaTitle": "Segle 2026 mit",
+    "ctaBody": "2026 setzen wir zum ersten Mal seit 10 Jahren wieder die Segel. Bist du dabei? Schreib uns eine E-Mail und wir schauen gemeinsam nach Verfügbarkeit.",
+    "ctaBack": "Zurück zur Übersicht"
+  },
+  "history": {
+    "heroEyebrow": "Seit 1915",
+    "heroTitle": "Zurück in der Zeit",
+    "intro": "Der grobe Lebensweg des Schiffes ist bekannt. Doch viele Geschichten fehlen noch. Hast du etwas beizutragen? Eine besondere Reise erlebt?",
+    "share": "Teile deine Geschichte — info@marie-galante.nl"
+  },
+  "log": {
+    "heroEyebrow": "Seit April 2025",
+    "heroTitle": "Logbuch",
+    "heroBody": "Lies über den Fortschritt des Umbaus, die Abenteuer, die wir erleben, und was uns unterwegs begegnet.",
+    "readMore": "Weiterlesen →",
+    "ctaEyebrow": "Verpasse nichts",
+    "ctaTitle": "Folge uns auf Instagram für tägliche Updates",
+    "backHome": "← zurück zur Startseite",
+    "backLog": "← zurück zum Logbuch",
+    "prev": "← vorheriger",
+    "next": "nächster →",
+    "notFound": "Beitrag nicht gefunden",
+    "notFoundBody": "Dieser Logbucheintrag existiert nicht oder wurde verschoben.",
+    "errorTitle": "Da ging etwas schief",
+    "retry": "Erneut versuchen"
+  },
+  "tracker": {
+    "eyebrow": "Live an Bord",
+    "title": "Verfolge die Marie Galante live",
+    "body": "Über MarineTraffic siehst du in Echtzeit, wo wir uns befinden — unterwegs auf der Ostsee oder still in einem dänischen Hafen. Die Karte aktualisiert sich automatisch, solange ein AIS-Signal vorliegt.",
+    "credit": "Karte powered by"
+  }
+}
