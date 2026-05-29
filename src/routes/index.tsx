@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import heroImg from "@/assets/photos/hero.jpg";
 import interior1 from "@/assets/photos/interior-1.jpg";
@@ -26,6 +27,7 @@ const PORTRAIT = portraitImg;
 const GALLERY = [interior1, interior2, interior7, interior3, interior4, interior5, interior6];
 
 function Index() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       {/* HERO */}
@@ -33,19 +35,19 @@ function Index() {
         <img src={HERO} alt="Marie Galante in de Veerhaven Rotterdam" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/10 to-primary/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 md:px-10 md:pb-32">
-          <div className="eyebrow text-background/70">Sinds 1915 · Zeillogger</div>
+          <div className="eyebrow text-background/70">{t("home.heroEyebrow")}</div>
           <h1 className="mt-4 max-w-3xl font-display text-5xl leading-[1.05] text-background md:text-7xl lg:text-8xl">
             Marie Galante
           </h1>
           <p className="mt-6 max-w-xl text-background/85 md:text-lg">
-            Ontdek de wereld van het zeilen op deze historische logger. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor een nieuw hoofdstuk.
+            {t("home.heroIntro")}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link to="/boek-jouw-avontuur" className="rounded-none border border-accent bg-accent px-7 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent">
-              Boek je avontuur
+              {t("home.ctaBoek")}
             </Link>
             <Link to="/terug-in-de-tijd" className="rounded-none border border-background/70 px-7 py-3 text-xs uppercase tracking-[0.25em] text-background transition-colors hover:bg-background hover:text-primary">
-              Onze geschiedenis
+              {t("home.ctaHistory")}
             </Link>
           </div>
         </div>
@@ -55,43 +57,43 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 pt-28 md:px-10 md:pt-40">
         <div className="grid gap-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
-            <div className="eyebrow">Het schip</div>
+            <div className="eyebrow">{t("home.shipEyebrow")}</div>
             <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
-              Marie Galante (PFTM)
+              {t("home.shipTitle")}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-              Een historische zeillogger met karakter. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor nieuwe avonturen.
+              {t("home.shipBody")}
             </p>
           </div>
           <div className="md:col-span-7">
             <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Naam</dt>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.naam")}</dt>
                 <dd className="col-span-2 text-foreground/85">Marie Galante</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Bouwjaar</dt>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.bouwjaar")}</dt>
                 <dd className="col-span-2 text-foreground/85">1915</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Type</dt>
-                <dd className="col-span-2 text-foreground/85">Zeillogger — gaffeltuig, twee masten</dd>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.type")}</dt>
+                <dd className="col-span-2 text-foreground/85">{t("home.spec.typeVal")}</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Afmetingen</dt>
-                <dd className="col-span-2 text-foreground/85">27 meter lang · 6,5 meter breed</dd>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.afmetingen")}</dt>
+                <dd className="col-span-2 text-foreground/85">{t("home.spec.afmetingenVal")}</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten dagtocht</dt>
-                <dd className="col-span-2 text-foreground/85">36 personen</dd>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.gastenDag")}</dt>
+                <dd className="col-span-2 text-foreground/85">{t("home.spec.gastenDagVal")}</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Gasten meerdaags</dt>
-                <dd className="col-span-2 text-foreground/85">18 personen</dd>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.gastenMeer")}</dt>
+                <dd className="col-span-2 text-foreground/85">{t("home.spec.gastenMeerVal")}</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">Thuishaven</dt>
-                <dd className="col-span-2 text-foreground/85">Rotterdam — Veerhaven</dd>
+                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("home.spec.thuishaven")}</dt>
+                <dd className="col-span-2 text-foreground/85">{t("home.spec.thuishavenVal")}</dd>
               </div>
             </dl>
           </div>
@@ -105,20 +107,20 @@ function Index() {
             <img src={PORTRAIT} alt="Lex & Lotte" className="w-full object-cover shadow-[0_30px_80px_-40px_rgba(0,0,0,0.4)]" />
           </div>
           <div className="md:col-span-7 md:pt-12">
-            <div className="eyebrow">Dit zijn wij</div>
+            <div className="eyebrow">{t("home.aboutEyebrow")}</div>
             <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
               <em className="font-light">Lex van der Linden</em> &amp; <em className="font-light">Lotte van Boesschoten</em>
             </h2>
             <p className="mt-8 text-lg leading-relaxed text-foreground/80">
-              In april 2025 kochten we samen het zeilschip Marie Galante. Sinds 2015 ligt het schip in de Veerhaven in Rotterdam — en samen willen we haar terugbrengen naar de Oostzee, om daar gasten een actieve zeilvakantie te bieden.
+              {t("home.aboutBody")}
             </p>
             <p className="mt-6 text-foreground/70">
-              Volg het avontuur, kom een nachtje slapen aan boord, of duik mee in de bijzondere historie van dit schip.
+              {t("home.aboutBody2")}
             </p>
             <div className="mt-10 grid grid-cols-3 border-t border-border pt-8">
-              <Stat k="1915" v="Gebouwd als logger" />
-              <Stat k="1980" v="Verbouwd tot zeilschip" />
-              <Stat k="2025" v="Nieuwe eigenaren" />
+              <Stat k="1915" v={t("home.stat1")} />
+              <Stat k="1980" v={t("home.stat2")} />
+              <Stat k="2025" v={t("home.stat3")} />
             </div>
           </div>
         </div>
@@ -129,15 +131,15 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid gap-12 md:grid-cols-12 md:gap-16">
             <div className="md:col-span-5">
-              <div className="eyebrow">Live aan boord</div>
+              <div className="eyebrow">{t("home.trackerEyebrow")}</div>
               <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">
-                Volg het schip live op de kaart
+                {t("home.trackerTitle")}
               </h2>
               <p className="mt-6 text-foreground/75">
-                Benieuwd waar de Marie Galante nu vaart of voor anker ligt? Bekijk de live positie via MarineTraffic — realtime en overal te volgen.
+                {t("home.trackerBody")}
               </p>
               <Link to="/tracker" className="mt-10 inline-block border border-primary bg-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary">
-                Open de live tracker
+                {t("home.trackerCta")}
               </Link>
             </div>
             <div className="md:col-span-7">
@@ -162,11 +164,11 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <div className="eyebrow text-primary-foreground/60">Aan de kade in Rotterdam</div>
-              <h2 className="mt-4 font-display text-4xl md:text-6xl">Overnachten aan boord</h2>
+              <div className="eyebrow text-primary-foreground/60">{t("home.galleryEyebrow")}</div>
+              <h2 className="mt-4 font-display text-4xl md:text-6xl">{t("home.galleryTitle")}</h2>
             </div>
             <Link to="/boek-jouw-avontuur" className="text-xs uppercase tracking-[0.25em] text-accent hover:underline">
-              Bekijk de mogelijkheden →
+              {t("home.galleryLink")}
             </Link>
           </div>
           <div className="mt-16 columns-1 gap-3 sm:columns-2 md:columns-3 md:gap-5">
@@ -186,16 +188,16 @@ function Index() {
 
       {/* INSTAGRAM CTA */}
       <section className="mx-auto max-w-7xl px-6 py-28 text-center md:px-10 md:py-36">
-        <div className="eyebrow">Volg het avontuur</div>
+        <div className="eyebrow">{t("home.instaEyebrow")}</div>
         <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight text-primary md:text-6xl">
-          Van de werf tot de Oostzee — elke week een nieuw verhaal.
+          {t("home.instaTitle")}
         </h2>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <a href="https://www.instagram.com/mariegalante1915/" target="_blank" rel="noreferrer" className="border border-primary bg-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-transparent hover:text-primary">
-            Volg ons op Instagram
+            {t("home.instaCta")}
           </a>
           <Link to="/logboek" className="border border-primary px-7 py-3 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground">
-            Lees het logboek
+            {t("home.instaLog")}
           </Link>
         </div>
       </section>
