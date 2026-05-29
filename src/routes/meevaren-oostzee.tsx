@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
 import interior1 from "@/assets/photos/interior-1.jpg";
@@ -36,40 +37,8 @@ export const Route = createFileRoute("/meevaren-oostzee")({
   }),
 });
 
-const indeling = [
-  { label: "Hutten", value: "7 hutten · 18 bedden" },
-  { label: "Salon", value: "Ruime kombuis, Bibliotheek, Bar en Eetzaal voor de hele bemanning" },
-  { label: "Sanitair", value: "Twee toiletten en twee warme douches" },
-  { label: "Lengte", value: "27 meter over alles · 6,5 meter breed" },
-  { label: "Tuig", value: "Twee masten, gaffeltuig — gebouwd in 1915" },
-];
-
-const faq = [
-  {
-    q: "Heb ik zeilervaring nodig?",
-    a: "Nee. Iedereen is welkom, van complete beginner tot ervaren zeiler. De vaste bemanning vaart het schip — jij mag zoveel meedoen als je zelf wilt, van het zeilhijsen tot aan het roer.",
-  },
-  {
-    q: "Wat kost een reis?",
-    a: "De prijzen hangen af van de duur en de soort reis. Neem vrijblijvend contact op voor de actuele prijzen.",
-  },
-  {
-    q: "Hoe ziet een dag aan boord eruit?",
-    a: "Vroege ochtend met koffie op dek, daarna zeilen we naar de volgende haven of ankerplaats. Onderweg lunchen we aan boord, 's avonds eten we samen — in de haven of voor anker.",
-  },
-  {
-    q: "Wat moet ik meenemen?",
-    a: "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur — en vergeet je tandenborstel niet. Die kun je thuis niet zo makkelijk lenen.",
-  },
-  {
-    q: "Met hoeveel gasten varen we?",
-    a: "Maximaal 18 gasten in 7 hutten, plus de vaste bemanning. Hutten zijn voor 2 of 3 personen.",
-  },
-  {
-    q: "Word ik zeeziek?",
-    a: "De Oostzee is een relatief beschutte zee. We varen veel langs de kust en tussen de eilanden door, dus heftige golven zijn zeldzaam. Twijfel je? Neem zeeziektepillen mee voor de eerste dag.",
-  },
-];
+const indelingKeys = ["hutten", "salon", "sanitair", "lengte", "tuig"] as const;
+const faqKeys = [1, 2, 3, 4, 5, 6] as const;
 
 // Afwisseling van portret & landschap, opbouw van dag naar avond
 const gallery = [
@@ -86,22 +55,23 @@ const gallery = [
 ];
 
 function MeevarenPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
         <img src={hero} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
-          <div className="eyebrow text-background/70">Vanaf 2026</div>
+          <div className="eyebrow text-background/70">{t("meevaren.heroEyebrow")}</div>
           <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">
-            Een week op de Oostzee
+            {t("meevaren.heroTitle")}
           </h1>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-24 md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Stap aan boord van Marie Galante voor een week zeilen met een groep vrienden. Samen het zeil hijsen, samen een ankerplaats zoeken, samen op vakantie. De wind door je haren, de Deense eilanden langszoevend, elke dag een nieuw uitzicht.
+          {t("meevaren.intro")}
         </p>
       </section>
 
@@ -109,18 +79,18 @@ function MeevarenPage() {
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="eyebrow">Aan boord</div>
-            <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Indeling van het schip</h2>
+            <div className="eyebrow">{t("meevaren.indelingEyebrow")}</div>
+            <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{t("meevaren.indelingTitle")}</h2>
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-              Marie Galante is geen luxejacht — het is een werkschip met karakter. Houten betimmering, koperen lampen en kooien waarin je het water tegen de romp hoort.
+              {t("meevaren.indelingBody")}
             </p>
           </div>
           <div className="md:col-span-7">
             <dl className="divide-y divide-foreground/15 border-y border-foreground/15">
-              {indeling.map((row) => (
-                <div key={row.label} className="grid grid-cols-3 gap-6 py-5">
-                  <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{row.label}</dt>
-                  <dd className="col-span-2 text-foreground/85">{row.value}</dd>
+              {indelingKeys.map((k) => (
+                <div key={k} className="grid grid-cols-3 gap-6 py-5">
+                  <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t(`meevaren.indeling.${k}`)}</dt>
+                  <dd className="col-span-2 text-foreground/85">{t(`meevaren.indeling.${k}Val`)}</dd>
                 </div>
               ))}
             </dl>
@@ -138,10 +108,10 @@ function MeevarenPage() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid items-center gap-16 md:grid-cols-12">
             <div className="md:col-span-5">
-              <div className="eyebrow">Het vaargebied</div>
-              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Duitse kust & Deense eilanden</h2>
+              <div className="eyebrow">{t("meevaren.gebiedEyebrow")}</div>
+              <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{t("meevaren.gebiedTitle")}</h2>
               <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-                We volgen de wind langs de Duitse kust en zetten koers naar de Deense eilanden. Elke reis is anders — de wind bepaalt waar we aanleggen.
+                {t("meevaren.gebiedBody")}
               </p>
               <ul className="mt-8 space-y-2 text-sm uppercase tracking-[0.2em] text-foreground/70">
                 <li>· Mommark · Marstal · Middelfart</li>
@@ -158,7 +128,7 @@ function MeevarenPage() {
                 />
               </div>
               <p className="mt-3 text-xs uppercase tracking-[0.25em] text-foreground/55">
-                Indicatief vaargebied — exacte route volgt wind en weer
+                {t("meevaren.gebiedNote")}
               </p>
             </div>
           </div>
@@ -168,10 +138,10 @@ function MeevarenPage() {
       {/* Sfeerimpressie collage */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <div className="max-w-2xl">
-          <div className="eyebrow">Een week aan boord</div>
-          <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Havens, zeilen en stilte</h2>
+          <div className="eyebrow">{t("meevaren.sfeerEyebrow")}</div>
+          <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{t("meevaren.sfeerTitle")}</h2>
           <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-            Vroege ochtenden met koffie op dek, lange dagen onder zeil en avonden in onbekende havens waar het bier lokaal is en de zon pas laat ondergaat.
+            {t("meevaren.sfeerBody")}
           </p>
         </div>
         <div className="mt-12 columns-1 gap-4 sm:columns-2 md:columns-3">
@@ -191,20 +161,20 @@ function MeevarenPage() {
       <section className="bg-secondary/40 py-24">
         <div className="mx-auto max-w-5xl px-6 md:px-10">
           <div className="max-w-2xl">
-            <div className="eyebrow">Veelgestelde vragen</div>
-            <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">Goed om te weten</h2>
+            <div className="eyebrow">{t("meevaren.faqEyebrow")}</div>
+            <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">{t("meevaren.faqTitle")}</h2>
             <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-              De meest gestelde vragen op een rij. Staat je vraag er niet bij? Stuur ons gerust een mail.
+              {t("meevaren.faqBody")}
             </p>
           </div>
           <dl className="mt-12 divide-y divide-foreground/15 border-y border-foreground/15">
-            {faq.map((item) => (
-              <details key={item.q} className="group py-6">
+            {faqKeys.map((n) => (
+              <details key={n} className="group py-6">
                 <summary className="flex cursor-pointer items-start justify-between gap-6 list-none">
-                  <dt className="font-display text-xl text-primary md:text-2xl">{item.q}</dt>
+                  <dt className="font-display text-xl text-primary md:text-2xl">{t(`meevaren.faq.q${n}`)}</dt>
                   <span className="mt-1 shrink-0 text-2xl text-foreground/50 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <dd className="mt-4 max-w-3xl text-foreground/80 leading-relaxed">{item.a}</dd>
+                <dd className="mt-4 max-w-3xl text-foreground/80 leading-relaxed">{t(`meevaren.faq.a${n}`)}</dd>
               </details>
             ))}
           </dl>
@@ -214,17 +184,17 @@ function MeevarenPage() {
       {/* CTA */}
       <section className="bg-primary py-24 text-primary-foreground">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
-          <div className="eyebrow text-primary-foreground/60">Vanaf 2026</div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl">Vaar mee in 2026</h2>
+          <div className="eyebrow text-primary-foreground/60">{t("meevaren.ctaEyebrow")}</div>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl">{t("meevaren.ctaTitle")}</h2>
           <p className="mt-6 text-primary-foreground/80">
-            In 2026 hijsen we voor het eerst sinds 10 jaar de zeilen. Ga je met ons mee? Stuur ons een e-mail en we kijken samen naar de beschikbaarheid.
+            {t("meevaren.ctaBody")}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="mailto:info@marie-galante.nl" className="inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent">
-              Ik wil mee
+              {t("nav.ikWilMee")}
             </a>
             <Link to="/boek-jouw-avontuur" className="inline-block border border-primary-foreground/40 px-8 py-3 text-xs uppercase tracking-[0.25em] text-primary-foreground hover:border-accent hover:text-accent">
-              Terug naar overzicht
+              {t("meevaren.ctaBack")}
             </Link>
           </div>
         </div>
