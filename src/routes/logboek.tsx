@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import { posts } from "@/data/logbook";
 
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/logboek")({
 const HERO = "https://i0.wp.com/marie-galante.nl/wp-content/uploads/2026/02/PXL_20251005_125952142.jpg?resize=1200%2C900&ssl=1";
 
 function LogbookPage() {
+  const { t } = useTranslation();
   const [feat, ...rest] = posts;
   return (
     <SiteLayout>
@@ -22,10 +24,10 @@ function LogbookPage() {
         <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-primary/55" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
-          <div className="eyebrow text-background/70">Sinds april 2025</div>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Logboek</h1>
+          <div className="eyebrow text-background/70">{t("log.heroEyebrow")}</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">{t("log.heroTitle")}</h1>
           <p className="mt-4 max-w-xl text-background/85">
-            Lees over de voortgang van de verbouwing, de avonturen die we beleven en wat we onderweg tegenkomen.
+            {t("log.heroBody")}
           </p>
         </div>
       </section>
@@ -43,7 +45,7 @@ function LogbookPage() {
             <h2 className="mt-4 font-display text-4xl leading-tight text-primary md:text-5xl">{feat.title}</h2>
             <p className="mt-6 text-lg text-foreground/80">{feat.excerpt}</p>
             <span className="mt-6 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary group-hover:text-accent">
-              Lees verder →
+              {t("log.readMore")}
             </span>
           </div>
         </Link>
@@ -72,13 +74,13 @@ function LogbookPage() {
 
       <section className="bg-primary py-20 text-center text-primary-foreground">
         <div className="mx-auto max-w-2xl px-6 md:px-10">
-          <div className="eyebrow text-primary-foreground/60">Mis niets</div>
-          <h2 className="mt-4 font-display text-3xl md:text-4xl">Volg ons op Instagram voor dagelijkse updates</h2>
+          <div className="eyebrow text-primary-foreground/60">{t("log.ctaEyebrow")}</div>
+          <h2 className="mt-4 font-display text-3xl md:text-4xl">{t("log.ctaTitle")}</h2>
           <a href="https://www.instagram.com/mariegalante1915/" target="_blank" rel="noreferrer" className="mt-8 inline-block border border-accent bg-accent px-7 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent">
             @mariegalante1915
           </a>
           <div className="mt-6">
-            <Link to="/" className="text-xs uppercase tracking-[0.25em] text-primary-foreground/70 hover:text-accent">← terug naar home</Link>
+            <Link to="/" className="text-xs uppercase tracking-[0.25em] text-primary-foreground/70 hover:text-accent">{t("log.backHome")}</Link>
           </div>
         </div>
       </section>
