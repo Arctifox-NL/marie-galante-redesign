@@ -1,19 +1,23 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
+import "@/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const nav = [
-  { to: "/", label: "Home" },
-  { to: "/boek-jouw-avontuur", label: "Boek je avontuur" },
-  { to: "/dagtochten", label: "Dagtochten" },
-  { to: "/terug-in-de-tijd", label: "Terug in de tijd" },
-  { to: "/logboek", label: "Logboek" },
-  { to: "/tracker", label: "Live tracker" },
-];
+const navItems = [
+  { to: "/", key: "home" },
+  { to: "/boek-jouw-avontuur", key: "boek" },
+  { to: "/dagtochten", key: "dagtochten" },
+  { to: "/terug-in-de-tijd", key: "geschiedenis" },
+  { to: "/logboek", key: "logboek" },
+  { to: "/tracker", key: "tracker" },
+] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,34 +40,36 @@ export function SiteHeader() {
           <span className="hidden md:inline">MARIE&nbsp;GALANTE</span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          {nav.slice(1).map((n) => (
+          {navItems.slice(1).map((n) => (
             <Link
               key={n.to}
               to={n.to}
               className="text-[0.72rem] uppercase tracking-[0.28em] text-background/85 transition-colors hover:text-accent"
               activeProps={{ className: "text-accent" }}
             >
-              {n.label}
+              {t(`nav.${n.key}`)}
             </Link>
           ))}
+          <LanguageSwitcher tone="light" />
           <a
             href="mailto:info@marie-galante.nl"
             className="border border-accent bg-accent px-4 py-2 text-[0.7rem] uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent"
           >
-            Ik wil mee
+            {t("nav.ikWilMee")}
           </a>
         </nav>
         <div className="flex items-center gap-4 md:hidden">
+          <LanguageSwitcher tone="light" />
           <a
             href="mailto:info@marie-galante.nl"
             className="border border-accent bg-accent px-3 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-accent-foreground"
           >
-            Ik wil mee
+            {t("nav.ikWilMee")}
           </a>
           <button
             onClick={() => setOpen(!open)}
             className="text-background"
-            aria-label="Menu"
+            aria-label={t("nav.menu")}
           >
             <span className="block h-px w-7 bg-current" />
             <span className="mt-1.5 block h-px w-7 bg-current" />
@@ -74,14 +80,14 @@ export function SiteHeader() {
       {open && (
         <div className="md:hidden">
           <div className="mx-6 rounded-md bg-primary/95 backdrop-blur px-6 py-6 text-primary-foreground">
-            {nav.slice(1).map((n) => (
+            {navItems.slice(1).map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
                 className="block py-2 text-sm uppercase tracking-[0.2em]"
               >
-                {n.label}
+                {t(`nav.${n.key}`)}
               </Link>
             ))}
           </div>
@@ -92,6 +98,7 @@ export function SiteHeader() {
 }
 
 export function SiteFooter() {
+  const { t } = useTranslation();
   return (
     <footer className="mt-32 bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-3 md:px-10">
@@ -101,21 +108,21 @@ export function SiteFooter() {
             <span className="font-display text-2xl tracking-[0.25em]">MARIE GALANTE</span>
           </div>
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
-            Een zeillogger uit 1915, klaar voor een nieuw avontuur.
+            {t("footer.tagline")}
           </p>
         </div>
         <div>
-          <div className="eyebrow text-primary-foreground/60">Navigatie</div>
+          <div className="eyebrow text-primary-foreground/60">{t("footer.navigatie")}</div>
           <ul className="mt-4 space-y-2 text-sm">
-            {nav.map((n) => (
+            {navItems.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className="hover:text-accent">{n.label}</Link>
+                <Link to={n.to} className="hover:text-accent">{t(`nav.${n.key}`)}</Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <div className="eyebrow text-primary-foreground/60">Contact</div>
+          <div className="eyebrow text-primary-foreground/60">{t("footer.contact")}</div>
           <ul className="mt-4 space-y-2 text-sm">
             <li>See the Sea</li>
             <li>+316 2705249</li>
@@ -129,7 +136,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-primary-foreground/15 py-6 text-center text-xs uppercase tracking-[0.25em] text-primary-foreground/50">
-        Lex van der Linden & Lotte van Boesschoten · sinds 2025
+        {t("footer.credits")}
       </div>
     </footer>
   );

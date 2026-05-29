@@ -1,0 +1,193 @@
+{
+  "nav": {
+    "home": "Home",
+    "boek": "Book your adventure",
+    "dagtochten": "Day trips",
+    "geschiedenis": "Back in time",
+    "logboek": "Logbook",
+    "tracker": "Live tracker",
+    "ikWilMee": "Sign me up",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "A sailing lugger from 1915, ready for a new adventure.",
+    "navigatie": "Navigation",
+    "contact": "Contact",
+    "credits": "Lex van der Linden & Lotte van Boesschoten · since 2025"
+  },
+  "lang": { "label": "Language", "nl": "NL", "en": "EN", "de": "DE" },
+  "home": {
+    "heroEyebrow": "Since 1915 · Sailing lugger",
+    "heroIntro": "Discover the world of sailing aboard this historic lugger. Built in 1915 as a fishing vessel, converted to a passenger ship in 1980 — and now ready for a new chapter.",
+    "ctaBoek": "Book your adventure",
+    "ctaHistory": "Our history",
+    "shipEyebrow": "The ship",
+    "shipTitle": "Marie Galante (PFTM)",
+    "shipBody": "A historic sailing lugger with character. Built in 1915 as a fishing vessel, converted to a passenger ship in 1980 — and ready for new adventures.",
+    "spec": {
+      "naam": "Name",
+      "bouwjaar": "Built",
+      "type": "Type",
+      "typeVal": "Sailing lugger — gaff rig, two masts",
+      "afmetingen": "Dimensions",
+      "afmetingenVal": "27 metres long · 6.5 metres wide",
+      "gastenDag": "Day trip guests",
+      "gastenDagVal": "36 people",
+      "gastenMeer": "Multi-day guests",
+      "gastenMeerVal": "18 people",
+      "thuishaven": "Home port",
+      "thuishavenVal": "Rotterdam — Veerhaven"
+    },
+    "aboutEyebrow": "This is us",
+    "aboutBody": "In April 2025 we bought the sailing ship Marie Galante together. Since 2015 she has been moored in the Veerhaven in Rotterdam — and together we want to bring her back to the Baltic Sea to offer guests an active sailing holiday.",
+    "aboutBody2": "Follow the adventure, come and spend a night on board, or dive into the remarkable history of this ship.",
+    "stat1": "Built as a lugger",
+    "stat2": "Converted to a sailing ship",
+    "stat3": "New owners",
+    "trackerEyebrow": "Live on board",
+    "trackerTitle": "Follow the ship live on the map",
+    "trackerBody": "Curious where the Marie Galante is sailing or anchored right now? Watch her live position via MarineTraffic — realtime, anywhere.",
+    "trackerCta": "Open the live tracker",
+    "galleryEyebrow": "At the quay in Rotterdam",
+    "galleryTitle": "Stay overnight on board",
+    "galleryLink": "See the options →",
+    "instaEyebrow": "Follow the adventure",
+    "instaTitle": "From the shipyard to the Baltic — a new story every week.",
+    "instaCta": "Follow us on Instagram",
+    "instaLog": "Read the logbook"
+  },
+  "boek": {
+    "heroEyebrow": "Ready for the real thing?",
+    "heroTitle": "Join the adventure",
+    "intro": "Wind in the sails, the horizon ahead — Marie Galante is waiting for you. Choose a sailing trip on the Baltic, a day trip from a seaside town, an overnight stay on board in winter in Rotterdam, or celebrate aboard a historic ship.",
+    "options": {
+      "oostzee": {
+        "eyebrow": "From 2026",
+        "title": "Sailing the Baltic",
+        "body": "Rigging up, certification done — the adventure begins. Step aboard for a sailing trip on the Baltic, discover hidden port towns and sail along on a historic ship with a story.",
+        "cta": "Read more"
+      },
+      "dag": {
+        "eyebrow": "Tickets",
+        "title": "Day trips",
+        "body": "Sail with us for a day from one of the seaside towns on the Baltic. Hoist the sails, feel the wind and experience how a historic lugger glides through the water — no experience needed.",
+        "cta": "View dates & tickets"
+      },
+      "bnb": {
+        "eyebrow": "Bed & Breakfast",
+        "title": "Stay in the Veerhaven",
+        "body": "During the winter months Marie Galante is moored at the quay in Rotterdam. Sleep in one of the historic cabins on deck, wake up with a view of the Erasmusbrug and enjoy coffee in the saloon — a unique stay in the heart of the city.",
+        "cta": "Book via Airbnb"
+      },
+      "feest": {
+        "eyebrow": "Private & events",
+        "title": "A party on board",
+        "body": "Birthday, company outing or wedding — Marie Galante offers a unique location at the quay. Bar, deck and saloon are available for groups of up to 36 people.",
+        "cta": "Ask about the options"
+      }
+    },
+    "ctaEyebrow": "Questions?",
+    "ctaTitle": "Send us a message",
+    "ctaBody": "We're happy to think along — an evening at the quay, a week on the Baltic or anything in between."
+  },
+  "dag": {
+    "heroEyebrow": "Tickets",
+    "heroTitle": "Sail for a day",
+    "intro": "Step aboard the Marie Galante for a trip from one of the seaside towns on the Baltic. Hoist the sails, feel the wind and experience how a historic lugger glides through the water.",
+    "praktischEyebrow": "Practical",
+    "praktischTitle": "What to expect",
+    "praktischBody": "A day on the water with Lex and Lotte at the helm. No experience needed — helping out is welcome, watching is fine too. Bring warm clothing and sunscreen; the sea breeze can be cool and the sun bright. Drinks are available on board and paid in cash.",
+    "spec": {
+      "vertrek": "Departure",
+      "vertrekVal": "Seaside towns on the Baltic",
+      "duur": "Duration",
+      "duurVal": "About a full day",
+      "inbegrepen": "Included",
+      "inbegrepenVal": "Coffee, tea and lunch on board",
+      "ervaring": "Experience",
+      "ervaringVal": "Not required — everyone is welcome"
+    },
+    "ticketsEyebrow": "Book your ticket",
+    "ticketsTitle": "Pick your date",
+    "ticketsBody": "Our tickets are sold through Weeztix. The ticket shop will appear below as soon as the first dates are announced.",
+    "shopEyebrow": "Ticket shop",
+    "shopBody": "The Weeztix ticket shop will appear here. Send us the embed code as soon as your shop is ready and we'll place it here.",
+    "shopCta": "Ask about the first dates"
+  },
+  "meevaren": {
+    "heroEyebrow": "From 2026",
+    "heroTitle": "A week on the Baltic",
+    "intro": "Step aboard Marie Galante for a week of sailing with a group of friends. Hoist the sails together, find an anchorage together, holiday together. Wind in your hair, the Danish islands sliding by, a new view every day.",
+    "indelingEyebrow": "On board",
+    "indelingTitle": "Ship layout",
+    "indelingBody": "Marie Galante is no luxury yacht — she's a working ship with character. Wooden panelling, brass lamps and bunks where you can hear the water against the hull.",
+    "indeling": {
+      "hutten": "Cabins",
+      "huttenVal": "7 cabins · 18 beds",
+      "salon": "Saloon",
+      "salonVal": "Spacious galley, library, bar and dining area for the whole crew",
+      "sanitair": "Sanitary",
+      "sanitairVal": "Two toilets and two hot showers",
+      "lengte": "Length",
+      "lengteVal": "27 metres overall · 6.5 metres wide",
+      "tuig": "Rig",
+      "tuigVal": "Two masts, gaff rig — built in 1915"
+    },
+    "gebiedEyebrow": "The sailing area",
+    "gebiedTitle": "German coast & Danish islands",
+    "gebiedBody": "We follow the wind along the German coast and set course for the Danish islands. Every trip is different — the wind decides where we moor.",
+    "gebiedNote": "Indicative sailing area — the exact route follows wind and weather",
+    "sfeerEyebrow": "A week on board",
+    "sfeerTitle": "Harbours, sails and silence",
+    "sfeerBody": "Early mornings with coffee on deck, long days under sail and evenings in unfamiliar harbours where the beer is local and the sun sets late.",
+    "faqEyebrow": "Frequently asked questions",
+    "faqTitle": "Good to know",
+    "faqBody": "The most common questions in a row. Don't see yours? Drop us an email.",
+    "faq": {
+      "q1": "Do I need sailing experience?",
+      "a1": "No. Everyone is welcome, from complete beginner to seasoned sailor. The permanent crew sails the ship — you can join in as much as you like, from hoisting sails to taking the helm.",
+      "q2": "What does a trip cost?",
+      "a2": "Prices depend on the duration and the type of trip. Get in touch for current rates, no strings attached.",
+      "q3": "What does a day on board look like?",
+      "a3": "Early morning coffee on deck, then we sail to the next harbour or anchorage. We lunch on board along the way and have dinner together in the evening — in port or at anchor.",
+      "q4": "What should I bring?",
+      "a4": "Warm layered clothing, a rain jacket, sailing or waterproof trousers, sunglasses, a sleeping bag or bedding (we'll let you know in advance) and a good mood — and don't forget your toothbrush. Hard to borrow that one at home.",
+      "q5": "How many guests sail along?",
+      "a5": "A maximum of 18 guests in 7 cabins, plus the permanent crew. Cabins are for 2 or 3 people.",
+      "q6": "Will I get seasick?",
+      "a6": "The Baltic is a relatively sheltered sea. We sail close to the coast and between the islands, so heavy waves are rare. In doubt? Bring seasickness pills for the first day."
+    },
+    "ctaEyebrow": "From 2026",
+    "ctaTitle": "Sail along in 2026",
+    "ctaBody": "In 2026 we hoist the sails for the first time in 10 years. Joining us? Send us an email and we'll look at availability together.",
+    "ctaBack": "Back to overview"
+  },
+  "history": {
+    "heroEyebrow": "Since 1915",
+    "heroTitle": "Back in time",
+    "intro": "A rough outline of the ship's life is known, but many stories are still missing. Have something to add? Been on a memorable voyage?",
+    "share": "Share your story — info@marie-galante.nl"
+  },
+  "log": {
+    "heroEyebrow": "Since April 2025",
+    "heroTitle": "Logbook",
+    "heroBody": "Read about the progress of the refit, the adventures we live and what we encounter along the way.",
+    "readMore": "Read more →",
+    "ctaEyebrow": "Don't miss a thing",
+    "ctaTitle": "Follow us on Instagram for daily updates",
+    "backHome": "← back to home",
+    "backLog": "← back to logbook",
+    "prev": "← previous",
+    "next": "next →",
+    "notFound": "Post not found",
+    "notFoundBody": "This logbook post doesn't exist or has been moved.",
+    "errorTitle": "Something went wrong",
+    "retry": "Try again"
+  },
+  "tracker": {
+    "eyebrow": "Live on board",
+    "title": "Follow the Marie Galante live",
+    "body": "Via MarineTraffic you can see in real time where we are — sailing the Baltic, or moored in a Danish harbour. The map updates automatically as long as there's an AIS signal.",
+    "credit": "Map powered by"
+  }
+}

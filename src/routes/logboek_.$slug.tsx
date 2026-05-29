@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import { posts, type LogPost } from "@/data/logbook";
 
@@ -13,29 +14,14 @@ export const Route = createFileRoute("/logboek_/$slug")({
     <SiteLayout>
       <div className="mx-auto max-w-2xl px-6 py-40 text-center md:px-10">
         <div className="eyebrow">404</div>
-        <h1 className="mt-4 font-display text-5xl text-primary">Bericht niet gevonden</h1>
-        <p className="mt-6 text-foreground/70">
-          Dit logboekbericht bestaat niet of is verplaatst.
-        </p>
-        <Link
-          to="/logboek"
-          className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent"
-        >
-          ← terug naar logboek
-        </Link>
+        <NotFoundInner />
       </div>
     </SiteLayout>
   ),
   errorComponent: ({ reset }) => (
     <SiteLayout>
       <div className="mx-auto max-w-2xl px-6 py-40 text-center md:px-10">
-        <h1 className="font-display text-4xl text-primary">Er ging iets mis</h1>
-        <button
-          onClick={() => reset()}
-          className="mt-6 border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent"
-        >
-          Opnieuw proberen
-        </button>
+        <ErrorInner reset={reset} />
       </div>
     </SiteLayout>
   ),
@@ -55,7 +41,39 @@ export const Route = createFileRoute("/logboek_/$slug")({
   },
 });
 
+function NotFoundInner() {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h1 className="mt-4 font-display text-5xl text-primary">{t("log.notFound")}</h1>
+      <p className="mt-6 text-foreground/70">{t("log.notFoundBody")}</p>
+      <Link
+        to="/logboek"
+        className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent"
+      >
+        {t("log.backLog")}
+      </Link>
+    </>
+  );
+}
+
+function ErrorInner({ reset }: { reset: () => void }) {
+  const { t } = useTranslation();
+  return (
+    <>
+      <h1 className="font-display text-4xl text-primary">{t("log.errorTitle")}</h1>
+      <button
+        onClick={() => reset()}
+        className="mt-6 border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent"
+      >
+        {t("log.retry")}
+      </button>
+    </>
+  );
+}
+
 function PostPage() {
+  const { t } = useTranslation();
   const { post } = Route.useLoaderData() as { post: LogPost };
   const idx = posts.findIndex((p) => p.slug === post.slug);
   const prev = idx < posts.length - 1 ? posts[idx + 1] : null;
@@ -118,7 +136,7 @@ function PostPage() {
             to="/logboek"
             className="text-xs uppercase tracking-[0.25em] text-primary hover:text-accent"
           >
-            ← terug naar logboek
+            {t("log.backLog")}
           </Link>
         </div>
       </article>
@@ -132,7 +150,7 @@ function PostPage() {
                 params={{ slug: prev.slug }}
                 className="group block"
               >
-                <div className="eyebrow">← vorige</div>
+                <div className="eyebrow">{t("log.prev")}</div>
                 <div className="mt-3 font-display text-2xl text-primary group-hover:text-accent">
                   {prev.title}
                 </div>
@@ -147,7 +165,7 @@ function PostPage() {
                 params={{ slug: next.slug }}
                 className="group block md:text-right"
               >
-                <div className="eyebrow">volgende →</div>
+                <div className="eyebrow">{t("log.next")}</div>
                 <div className="mt-3 font-display text-2xl text-primary group-hover:text-accent">
                   {next.title}
                 </div>

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
 import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
@@ -88,23 +89,24 @@ const timeline: Entry[] = [
 ];
 
 function HistoryPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
         <img src={HERO} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-primary/65" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
-          <div className="eyebrow text-background/70">Sinds 1915</div>
-          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">Terug in de tijd</h1>
+          <div className="eyebrow text-background/70">{t("history.heroEyebrow")}</div>
+          <h1 className="mt-3 max-w-3xl font-display text-5xl text-background md:text-7xl">{t("history.heroTitle")}</h1>
         </div>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-20 text-center md:px-10">
         <p className="font-display text-2xl leading-relaxed text-foreground/85 md:text-3xl">
-          Er is een globale levensweg van het schip bekend. Maar nog veel verhalen ontbreken. Heb je iets bij te dragen? Een bijzondere reis meegemaakt?
+          {t("history.intro")}
         </p>
         <a href="mailto:info@marie-galante.nl" className="mt-8 inline-block border-b border-accent pb-1 text-xs uppercase tracking-[0.25em] text-primary hover:text-accent">
-          Deel je verhaal — info@marie-galante.nl
+          {t("history.share")}
         </a>
       </section>
 

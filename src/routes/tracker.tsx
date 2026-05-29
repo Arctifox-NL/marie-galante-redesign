@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 
 const MMSI = "244556000";
@@ -18,15 +19,16 @@ export const Route = createFileRoute("/tracker")({
 });
 
 function TrackerPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pt-32 pb-12 md:px-10 md:pt-40">
-        <div className="eyebrow">Live aan boord</div>
+        <div className="eyebrow">{t("tracker.eyebrow")}</div>
         <h1 className="mt-4 font-display text-4xl leading-tight text-primary md:text-6xl">
-          Volg de Marie Galante live
+          {t("tracker.title")}
         </h1>
         <p className="mt-6 max-w-2xl text-foreground/75 md:text-lg">
-          Via MarineTraffic kun je realtime zien waar we ons bevinden — onderweg over de Oostzee, of stilliggend in een Deense haven. De kaart wordt automatisch bijgewerkt zolang er een AIS-signaal is.
+          {t("tracker.body")}
         </p>
       </section>
 
@@ -44,7 +46,7 @@ function TrackerPage() {
           />
         </div>
         <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          Kaart powered by{" "}
+          {t("tracker.credit")}{" "}
           <a href={FULL_URL} target="_blank" rel="noreferrer" className="text-accent hover:underline">
             MarineTraffic ↗
           </a>

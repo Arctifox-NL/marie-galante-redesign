@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "home": "Home",
+    "boek": "Boek je avontuur",
+    "dagtochten": "Dagtochten",
+    "geschiedenis": "Terug in de tijd",
+    "logboek": "Logboek",
+    "tracker": "Live tracker",
+    "ikWilMee": "Ik wil mee",
+    "menu": "Menu"
+  },
+  "footer": {
+    "tagline": "Een zeillogger uit 1915, klaar voor een nieuw avontuur.",
+    "navigatie": "Navigatie",
+    "contact": "Contact",
+    "credits": "Lex van der Linden & Lotte van Boesschoten · sinds 2025"
+  },
+  "lang": {
+    "label": "Taal",
+    "nl": "NL",
+    "en": "EN",
+    "de": "DE"
+  },
+  "home": {
+    "heroEyebrow": "Sinds 1915 · Zeillogger",
+    "heroIntro": "Ontdek de wereld van het zeilen op deze historische logger. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor een nieuw hoofdstuk.",
+    "ctaBoek": "Boek je avontuur",
+    "ctaHistory": "Onze geschiedenis",
+    "shipEyebrow": "Het schip",
+    "shipTitle": "Marie Galante (PFTM)",
+    "shipBody": "Een historische zeillogger met karakter. Gebouwd in 1915 als visserschip, in 1980 omgebouwd tot passagiersschip — en nu klaar voor nieuwe avonturen.",
+    "spec": {
+      "naam": "Naam",
+      "bouwjaar": "Bouwjaar",
+      "type": "Type",
+      "typeVal": "Zeillogger — gaffeltuig, twee masten",
+      "afmetingen": "Afmetingen",
+      "afmetingenVal": "27 meter lang · 6,5 meter breed",
+      "gastenDag": "Gasten dagtocht",
+      "gastenDagVal": "36 personen",
+      "gastenMeer": "Gasten meerdaags",
+      "gastenMeerVal": "18 personen",
+      "thuishaven": "Thuishaven",
+      "thuishavenVal": "Rotterdam — Veerhaven"
+    },
+    "aboutEyebrow": "Dit zijn wij",
+    "aboutBody": "In april 2025 kochten we samen het zeilschip Marie Galante. Sinds 2015 ligt het schip in de Veerhaven in Rotterdam — en samen willen we haar terugbrengen naar de Oostzee, om daar gasten een actieve zeilvakantie te bieden.",
+    "aboutBody2": "Volg het avontuur, kom een nachtje slapen aan boord, of duik mee in de bijzondere historie van dit schip.",
+    "stat1": "Gebouwd als logger",
+    "stat2": "Verbouwd tot zeilschip",
+    "stat3": "Nieuwe eigenaren",
+    "trackerEyebrow": "Live aan boord",
+    "trackerTitle": "Volg het schip live op de kaart",
+    "trackerBody": "Benieuwd waar de Marie Galante nu vaart of voor anker ligt? Bekijk de live positie via MarineTraffic — realtime en overal te volgen.",
+    "trackerCta": "Open de live tracker",
+    "galleryEyebrow": "Aan de kade in Rotterdam",
+    "galleryTitle": "Overnachten aan boord",
+    "galleryLink": "Bekijk de mogelijkheden →",
+    "instaEyebrow": "Volg het avontuur",
+    "instaTitle": "Van de werf tot de Oostzee — elke week een nieuw verhaal.",
+    "instaCta": "Volg ons op Instagram",
+    "instaLog": "Lees het logboek"
+  },
+  "boek": {
+    "heroEyebrow": "Klaar voor het echte werk?",
+    "heroTitle": "Ga mee op avontuur",
+    "intro": "De wind in de zeilen, de horizon voor je — Marie Galante wacht op jou. Kies voor een zeilreis over de Oostzee, een dagtocht vanuit een badplaats, overnacht in de winter aan boord in Rotterdam, of vier een feestje op een historisch schip.",
+    "options": {
+      "oostzee": {
+        "eyebrow": "Vanaf 2026",
+        "title": "Meevaren op de Oostzee",
+        "body": "Het tuig staat, de keuring is rond — het avontuur begint. Stap aan boord voor een zeilreis over de Oostzee, ontdek verborgen havensteden en vaar mee op een historisch schip met een verhaal.",
+        "cta": "Meer info"
+      },
+      "dag": {
+        "eyebrow": "Tickets",
+        "title": "Dagtochten",
+        "body": "Vaar een dag mee vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt — geen ervaring nodig.",
+        "cta": "Bekijk data & tickets"
+      },
+      "bnb": {
+        "eyebrow": "Bed & Breakfast",
+        "title": "Overnachten in de Veerhaven",
+        "body": "In de wintermaanden ligt Marie Galante aan de kade in Rotterdam. Slaap in een van de historische hutten aan dek, wakker worden met uitzicht op de Erasmusbrug en geniet van koffie in de salon — een bijzondere overnachting midden in de stad.",
+        "cta": "Reserveer via Airbnb"
+      },
+      "feest": {
+        "eyebrow": "Privé & evenementen",
+        "title": "Een feestje aan boord",
+        "body": "Verjaardag, bedrijfsuitje of bruiloft — Marie Galante biedt een unieke locatie aan de kade. Bar, dek en salon zijn beschikbaar voor groepen tot 36 personen.",
+        "cta": "Vraag de mogelijkheden aan"
+      }
+    },
+    "ctaEyebrow": "Vragen?",
+    "ctaTitle": "Stuur ons een bericht",
+    "ctaBody": "We denken graag mee over de mogelijkheden — een avond aan de kade, een week op de Oostzee of iets daar tussenin."
+  },
+  "dag": {
+    "heroEyebrow": "Tickets",
+    "heroTitle": "Vaar een dag mee",
+    "intro": "Stap aan boord van de Marie Galante voor een tocht vanuit een van de badplaatsen aan de Oostzee. Hijs de zeilen, voel de wind en ervaar hoe een historische logger door het water glijdt.",
+    "praktischEyebrow": "Praktisch",
+    "praktischTitle": "Wat je kunt verwachten",
+    "praktischBody": "Een dag op het water onder leiding van Lex en Lotte. Geen ervaring nodig — meehelpen mag, toekijken ook. Neem warme kleding en zonnebrand mee, want op zee kan het fris waaien en de zon fel schijnen. Drankjes zijn aan boord verkrijgbaar en worden contant afgerekend.",
+    "spec": {
+      "vertrek": "Vertrek",
+      "vertrekVal": "Badplaatsen aan de Oostzee",
+      "duur": "Duur",
+      "duurVal": "Ongeveer een hele dag",
+      "inbegrepen": "Inbegrepen",
+      "inbegrepenVal": "Koffie, thee en een lunch aan boord",
+      "ervaring": "Ervaring",
+      "ervaringVal": "Niet nodig — iedereen welkom"
+    },
+    "ticketsEyebrow": "Boek je ticket",
+    "ticketsTitle": "Kies je datum",
+    "ticketsBody": "Onze tickets worden verkocht via Weeztix. Zodra de eerste data bekend zijn verschijnt de ticketshop hieronder.",
+    "shopEyebrow": "Ticketshop",
+    "shopBody": "Hier komt de Weeztix-ticketshop. Stuur de embed-code zodra je shop klaar staat, dan plaatsen we hem hier.",
+    "shopCta": "Vraag naar de eerste data"
+  },
+  "meevaren": {
+    "heroEyebrow": "Vanaf 2026",
+    "heroTitle": "Een week op de Oostzee",
+    "intro": "Stap aan boord van Marie Galante voor een week zeilen met een groep vrienden. Samen het zeil hijsen, samen een ankerplaats zoeken, samen op vakantie. De wind door je haren, de Deense eilanden langszoevend, elke dag een nieuw uitzicht.",
+    "indelingEyebrow": "Aan boord",
+    "indelingTitle": "Indeling van het schip",
+    "indelingBody": "Marie Galante is geen luxejacht — het is een werkschip met karakter. Houten betimmering, koperen lampen en kooien waarin je het water tegen de romp hoort.",
+    "indeling": {
+      "hutten": "Hutten",
+      "huttenVal": "7 hutten · 18 bedden",
+      "salon": "Salon",
+      "salonVal": "Ruime kombuis, Bibliotheek, Bar en Eetzaal voor de hele bemanning",
+      "sanitair": "Sanitair",
+      "sanitairVal": "Twee toiletten en twee warme douches",
+      "lengte": "Lengte",
+      "lengteVal": "27 meter over alles · 6,5 meter breed",
+      "tuig": "Tuig",
+      "tuigVal": "Twee masten, gaffeltuig — gebouwd in 1915"
+    },
+    "gebiedEyebrow": "Het vaargebied",
+    "gebiedTitle": "Duitse kust & Deense eilanden",
+    "gebiedBody": "We volgen de wind langs de Duitse kust en zetten koers naar de Deense eilanden. Elke reis is anders — de wind bepaalt waar we aanleggen.",
+    "gebiedNote": "Indicatief vaargebied — exacte route volgt wind en weer",
+    "sfeerEyebrow": "Een week aan boord",
+    "sfeerTitle": "Havens, zeilen en stilte",
+    "sfeerBody": "Vroege ochtenden met koffie op dek, lange dagen onder zeil en avonden in onbekende havens waar het bier lokaal is en de zon pas laat ondergaat.",
+    "faqEyebrow": "Veelgestelde vragen",
+    "faqTitle": "Goed om te weten",
+    "faqBody": "De meest gestelde vragen op een rij. Staat je vraag er niet bij? Stuur ons gerust een mail.",
+    "faq": {
+      "q1": "Heb ik zeilervaring nodig?",
+      "a1": "Nee. Iedereen is welkom, van complete beginner tot ervaren zeiler. De vaste bemanning vaart het schip — jij mag zoveel meedoen als je zelf wilt, van het zeilhijsen tot aan het roer.",
+      "q2": "Wat kost een reis?",
+      "a2": "De prijzen hangen af van de duur en de soort reis. Neem vrijblijvend contact op voor de actuele prijzen.",
+      "q3": "Hoe ziet een dag aan boord eruit?",
+      "a3": "Vroege ochtend met koffie op dek, daarna zeilen we naar de volgende haven of ankerplaats. Onderweg lunchen we aan boord, 's avonds eten we samen — in de haven of voor anker.",
+      "q4": "Wat moet ik meenemen?",
+      "a4": "Warme kleding in lagen, regenjas, zeilbroek of waterdichte broek, zonnebril, slaapzak of beddengoed (we laten je dit van tevoren weten) en een goed humeur — en vergeet je tandenborstel niet. Die kun je thuis niet zo makkelijk lenen.",
+      "q5": "Met hoeveel gasten varen we?",
+      "a5": "Maximaal 18 gasten in 7 hutten, plus de vaste bemanning. Hutten zijn voor 2 of 3 personen.",
+      "q6": "Word ik zeeziek?",
+      "a6": "De Oostzee is een relatief beschutte zee. We varen veel langs de kust en tussen de eilanden door, dus heftige golven zijn zeldzaam. Twijfel je? Neem zeeziektepillen mee voor de eerste dag."
+    },
+    "ctaEyebrow": "Vanaf 2026",
+    "ctaTitle": "Vaar mee in 2026",
+    "ctaBody": "In 2026 hijsen we voor het eerst sinds 10 jaar de zeilen. Ga je met ons mee? Stuur ons een e-mail en we kijken samen naar de beschikbaarheid.",
+    "ctaBack": "Terug naar overzicht"
+  },
+  "history": {
+    "heroEyebrow": "Sinds 1915",
+    "heroTitle": "Terug in de tijd",
+    "intro": "Er is een globale levensweg van het schip bekend. Maar nog veel verhalen ontbreken. Heb je iets bij te dragen? Een bijzondere reis meegemaakt?",
+    "share": "Deel je verhaal — info@marie-galante.nl"
+  },
+  "log": {
+    "heroEyebrow": "Sinds april 2025",
+    "heroTitle": "Logboek",
+    "heroBody": "Lees over de voortgang van de verbouwing, de avonturen die we beleven en wat we onderweg tegenkomen.",
+    "readMore": "Lees verder →",
+    "ctaEyebrow": "Mis niets",
+    "ctaTitle": "Volg ons op Instagram voor dagelijkse updates",
+    "backHome": "← terug naar home",
+    "backLog": "← terug naar logboek",
+    "prev": "← vorige",
+    "next": "volgende →",
+    "notFound": "Bericht niet gevonden",
+    "notFoundBody": "Dit logboekbericht bestaat niet of is verplaatst.",
+    "errorTitle": "Er ging iets mis",
+    "retry": "Opnieuw proberen"
+  },
+  "tracker": {
+    "eyebrow": "Live aan boord",
+    "title": "Volg de Marie Galante live",
+    "body": "Via MarineTraffic kun je realtime zien waar we ons bevinden — onderweg over de Oostzee, of stilliggend in een Deense haven. De kaart wordt automatisch bijgewerkt zolang er een AIS-signaal is.",
+    "credit": "Kaart powered by"
+  }
+}
