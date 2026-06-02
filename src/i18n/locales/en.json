@@ -112,7 +112,24 @@
     "ticketsBody": "Our tickets are sold through Weeztix. The ticket shop will appear below as soon as the first dates are announced.",
     "shopEyebrow": "Ticket shop",
     "shopBody": "The Weeztix ticket shop will appear here. Send us the embed code as soon as your shop is ready and we'll place it here.",
-    "shopCta": "Ask about the first dates"
+    "shopCta": "Ask about the first dates",
+    "charterEyebrow": "Private charter",
+    "charterTitle": "Charter the whole ship",
+    "charterBody": "We also offer day trips where you can charter the entire ship — perfect for a company outing or family day. A trip from 10:00 to 17:00, including a welcome drink, coffee and tea. Additional drinks can be paid for on board, or pick a drinks package.",
+    "charterTable": {
+      "optie": "Option",
+      "inbegrepen": "Included",
+      "prijs": "Price",
+      "kaalTitle": "Bare charter",
+      "kaalIncl": "Welcome drink, coffee & tea",
+      "kaalPrijs": "€ 15.00",
+      "drankTitle": "Charter + drinks package",
+      "drankIncl": "Unlimited beer, soft drinks & wine",
+      "drankPrijs": "€ 39.00 p.p. extra",
+      "lunchTitle": "Charter + drinks & ship's lunch",
+      "lunchIncl": "Beer, soft drinks & wine + a warm ship's meal",
+      "lunchPrijs": "€ 49.00 p.p. extra"
+    }
   },
   "meevaren": {
     "heroEyebrow": "From 2026",

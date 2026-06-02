@@ -105,6 +105,72 @@ function DagtochtenPage() {
           </div>
         </div>
       </section>
+
+      {/* Privé charter */}
+      <section id="charter" className="mx-auto max-w-7xl px-6 py-24 md:px-10">
+        <div className="max-w-3xl">
+          <div className="eyebrow">{t("dag.charterEyebrow")}</div>
+          <h2 className="mt-4 font-display text-4xl text-primary md:text-5xl">
+            {t("dag.charterTitle")}
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+            {t("dag.charterBody")}
+          </p>
+        </div>
+
+        <div className="mt-12 overflow-x-auto">
+          <table className="w-full border-collapse text-left">
+            <thead>
+              <tr className="border-y border-foreground/20">
+                <th className="py-4 pr-6 text-xs uppercase tracking-[0.25em] text-foreground/55">
+                  {t("dag.charterTable.optie")}
+                </th>
+                <th className="py-4 pr-6 text-xs uppercase tracking-[0.25em] text-foreground/55">
+                  {t("dag.charterTable.inbegrepen")}
+                </th>
+                <th className="py-4 text-xs uppercase tracking-[0.25em] text-foreground/55">
+                  {t("dag.charterTable.prijs")}
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-foreground/15">
+              <tr>
+                <td className="py-6 pr-6 align-top font-display text-xl text-primary">
+                  {t("dag.charterTable.kaalTitle")}
+                </td>
+                <td className="py-6 pr-6 align-top text-foreground/80">
+                  {t("dag.charterTable.kaalIncl")}
+                </td>
+                <td className="py-6 align-top font-display text-xl text-foreground">
+                  {t("dag.charterTable.kaalPrijs")}
+                </td>
+              </tr>
+              <tr>
+                <td className="py-6 pr-6 align-top font-display text-xl text-primary">
+                  {t("dag.charterTable.drankTitle")}
+                </td>
+                <td className="py-6 pr-6 align-top text-foreground/80">
+                  {t("dag.charterTable.drankIncl")}
+                </td>
+                <td className="py-6 align-top font-display text-xl text-foreground">
+                  {t("dag.charterTable.drankPrijs")}
+                </td>
+              </tr>
+              <tr>
+                <td className="py-6 pr-6 align-top font-display text-xl text-primary">
+                  {t("dag.charterTable.lunchTitle")}
+                </td>
+                <td className="py-6 pr-6 align-top text-foreground/80">
+                  {t("dag.charterTable.lunchIncl")}
+                </td>
+                <td className="py-6 align-top font-display text-xl text-foreground">
+                  {t("dag.charterTable.lunchPrijs")}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
