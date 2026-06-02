@@ -112,7 +112,24 @@
     "ticketsBody": "Unsere Tickets werden über Weeztix verkauft. Sobald die ersten Termine feststehen, erscheint der Ticketshop hier unten.",
     "shopEyebrow": "Ticketshop",
     "shopBody": "Hier kommt der Weeztix-Ticketshop hin. Schick uns den Embed-Code, sobald dein Shop bereit ist, und wir setzen ihn hier ein.",
-    "shopCta": "Nach den ersten Terminen fragen"
+    "shopCta": "Nach den ersten Terminen fragen",
+    "charterEyebrow": "Privatcharter",
+    "charterTitle": "Das ganze Schiff chartern",
+    "charterBody": "Wir bieten auch Tagestörns an, bei denen das gesamte Schiff gechartert werden kann — ideal für einen Betriebsausflug oder Familientag. Eine Fahrt von 10:00 bis 17:00 Uhr, inklusive Willkommensgetränk, Kaffee und Tee. Weitere Getränke können an Bord einzeln bezahlt werden, oder du wählst ein Getränkepaket.",
+    "charterTable": {
+      "optie": "Option",
+      "inbegrepen": "Inklusive",
+      "prijs": "Preis",
+      "kaalTitle": "Basis-Charter",
+      "kaalIncl": "Willkommensgetränk, Kaffee & Tee",
+      "kaalPrijs": "€ 15,00",
+      "drankTitle": "Charter + Getränkepaket",
+      "drankIncl": "Bier, Softdrinks & Wein unbegrenzt",
+      "drankPrijs": "€ 39,00 p.P. extra",
+      "lunchTitle": "Charter + Getränke & Schiffsmahlzeit",
+      "lunchIncl": "Bier, Softdrinks & Wein + warme Schiffsmahlzeit",
+      "lunchPrijs": "€ 49,00 p.P. extra"
+    }
   },
   "meevaren": {
     "heroEyebrow": "Ab 2026",
