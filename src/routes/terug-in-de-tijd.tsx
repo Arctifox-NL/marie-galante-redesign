@@ -4,6 +4,9 @@ import SiteLayout from "@/components/SiteLayout";
 import photo1980SpicaStege from "@/assets/photos/1980-spica-stege.jpg";
 import photo1980AutoRuim from "@/assets/photos/1980-auto-ruim.jpg";
 import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
+import photo1980BouwEnkhuizen from "@/assets/photos/1980-bouw-enkhuizen.jpg";
+import photo1980RompWater from "@/assets/photos/1980-romp-water.jpg";
+import photo1980WerkDek from "@/assets/photos/1980-werk-dek.jpg";
 import photo2014Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
 import photo2014Dek from "@/assets/photos/2014-dek-evenement.jpg";
 import photo2014Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
@@ -73,6 +76,9 @@ const timeline: Entry[] = [
       photo1980SpicaStege,
       photo1980AutoRuim,
       photo1980AutoHijsen,
+      photo1980BouwEnkhuizen,
+      photo1980RompWater,
+      photo1980WerkDek,
     ],
   },
   { year: "1978", title: "Spica", body: "Verkocht aan H. J. H. Hansen, omgedoopt tot Spica met thuishaven Stege. Varend onder Deense vlag." },
