@@ -7,6 +7,9 @@ import photo1980AutoHijsen from "@/assets/photos/1980-auto-hijsen.jpg";
 import photo1980BouwEnkhuizen from "@/assets/photos/1980-bouw-enkhuizen.jpg";
 import photo1980RompWater from "@/assets/photos/1980-romp-water.jpg";
 import photo1980WerkDek from "@/assets/photos/1980-werk-dek.jpg";
+import photo1982CharterZeilend from "@/assets/photos/1982-charter-zeilend.jpg";
+import photo1982CharterHaven from "@/assets/photos/1982-charter-haven.jpg";
+import photo1989CharterKade from "@/assets/photos/1989-charter-kade.jpg";
 import photo2014Bow from "@/assets/photos/2014-marie-galante-bow.jpg";
 import photo2014Dek from "@/assets/photos/2014-dek-evenement.jpg";
 import photo2014Zeilen from "@/assets/photos/2014-zeilen-golven.jpg";
@@ -66,6 +69,16 @@ const timeline: Entry[] = [
       photo2014Bow,
       photo2014Dek,
       photo2014Zeilen,
+    ],
+  },
+  {
+    year: "1982 – 2014",
+    title: "Marie Galante charter",
+    body: "De avonturen van Rol en de Marie Galante kunnen beginnen. Het water van voornamelijk de Baltische zee wordt dun gevaren. Gasten worden ontvangen, buffetten opgebouwd en zelf een huwelijk of twee (of drie) vindt plaats.",
+    images: [
+      photo1982CharterZeilend,
+      photo1982CharterHaven,
+      photo1989CharterKade,
     ],
   },
   {
