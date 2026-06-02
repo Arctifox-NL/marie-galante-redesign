@@ -68,7 +68,7 @@ const timeline: Entry[] = [
   {
     year: "1980",
     title: "Het Marie Galante-tijdperk breekt aan",
-    body: "Kees Rol koopt het schip en bouwt haar om tot zeilend passagiersschip. Er komen hutten en een bar in. Met thuishaven Enkhuizen en onder de Nederlandse vlag vaart ze in de zomer op de Baltische zee — Denemarken en Duitsland — en in de winter terug naar Nederland.",
+    body: "Kees Rol wordt bekroond tot nieuwe eigenaar van de Spica, en zal haar omdopen tot Marie Galante. In de volgende twee jaar verbouwt hij het oude vrachtschip om tot een zeilend passagiersschip met thuishaven Enkhuizen.",
     images: [
       photo1980SpicaStege,
       photo1980AutoRuim,
