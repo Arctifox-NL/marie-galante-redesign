@@ -19,7 +19,7 @@ export const Route = createFileRoute("/terug-in-de-tijd")({
   component: HistoryPage,
   head: () => ({
     meta: [
-      { title: "Terug in de tijd · Marie Galante" },
+      { title: "Geschiedenis · Marie Galante" },
       { name: "description", content: "De geschiedenis van zeillogger Marie Galante, gebouwd in 1915. Van visserschip onder Duitse, Deense en Zweedse vlag tot zeilend passagiersschip op de Oostzee." },
     ],
   }),
