@@ -39,7 +39,7 @@ export function SiteHeader() {
           <img src={logo} alt="Marie Galante logo" className="h-12 w-12 object-contain brightness-0 invert md:h-14 md:w-14" />
           <span className="hidden md:inline">MARIE&nbsp;GALANTE</span>
         </Link>
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.slice(1).map((n) => (
             <Link
               key={n.to}
