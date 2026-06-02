@@ -19,6 +19,9 @@ import photo2016Stuurhut from "@/assets/photos/2016-rotterdam-stuurhut.jpg";
 import photo2025Werf from "@/assets/photos/2025-werf.jpg";
 import photo2025Masten from "@/assets/photos/2025-masten-eraf.jpg";
 import photo2025Mist from "@/assets/photos/2025-rotterdam-mist.jpg";
+import photo2025Vaart from "@/assets/photos/2025-marie-galante-vaart.jpg";
+import photo2026WerfRomp from "@/assets/photos/2026-werf-romp.jpg";
+import photo2025Skyline from "@/assets/photos/2025-rotterdam-skyline.jpg";
 import heroImage from "@/assets/photos/hero-terug-in-de-tijd.jpg";
 
 export const Route = createFileRoute("/terug-in-de-tijd")({
@@ -42,13 +45,16 @@ type Entry = {
 
 const timeline: Entry[] = [
   {
-    year: "2025",
-    title: "Marie Galante — See the Sea",
-    body: "Het nieuwe tijdperk is aangebroken: Marie Galante mocht weer weg van de kade voor de verkoop keur. De masten zijn eraf gehaald en de huiddikte gemeten. Met trots treden de nieuwe eigenaren aan: Lex van der Linden en Lotte van Boesschoten. Met een flinke to do lijst, veel energie en het voornemen hard te werken beginnen ze aan het avontuur om de Marie Galante weer onder keur te brengen.",
+    year: "2025 – 2026",
+    title: "Marie Galante terug naar zee!",
+    body: "Na bijna tien jaar aan de ketting breekt er een nieuw tijdperk aan. De Marie Galante moet maar weer gaan varen. Als kers verse eigenaren beginnen Lex van der Linden en Lotte van Boesschoten aan een nieuw avontuur. Het doel: De Marie Galante weer volledig onder keur brengen en gasten ontvangen op de Oostzee. De masten worden vervangen, de romp wordt gerepareerd en er komt een nieuw kleurtje op het staal. Maar naast het zichtbare werk wordt er ook een hele stapel aan papierwerk in orde gemaakt om weer vrij rond te mogen varen.",
     images: [
       photo2025Werf,
       photo2025Masten,
       photo2025Mist,
+      photo2025Vaart,
+      photo2026WerfRomp,
+      photo2025Skyline,
     ],
   },
   {
