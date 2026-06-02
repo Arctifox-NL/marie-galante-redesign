@@ -117,7 +117,24 @@
     "ticketsBody": "Onze tickets worden verkocht via Weeztix. Zodra de eerste data bekend zijn verschijnt de ticketshop hieronder.",
     "shopEyebrow": "Ticketshop",
     "shopBody": "Hier komt de Weeztix-ticketshop. Stuur de embed-code zodra je shop klaar staat, dan plaatsen we hem hier.",
-    "shopCta": "Vraag naar de eerste data"
+    "shopCta": "Vraag naar de eerste data",
+    "charterEyebrow": "Privé charter",
+    "charterTitle": "Huur het hele schip",
+    "charterBody": "We bieden ook dagtochten aan waarbij het hele schip gehuurd kan worden — leuk voor een bedrijfsuitje of familiedag. Een tocht van 10.00 tot 17.00 uur, inclusief welkomstdrankje, koffie en thee. Aan boord kunnen verdere drankjes los worden afgerekend, of kies voor een drankarrangement.",
+    "charterTable": {
+      "optie": "Optie",
+      "inbegrepen": "Inbegrepen",
+      "prijs": "Prijs",
+      "kaalTitle": "Kale charter",
+      "kaalIncl": "Welkomstdrankje, koffie & thee",
+      "kaalPrijs": "€ 15,00",
+      "drankTitle": "Charter + drankarrangement",
+      "drankIncl": "Bier, fris & wijn onbeperkt",
+      "drankPrijs": "€ 39,00 p.p. extra",
+      "lunchTitle": "Charter + drank & scheepslunch",
+      "lunchIncl": "Bier, fris & wijn + warme scheepsmaaltijd",
+      "lunchPrijs": "€ 49,00 p.p. extra"
+    }
   },
   "meevaren": {
     "heroEyebrow": "Vanaf 2026",
