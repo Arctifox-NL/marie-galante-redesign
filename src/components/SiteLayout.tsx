@@ -44,7 +44,7 @@ export function SiteHeader() {
             <Link
               key={n.to}
               to={n.to}
-              className="text-[0.72rem] uppercase tracking-[0.28em] text-background/85 transition-colors hover:text-accent"
+              className="whitespace-nowrap text-[0.72rem] uppercase tracking-[0.28em] text-background/85 transition-colors hover:text-accent"
               activeProps={{ className: "text-accent" }}
             >
               {t(`nav.${n.key}`)}
