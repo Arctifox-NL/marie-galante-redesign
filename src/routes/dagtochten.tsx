@@ -170,6 +170,15 @@ function DagtochtenPage() {
             </tbody>
           </table>
         </div>
+
+        <div className="mt-12">
+          <a
+            href="mailto:info@marie-galante.nl"
+            className="inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent"
+          >
+            {t("dag.charterCta")}
+          </a>
+        </div>
       </section>
     </SiteLayout>
   );
