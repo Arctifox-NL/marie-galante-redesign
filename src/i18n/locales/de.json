@@ -3,7 +3,7 @@
     "home": "Home",
     "boek": "Buche dein Abenteuer",
     "dagtochten": "Tagestörns",
-    "geschiedenis": "Zurück in der Zeit",
+    "geschiedenis": "Geschichte",
     "logboek": "Logbuch",
     "tracker": "Live-Tracker",
     "ikWilMee": "Ich will mit",
@@ -182,7 +182,7 @@
   },
   "history": {
     "heroEyebrow": "Seit 1915",
-    "heroTitle": "Zurück in der Zeit",
+    "heroTitle": "Geschichte",
     "intro": "Der grobe Lebensweg des Schiffes ist bekannt. Doch viele Geschichten fehlen noch. Hast du etwas beizutragen? Eine besondere Reise erlebt?",
     "share": "Teile deine Geschichte — info@marie-galante.nl"
   },

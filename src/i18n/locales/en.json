@@ -3,7 +3,7 @@
     "home": "Home",
     "boek": "Book your adventure",
     "dagtochten": "Day trips",
-    "geschiedenis": "Back in time",
+    "geschiedenis": "History",
     "logboek": "Logbook",
     "tracker": "Live tracker",
     "ikWilMee": "Sign me up",
@@ -182,7 +182,7 @@
   },
   "history": {
     "heroEyebrow": "Since 1915",
-    "heroTitle": "Back in time",
+    "heroTitle": "History",
     "intro": "A rough outline of the ship's life is known, but many stories are still missing. Have something to add? Been on a memorable voyage?",
     "share": "Share your story — info@marie-galante.nl"
   },
