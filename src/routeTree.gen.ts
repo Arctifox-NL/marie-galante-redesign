@@ -16,9 +16,14 @@ import { Route as MeevarenOostzeeRouteImport } from './routes/meevaren-oostzee'
 import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as DagtochtenRouteImport } from './routes/dagtochten'
 import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
+import { Route as DagtochtenBedanktRouteImport } from './routes/dagtochten.bedankt'
+import { Route as AdminBoekingenRouteImport } from './routes/admin.boekingen'
+import { Route as DagtochtenBoekenSlotIdRouteImport } from './routes/dagtochten.boeken.$slotId'
+import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const TrackerRoute = TrackerRouteImport.update({
   id: '/tracker',
@@ -55,6 +60,11 @@ const BoekJouwAvontuurRoute = BoekJouwAvontuurRouteImport.update({
   path: '/boek-jouw-avontuur',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -70,48 +80,85 @@ const LogboekSlugRoute = LogboekSlugRouteImport.update({
   path: '/logboek/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DagtochtenBedanktRoute = DagtochtenBedanktRouteImport.update({
+  id: '/bedankt',
+  path: '/bedankt',
+  getParentRoute: () => DagtochtenRoute,
+} as any)
+const AdminBoekingenRoute = AdminBoekingenRouteImport.update({
+  id: '/boekingen',
+  path: '/boekingen',
+  getParentRoute: () => AdminRoute,
+} as any)
+const DagtochtenBoekenSlotIdRoute = DagtochtenBoekenSlotIdRouteImport.update({
+  id: '/boeken/$slotId',
+  path: '/boeken/$slotId',
+  getParentRoute: () => DagtochtenRoute,
+} as any)
+const ApiPublicPaymentsWebhookRoute =
+  ApiPublicPaymentsWebhookRouteImport.update({
+    id: '/api/public/payments/webhook',
+    path: '/api/public/payments/webhook',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/dagtochten': typeof DagtochtenRoute
+  '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
+  '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
+  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/dagtochten': typeof DagtochtenRoute
+  '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
+  '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
+  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
-  '/dagtochten': typeof DagtochtenRoute
+  '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
+  '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
+  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -119,11 +166,16 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
+    | '/dagtochten/bedankt'
     | '/logboek/$slug'
     | '/product/$handle'
+    | '/dagtochten/boeken/$slotId'
+    | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -131,11 +183,16 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
+    | '/dagtochten/bedankt'
     | '/logboek/$slug'
     | '/product/$handle'
+    | '/dagtochten/boeken/$slotId'
+    | '/api/public/payments/webhook'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -143,14 +200,19 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
+    | '/dagtochten/bedankt'
     | '/logboek_/$slug'
     | '/product/$handle'
+    | '/dagtochten/boeken/$slotId'
+    | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
   BoekJouwAvontuurRoute: typeof BoekJouwAvontuurRoute
-  DagtochtenRoute: typeof DagtochtenRoute
+  DagtochtenRoute: typeof DagtochtenRouteWithChildren
   LogboekRoute: typeof LogboekRoute
   MeevarenOostzeeRoute: typeof MeevarenOostzeeRoute
   ShopRoute: typeof ShopRoute
@@ -158,6 +220,7 @@ export interface RootRouteChildren {
   TrackerRoute: typeof TrackerRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
+  ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -211,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoekJouwAvontuurRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -232,13 +302,66 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LogboekSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dagtochten/bedankt': {
+      id: '/dagtochten/bedankt'
+      path: '/bedankt'
+      fullPath: '/dagtochten/bedankt'
+      preLoaderRoute: typeof DagtochtenBedanktRouteImport
+      parentRoute: typeof DagtochtenRoute
+    }
+    '/admin/boekingen': {
+      id: '/admin/boekingen'
+      path: '/boekingen'
+      fullPath: '/admin/boekingen'
+      preLoaderRoute: typeof AdminBoekingenRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/dagtochten/boeken/$slotId': {
+      id: '/dagtochten/boeken/$slotId'
+      path: '/boeken/$slotId'
+      fullPath: '/dagtochten/boeken/$slotId'
+      preLoaderRoute: typeof DagtochtenBoekenSlotIdRouteImport
+      parentRoute: typeof DagtochtenRoute
+    }
+    '/api/public/payments/webhook': {
+      id: '/api/public/payments/webhook'
+      path: '/api/public/payments/webhook'
+      fullPath: '/api/public/payments/webhook'
+      preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminBoekingenRoute: typeof AdminBoekingenRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminBoekingenRoute: AdminBoekingenRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
+interface DagtochtenRouteChildren {
+  DagtochtenBedanktRoute: typeof DagtochtenBedanktRoute
+  DagtochtenBoekenSlotIdRoute: typeof DagtochtenBoekenSlotIdRoute
+}
+
+const DagtochtenRouteChildren: DagtochtenRouteChildren = {
+  DagtochtenBedanktRoute: DagtochtenBedanktRoute,
+  DagtochtenBoekenSlotIdRoute: DagtochtenBoekenSlotIdRoute,
+}
+
+const DagtochtenRouteWithChildren = DagtochtenRoute._addFileChildren(
+  DagtochtenRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
   BoekJouwAvontuurRoute: BoekJouwAvontuurRoute,
-  DagtochtenRoute: DagtochtenRoute,
+  DagtochtenRoute: DagtochtenRouteWithChildren,
   LogboekRoute: LogboekRoute,
   MeevarenOostzeeRoute: MeevarenOostzeeRoute,
   ShopRoute: ShopRoute,
@@ -246,6 +369,7 @@ const rootRouteChildren: RootRouteChildren = {
   TrackerRoute: TrackerRoute,
   LogboekSlugRoute: LogboekSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
+  ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
