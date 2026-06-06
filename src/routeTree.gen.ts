@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrackerRouteImport } from './routes/tracker'
 import { Route as TerugInDeTijdRouteImport } from './routes/terug-in-de-tijd'
+import { Route as ShopRouteImport } from './routes/shop'
 import { Route as MeevarenOostzeeRouteImport } from './routes/meevaren-oostzee'
 import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as DagtochtenRouteImport } from './routes/dagtochten'
@@ -27,6 +28,11 @@ const TrackerRoute = TrackerRouteImport.update({
 const TerugInDeTijdRoute = TerugInDeTijdRouteImport.update({
   id: '/terug-in-de-tijd',
   path: '/terug-in-de-tijd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MeevarenOostzeeRoute = MeevarenOostzeeRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/dagtochten': typeof DagtochtenRoute
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
+  '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/dagtochten': typeof DagtochtenRoute
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
+  '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/dagtochten': typeof DagtochtenRoute
   '/logboek': typeof LogboekRoute
   '/meevaren-oostzee': typeof MeevarenOostzeeRoute
+  '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/dagtochten'
     | '/logboek'
     | '/meevaren-oostzee'
+    | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek/$slug'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/dagtochten'
     | '/logboek'
     | '/meevaren-oostzee'
+    | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek/$slug'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/dagtochten'
     | '/logboek'
     | '/meevaren-oostzee'
+    | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek_/$slug'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   DagtochtenRoute: typeof DagtochtenRoute
   LogboekRoute: typeof LogboekRoute
   MeevarenOostzeeRoute: typeof MeevarenOostzeeRoute
+  ShopRoute: typeof ShopRoute
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
   TrackerRoute: typeof TrackerRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
@@ -161,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/terug-in-de-tijd'
       fullPath: '/terug-in-de-tijd'
       preLoaderRoute: typeof TerugInDeTijdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/meevaren-oostzee': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   DagtochtenRoute: DagtochtenRoute,
   LogboekRoute: LogboekRoute,
   MeevarenOostzeeRoute: MeevarenOostzeeRoute,
+  ShopRoute: ShopRoute,
   TerugInDeTijdRoute: TerugInDeTijdRoute,
   TrackerRoute: TrackerRoute,
   LogboekSlugRoute: LogboekSlugRoute,
