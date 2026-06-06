@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
@@ -24,6 +25,21 @@ export const Route = createFileRoute("/dagtochten")({
 
 function DagtochtenPage() {
   const { t } = useTranslation();
+  useEffect(() => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[src="https://v1.widget.shop.weeztix.com/injector.js"]'
+    );
+    if (existing) {
+      existing.remove();
+    }
+    const script = document.createElement("script");
+    script.src = "https://v1.widget.shop.weeztix.com/injector.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
@@ -84,20 +100,13 @@ function DagtochtenPage() {
             </p>
           </div>
 
-          {/* Weeztix embed placeholder — vervang dit blok door de iframe / script die Weeztix aanlevert */}
-          <div className="mt-12 flex min-h-[480px] items-center justify-center border border-dashed border-foreground/25 bg-background p-10 text-center">
-            <div>
-              <div className="eyebrow text-foreground/55">{t("dag.shopEyebrow")}</div>
-              <p className="mt-4 max-w-md text-foreground/70">
-                {t("dag.shopBody")}
-              </p>
-              <a
-                href="mailto:info@marie-galante.nl"
-                className="mt-8 inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent"
-              >
-                {t("dag.shopCta")}
-              </a>
-            </div>
+          {/* Weeztix shop embed */}
+          <div className="mt-12 bg-background p-4 md:p-8">
+            <div
+              className="ot-iframe"
+              data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
+              data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
+            />
           </div>
         </div>
       </section>
