@@ -16,6 +16,7 @@ import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as DagtochtenRouteImport } from './routes/dagtochten'
 import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 
 const TrackerRoute = TrackerRouteImport.update({
@@ -53,6 +54,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductHandleRoute = ProductHandleRouteImport.update({
+  id: '/product/$handle',
+  path: '/product/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LogboekSlugRoute = LogboekSlugRouteImport.update({
   id: '/logboek_/$slug',
   path: '/logboek/$slug',
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek/$slug': typeof LogboekSlugRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek/$slug'
+    | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek/$slug'
+    | '/product/$handle'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/terug-in-de-tijd'
     | '/tracker'
     | '/logboek_/$slug'
+    | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
   TrackerRoute: typeof TrackerRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
+  ProductHandleRoute: typeof ProductHandleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -185,6 +198,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/$handle': {
+      id: '/product/$handle'
+      path: '/product/$handle'
+      fullPath: '/product/$handle'
+      preLoaderRoute: typeof ProductHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/logboek_/$slug': {
       id: '/logboek_/$slug'
       path: '/logboek/$slug'
@@ -204,7 +224,18 @@ const rootRouteChildren: RootRouteChildren = {
   TerugInDeTijdRoute: TerugInDeTijdRoute,
   TrackerRoute: TrackerRoute,
   LogboekSlugRoute: LogboekSlugRoute,
+  ProductHandleRoute: ProductHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
