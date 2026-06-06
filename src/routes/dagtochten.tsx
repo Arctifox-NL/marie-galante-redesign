@@ -65,10 +65,6 @@ function DagtochtenPage() {
                 <dd className="col-span-2 text-foreground/85">{t("dag.spec.duurVal")}</dd>
               </div>
               <div className="grid grid-cols-3 gap-6 py-5">
-                <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("dag.spec.inbegrepen")}</dt>
-                <dd className="col-span-2 text-foreground/85">{t("dag.spec.inbegrepenVal")}</dd>
-              </div>
-              <div className="grid grid-cols-3 gap-6 py-5">
                 <dt className="text-xs uppercase tracking-[0.25em] text-foreground/55">{t("dag.spec.ervaring")}</dt>
                 <dd className="col-span-2 text-foreground/85">{t("dag.spec.ervaringVal")}</dd>
               </div>
