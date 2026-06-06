@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
 import SiteLayout from "@/components/SiteLayout";
+import { ProductCard } from "@/components/ProductCard";
+import { fetchProducts } from "@/lib/shopify";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
 
 export const Route = createFileRoute("/dagtochten")({
@@ -25,21 +28,10 @@ export const Route = createFileRoute("/dagtochten")({
 
 function DagtochtenPage() {
   const { t } = useTranslation();
-  useEffect(() => {
-    const existing = document.querySelector<HTMLScriptElement>(
-      'script[src="https://v1.widget.shop.weeztix.com/injector.js"]'
-    );
-    if (existing) {
-      existing.remove();
-    }
-    const script = document.createElement("script");
-    script.src = "https://v1.widget.shop.weeztix.com/injector.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      script.remove();
-    };
-  }, []);
+  const { data: products = [], isLoading, error } = useQuery({
+    queryKey: ["shopify-products", "dagtochten"],
+    queryFn: () => fetchProducts(20, "tag:dagtocht OR product_type:Ticket OR product_type:Dagtocht"),
+  });
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
@@ -100,15 +92,27 @@ function DagtochtenPage() {
             </p>
           </div>
 
-          {/* Weeztix shop embed — interne scroll zodat de rest van de pagina zichtbaar blijft */}
-          <div className="mt-12 bg-background p-4 md:p-8">
-            <div className="h-[70vh] max-h-[700px] min-h-[480px] overflow-y-auto overscroll-contain">
-              <div
-                className="ot-iframe"
-                data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
-                data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
-              />
-            </div>
+          <div className="mt-12">
+            {isLoading ? (
+              <div className="flex min-h-[30vh] items-center justify-center">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              </div>
+            ) : error ? (
+              <p className="text-foreground/70">
+                De tickets laden op dit moment niet. Probeer het zo opnieuw.
+              </p>
+            ) : products.length === 0 ? (
+              <p className="text-foreground/70">
+                Er staan nog geen dagtocht-tickets in de shop. Zodra de data bekend zijn, vind je
+                ze hier.
+              </p>
+            ) : (
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                {products.map((p) => (
+                  <ProductCard key={p.node.id} product={p} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
