@@ -7,7 +7,10 @@ async function markBookingPaid(
   sessionId: string | null,
 ) {
   const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
-  const update: Record<string, unknown> = { payment_status: 'paid' };
+  const update: {
+    payment_status: 'paid';
+    stripe_payment_intent_id?: string;
+  } = { payment_status: 'paid' };
   if (paymentIntentId) update.stripe_payment_intent_id = paymentIntentId;
   if (sessionId) {
     await supabaseAdmin
