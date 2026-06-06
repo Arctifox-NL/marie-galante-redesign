@@ -16,10 +16,12 @@ import { Route as MeevarenOostzeeRouteImport } from './routes/meevaren-oostzee'
 import { Route as LogboekRouteImport } from './routes/logboek'
 import { Route as DagtochtenRouteImport } from './routes/dagtochten'
 import { Route as BoekJouwAvontuurRouteImport } from './routes/boek-jouw-avontuur'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 import { Route as DagtochtenBedanktRouteImport } from './routes/dagtochten.bedankt'
+import { Route as AdminBoekingenRouteImport } from './routes/admin.boekingen'
 import { Route as DagtochtenBoekenSlotIdRouteImport } from './routes/dagtochten.boeken.$slotId'
 import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
@@ -58,6 +60,11 @@ const BoekJouwAvontuurRoute = BoekJouwAvontuurRouteImport.update({
   path: '/boek-jouw-avontuur',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -78,6 +85,11 @@ const DagtochtenBedanktRoute = DagtochtenBedanktRouteImport.update({
   path: '/bedankt',
   getParentRoute: () => DagtochtenRoute,
 } as any)
+const AdminBoekingenRoute = AdminBoekingenRouteImport.update({
+  id: '/boekingen',
+  path: '/boekingen',
+  getParentRoute: () => AdminRoute,
+} as any)
 const DagtochtenBoekenSlotIdRoute = DagtochtenBoekenSlotIdRouteImport.update({
   id: '/boeken/$slotId',
   path: '/boeken/$slotId',
@@ -92,6 +104,7 @@ const ApiPublicPaymentsWebhookRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
@@ -99,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
   '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -107,6 +121,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
@@ -114,6 +129,7 @@ export interface FileRoutesByTo {
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
   '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -123,6 +139,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/boek-jouw-avontuur': typeof BoekJouwAvontuurRoute
   '/dagtochten': typeof DagtochtenRouteWithChildren
   '/logboek': typeof LogboekRoute
@@ -130,6 +147,7 @@ export interface FileRoutesById {
   '/shop': typeof ShopRoute
   '/terug-in-de-tijd': typeof TerugInDeTijdRoute
   '/tracker': typeof TrackerRoute
+  '/admin/boekingen': typeof AdminBoekingenRoute
   '/dagtochten/bedankt': typeof DagtochtenBedanktRoute
   '/logboek_/$slug': typeof LogboekSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -140,6 +158,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -147,6 +166,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
     | '/dagtochten/bedankt'
     | '/logboek/$slug'
     | '/product/$handle'
@@ -155,6 +175,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -162,6 +183,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
     | '/dagtochten/bedankt'
     | '/logboek/$slug'
     | '/product/$handle'
@@ -170,6 +192,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/boek-jouw-avontuur'
     | '/dagtochten'
     | '/logboek'
@@ -177,6 +200,7 @@ export interface FileRouteTypes {
     | '/shop'
     | '/terug-in-de-tijd'
     | '/tracker'
+    | '/admin/boekingen'
     | '/dagtochten/bedankt'
     | '/logboek_/$slug'
     | '/product/$handle'
@@ -186,6 +210,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
   BoekJouwAvontuurRoute: typeof BoekJouwAvontuurRoute
   DagtochtenRoute: typeof DagtochtenRouteWithChildren
   LogboekRoute: typeof LogboekRoute
@@ -249,6 +274,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BoekJouwAvontuurRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -277,6 +309,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DagtochtenBedanktRouteImport
       parentRoute: typeof DagtochtenRoute
     }
+    '/admin/boekingen': {
+      id: '/admin/boekingen'
+      path: '/boekingen'
+      fullPath: '/admin/boekingen'
+      preLoaderRoute: typeof AdminBoekingenRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/dagtochten/boeken/$slotId': {
       id: '/dagtochten/boeken/$slotId'
       path: '/boeken/$slotId'
@@ -294,6 +333,16 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AdminRouteChildren {
+  AdminBoekingenRoute: typeof AdminBoekingenRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminBoekingenRoute: AdminBoekingenRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 interface DagtochtenRouteChildren {
   DagtochtenBedanktRoute: typeof DagtochtenBedanktRoute
   DagtochtenBoekenSlotIdRoute: typeof DagtochtenBoekenSlotIdRoute
@@ -310,6 +359,7 @@ const DagtochtenRouteWithChildren = DagtochtenRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
   BoekJouwAvontuurRoute: BoekJouwAvontuurRoute,
   DagtochtenRoute: DagtochtenRouteWithChildren,
   LogboekRoute: LogboekRoute,
@@ -324,3 +374,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
