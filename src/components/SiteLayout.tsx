@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo.png";
 import "@/i18n";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { CartDrawer } from "./CartDrawer";
 
 const navItems = [
   { to: "/", key: "home" },
@@ -12,6 +13,7 @@ const navItems = [
   { to: "/terug-in-de-tijd", key: "geschiedenis" },
   { to: "/logboek", key: "logboek" },
   { to: "/tracker", key: "tracker" },
+  { to: "/shop", key: "shop" },
 ] as const;
 
 export function SiteHeader() {
@@ -51,6 +53,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <LanguageSwitcher tone="light" />
+          <CartDrawer tone="light" />
           <a
             href="mailto:info@marie-galante.nl"
             className="border border-accent bg-accent px-4 py-2 text-[0.7rem] uppercase tracking-[0.25em] text-accent-foreground transition-colors hover:bg-transparent hover:text-accent"
@@ -60,6 +63,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-4 md:hidden">
           <LanguageSwitcher tone="light" />
+          <CartDrawer tone="light" />
           <a
             href="mailto:info@marie-galante.nl"
             className="border border-accent bg-accent px-3 py-2 text-[0.65rem] uppercase tracking-[0.2em] text-accent-foreground"
