@@ -100,13 +100,15 @@ function DagtochtenPage() {
             </p>
           </div>
 
-          {/* Weeztix shop embed */}
+          {/* Weeztix shop embed — interne scroll zodat de rest van de pagina zichtbaar blijft */}
           <div className="mt-12 bg-background p-4 md:p-8">
-            <div
-              className="ot-iframe"
-              data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
-              data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
-            />
+            <div className="h-[70vh] max-h-[700px] min-h-[480px] overflow-y-auto overscroll-contain">
+              <div
+                className="ot-iframe"
+                data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
+                data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
+              />
+            </div>
           </div>
         </div>
       </section>
