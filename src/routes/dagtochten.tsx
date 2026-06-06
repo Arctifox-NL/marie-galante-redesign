@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import SiteLayout from "@/components/SiteLayout";
-import { Link } from "@tanstack/react-router";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
 
 export const Route = createFileRoute("/dagtochten")({
@@ -25,6 +25,21 @@ export const Route = createFileRoute("/dagtochten")({
 
 function DagtochtenPage() {
   const { t } = useTranslation();
+  useEffect(() => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[src="https://v1.widget.shop.weeztix.com/injector.js"]'
+    );
+    if (existing) {
+      existing.remove();
+    }
+    const script = document.createElement("script");
+    script.src = "https://v1.widget.shop.weeztix.com/injector.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
@@ -85,13 +100,15 @@ function DagtochtenPage() {
             </p>
           </div>
 
-          <div className="mt-12">
-            <Link
-              to="/shop"
-              className="inline-block border border-accent bg-accent px-8 py-3 text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent"
-            >
-              {t("dag.ticketsCta", "Bekijk tickets in de shop")}
-            </Link>
+          {/* Weeztix shop embed — interne scroll zodat de rest van de pagina zichtbaar blijft */}
+          <div className="mt-12 bg-background p-4 md:p-8">
+            <div className="h-[70vh] max-h-[700px] min-h-[480px] overflow-y-auto overscroll-contain">
+              <div
+                className="ot-iframe"
+                data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
+                data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
+              />
+            </div>
           </div>
         </div>
       </section>
