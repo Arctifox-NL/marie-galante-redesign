@@ -7,7 +7,7 @@ import SiteLayout from "@/components/SiteLayout";
 import { listAvailableSlots, type AvailableSlot } from "@/lib/bookings.functions";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
 
-export const Route = createFileRoute("/dagtochten")({
+export const Route = createFileRoute("/dagtochten/")({
   component: DagtochtenPage,
   head: () => ({
     meta: [
