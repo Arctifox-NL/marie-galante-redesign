@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export const Route = createFileRoute("/admin")({
+export const Route = createFileRoute("/admin/")({
   component: AdminLogin,
   head: () => ({ meta: [{ title: "Admin · Marie Galante" }, { name: "robots", content: "noindex" }] }),
 });
