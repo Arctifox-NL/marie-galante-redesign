@@ -20,8 +20,7 @@ function ThankYouPage() {
         <h1 className="mt-4 font-display text-4xl text-primary md:text-5xl">Je boeking is bevestigd</h1>
         <p className="mt-6 text-lg leading-relaxed text-foreground/80">
           We hebben je betaling ontvangen. Je krijgt een bevestiging per e-mail. Bewaar de mail goed —
-          daar staat alle praktische info voor je tocht in. Bij slecht weer of minder dan 8 boekingen
-          nemen we tijdig contact met je op om te verschuiven of terug te betalen.
+          daar staat alle praktische info voor je tocht in.
         </p>
         {session_id && (
           <p className="mt-4 text-xs text-foreground/50">Referentie: {session_id}</p>
