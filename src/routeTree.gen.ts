@@ -81,19 +81,19 @@ const LogboekSlugRoute = LogboekSlugRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const DagtochtenBedanktRoute = DagtochtenBedanktRouteImport.update({
-  id: '/bedankt',
-  path: '/bedankt',
-  getParentRoute: () => DagtochtenRoute,
+  id: '/dagtochten/bedankt',
+  path: '/dagtochten/bedankt',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const AdminBoekingenRoute = AdminBoekingenRouteImport.update({
-  id: '/boekingen',
-  path: '/boekingen',
-  getParentRoute: () => AdminRoute,
+  id: '/admin/boekingen',
+  path: '/admin/boekingen',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DagtochtenBoekenSlotIdRoute = DagtochtenBoekenSlotIdRouteImport.update({
-  id: '/boeken/$slotId',
-  path: '/boeken/$slotId',
-  getParentRoute: () => DagtochtenRoute,
+  id: '/dagtochten/boeken/$slotId',
+  path: '/dagtochten/boeken/$slotId',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicPaymentsWebhookRoute =
   ApiPublicPaymentsWebhookRouteImport.update({
@@ -216,10 +216,13 @@ export interface RootRouteChildren {
   ShopRoute: typeof ShopRoute
   TerugInDeTijdRoute: typeof TerugInDeTijdRoute
   TrackerRoute: typeof TrackerRoute
+  AdminBoekingenRoute: typeof AdminBoekingenRoute
+  DagtochtenBedanktRoute: typeof DagtochtenBedanktRoute
   LogboekSlugRoute: typeof LogboekSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
   AdminIndexRoute: typeof AdminIndexRoute
   DagtochtenIndexRoute: typeof DagtochtenIndexRoute
+  DagtochtenBoekenSlotIdRoute: typeof DagtochtenBoekenSlotIdRoute
   ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
@@ -304,24 +307,24 @@ declare module '@tanstack/react-router' {
     }
     '/dagtochten/bedankt': {
       id: '/dagtochten/bedankt'
-      path: '/bedankt'
+      path: '/dagtochten/bedankt'
       fullPath: '/dagtochten/bedankt'
       preLoaderRoute: typeof DagtochtenBedanktRouteImport
-      parentRoute: typeof DagtochtenRoute
+      parentRoute: typeof rootRouteImport
     }
     '/admin/boekingen': {
       id: '/admin/boekingen'
-      path: '/boekingen'
+      path: '/admin/boekingen'
       fullPath: '/admin/boekingen'
       preLoaderRoute: typeof AdminBoekingenRouteImport
-      parentRoute: typeof AdminRoute
+      parentRoute: typeof rootRouteImport
     }
     '/dagtochten/boeken/$slotId': {
       id: '/dagtochten/boeken/$slotId'
-      path: '/boeken/$slotId'
+      path: '/dagtochten/boeken/$slotId'
       fullPath: '/dagtochten/boeken/$slotId'
       preLoaderRoute: typeof DagtochtenBoekenSlotIdRouteImport
-      parentRoute: typeof DagtochtenRoute
+      parentRoute: typeof rootRouteImport
     }
     '/api/public/payments/webhook': {
       id: '/api/public/payments/webhook'
@@ -341,10 +344,13 @@ const rootRouteChildren: RootRouteChildren = {
   ShopRoute: ShopRoute,
   TerugInDeTijdRoute: TerugInDeTijdRoute,
   TrackerRoute: TrackerRoute,
+  AdminBoekingenRoute: AdminBoekingenRoute,
+  DagtochtenBedanktRoute: DagtochtenBedanktRoute,
   LogboekSlugRoute: LogboekSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
   AdminIndexRoute: AdminIndexRoute,
   DagtochtenIndexRoute: DagtochtenIndexRoute,
+  DagtochtenBoekenSlotIdRoute: DagtochtenBoekenSlotIdRoute,
   ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
