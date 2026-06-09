@@ -1,6 +1,5 @@
 import { createServerFn } from '@tanstack/react-start';
 import { z } from 'zod';
-import type { StripeEnv } from './stripe';
 
 const PRICE_ADULT_CENTS = 3600;
 const PRICE_CHILD_CENTS = 2900;
