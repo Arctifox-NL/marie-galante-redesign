@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute, Link, useParams } from "@tanstack/react-router";
+import { createFileRoute, Link, useParams, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useQuery } from "@tanstack/react-query";
 import { Loader2 } from "lucide-react";
@@ -7,8 +7,7 @@ import SiteLayout from "@/components/SiteLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getSlot } from "@/lib/bookings.functions";
-import { StripeEmbeddedCheckoutForBooking } from "@/components/StripeEmbeddedCheckout";
+import { getSlot, createBookingRequest } from "@/lib/bookings.functions";
 
 const PRICE_ADULT = 36;
 const PRICE_CHILD = 29;
@@ -22,7 +21,9 @@ export const Route = createFileRoute("/dagtochten/boeken/$slotId")({
 
 function BookingPage() {
   const { slotId } = useParams({ from: "/dagtochten/boeken/$slotId" });
+  const navigate = useNavigate();
   const fetchSlot = useServerFn(getSlot);
+  const submitBooking = useServerFn(createBookingRequest);
   const { data: slot, isLoading, error } = useQuery({
     queryKey: ["slot", slotId],
     queryFn: () => fetchSlot({ data: { slotId } }),
@@ -34,7 +35,7 @@ function BookingPage() {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [babies, setBabies] = useState(0);
-  const [showCheckout, setShowCheckout] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
 
   const total = adults * PRICE_ADULT + children * PRICE_CHILD;
@@ -52,7 +53,7 @@ function BookingPage() {
     }).format(new Date(iso));
   }
 
-  function startCheckout(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
     setFormError(null);
     if (!name.trim() || !email.trim() || !phone.trim()) {
@@ -71,7 +72,29 @@ function BookingPage() {
       setFormError(`Er zijn nog maar ${slot.available} plekken beschikbaar.`);
       return;
     }
-    setShowCheckout(true);
+    setSubmitting(true);
+    try {
+      const result = await submitBooking({
+        data: {
+          slotId,
+          customerName: name,
+          customerEmail: email,
+          customerPhone: phone,
+          adults,
+          children,
+          babies,
+        },
+      });
+      if ("error" in result) {
+        setFormError(result.error);
+        setSubmitting(false);
+        return;
+      }
+      navigate({ to: "/dagtochten/bedankt", search: { booking_id: result.bookingId } as never });
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : "Onbekende fout");
+      setSubmitting(false);
+    }
   }
 
   if (isLoading) {
@@ -109,8 +132,7 @@ function BookingPage() {
           Vertrek vanuit Eckernförde · {slot.available} van {slot.capacity} plekken vrij
         </p>
 
-        {!showCheckout ? (
-          <form onSubmit={startCheckout} className="mt-12 grid gap-8">
+        <form onSubmit={submit} className="mt-12 grid gap-8">
             <div className="grid gap-4 md:grid-cols-2">
               <Field label="Naam" required>
                 <Input value={name} onChange={(e) => setName(e.target.value)} maxLength={120} required />
@@ -138,8 +160,8 @@ function BookingPage() {
                 <div className="font-display text-3xl text-foreground">€ {total.toFixed(2).replace(".", ",")}</div>
                 <div className="text-xs text-foreground/60">{totalPersons} {totalPersons === 1 ? "persoon" : "personen"}</div>
               </div>
-              <Button type="submit" size="lg" disabled={totalPersons < 1}>
-                Naar betaling →
+              <Button type="submit" size="lg" disabled={totalPersons < 1 || submitting}>
+                {submitting ? "Versturen…" : "Boeking aanvragen →"}
               </Button>
             </div>
 
@@ -150,32 +172,7 @@ function BookingPage() {
               minder dan 8 boekingen kan de tocht niet doorgaan. We bereiken je dan via e-mail of
               telefoon en zoeken een nieuwe datum. Lukt verschuiven niet, dan krijg je je geld terug.
             </div>
-          </form>
-        ) : (
-          <div className="mt-10">
-            <button
-              type="button"
-              className="mb-6 text-xs uppercase tracking-[0.25em] text-foreground/60 hover:text-foreground"
-              onClick={() => setShowCheckout(false)}
-            >
-              ← gegevens aanpassen
-            </button>
-            <StripeEmbeddedCheckoutForBooking
-              slotId={slot.id}
-              customerName={name}
-              customerEmail={email}
-              customerPhone={phone}
-              adults={adults}
-              children={children}
-              babies={babies}
-              returnUrl={`${window.location.origin}/dagtochten/bedankt?session_id={CHECKOUT_SESSION_ID}`}
-              onError={(msg) => {
-                setFormError(msg);
-                setShowCheckout(false);
-              }}
-            />
-          </div>
-        )}
+        </form>
       </section>
     </SiteLayout>
   );
