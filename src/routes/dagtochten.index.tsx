@@ -1,10 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useTranslation } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
+import { Loader2 } from "lucide-react";
 import SiteLayout from "@/components/SiteLayout";
+import { listAvailableSlots, type AvailableSlot } from "@/lib/bookings.functions";
 import hero from "@/assets/photos/marie-galante-zeilend.jpg";
 
-export const Route = createFileRoute("/dagtochten")({
+export const Route = createFileRoute("/dagtochten/")({
   component: DagtochtenPage,
   head: () => ({
     meta: [
@@ -25,21 +28,17 @@ export const Route = createFileRoute("/dagtochten")({
 
 function DagtochtenPage() {
   const { t } = useTranslation();
-  useEffect(() => {
-    const existing = document.querySelector<HTMLScriptElement>(
-      'script[src="https://v1.widget.shop.weeztix.com/injector.js"]'
-    );
-    if (existing) {
-      existing.remove();
-    }
-    const script = document.createElement("script");
-    script.src = "https://v1.widget.shop.weeztix.com/injector.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      script.remove();
-    };
-  }, []);
+  const fetchSlots = useServerFn(listAvailableSlots);
+  const {
+    data: slots = [],
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["trip-slots"],
+    queryFn: () => fetchSlots(),
+  });
+
+  const grouped = groupByDate(slots);
   return (
     <SiteLayout>
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
@@ -100,15 +99,31 @@ function DagtochtenPage() {
             </p>
           </div>
 
-          {/* Weeztix shop embed — interne scroll zodat de rest van de pagina zichtbaar blijft */}
-          <div className="mt-12 bg-background p-4 md:p-8">
-            <div className="h-[70vh] max-h-[700px] min-h-[480px] overflow-y-auto overscroll-contain">
-              <div
-                className="ot-iframe"
-                data-ot-url="https://shop.weeztix.com/a5951f33-5e97-11f1-8e27-d65b0659bc31"
-                data-ot-guid="a5951f33-5e97-11f1-8e27-d65b0659bc31"
-              />
-            </div>
+          <div className="mt-12">
+            {isLoading ? (
+              <div className="flex min-h-[30vh] items-center justify-center">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              </div>
+            ) : error ? (
+              <p className="text-foreground/70">
+                De tickets laden op dit moment niet. Probeer het zo opnieuw.
+              </p>
+            ) : grouped.length === 0 ? (
+              <p className="text-foreground/70">Er zijn op dit moment geen tochten beschikbaar.</p>
+            ) : (
+              <>
+                <div className="mb-8 rounded-md border border-foreground/15 bg-background/60 p-5 text-sm text-foreground/80">
+                  <strong className="text-foreground">Goed om te weten:</strong> bij slecht weer of
+                  minder dan 8 boekingen gaat een tocht niet door. Je kunt dan kosteloos verschuiven
+                  of we storten je geld terug. Tickets zijn niet anders inwisselbaar.
+                </div>
+                <div className="space-y-10">
+                  {grouped.map((day) => (
+                    <DayBlock key={day.date} day={day} />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -188,5 +203,85 @@ function DagtochtenPage() {
         </div>
       </section>
     </SiteLayout>
+  );
+}
+
+type DayGroup = { date: string; dateLabel: string; slots: AvailableSlot[] };
+
+function groupByDate(slots: AvailableSlot[]): DayGroup[] {
+  const map = new Map<string, DayGroup>();
+  for (const s of slots) {
+    const d = new Date(s.starts_at);
+    const dateKey = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Berlin",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(d);
+    const label = new Intl.DateTimeFormat("nl-NL", {
+      timeZone: "Europe/Berlin",
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+    }).format(d);
+    if (!map.has(dateKey)) map.set(dateKey, { date: dateKey, dateLabel: label, slots: [] });
+    map.get(dateKey)!.slots.push(s);
+  }
+  return Array.from(map.values());
+}
+
+function timeLabel(iso: string) {
+  return new Intl.DateTimeFormat("nl-NL", {
+    timeZone: "Europe/Berlin",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(iso));
+}
+
+function DayBlock({ day }: { day: DayGroup }) {
+  return (
+    <div>
+      <h3 className="font-display text-2xl text-primary capitalize">{day.dateLabel}</h3>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {day.slots.map((s) => {
+          const soldOut = s.status === "cancelled" || s.available <= 0;
+          return (
+            <div
+              key={s.id}
+              className="flex flex-col justify-between border border-foreground/15 bg-background p-5"
+            >
+              <div>
+                <div className="font-display text-xl text-foreground">
+                  {timeLabel(s.starts_at)} – {timeLabel(s.ends_at)}
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-[0.2em] text-foreground/55">
+                  Eckernförde
+                </div>
+                <div className="mt-3 text-sm text-foreground/70">
+                  {soldOut
+                    ? s.status === "cancelled"
+                      ? "Geannuleerd"
+                      : "Volgeboekt"
+                    : `${s.available} van ${s.capacity} plekken vrij`}
+                </div>
+              </div>
+              {soldOut ? (
+                <span className="mt-5 inline-block border border-foreground/20 px-4 py-2 text-center text-xs uppercase tracking-[0.25em] text-foreground/50">
+                  Niet beschikbaar
+                </span>
+              ) : (
+                <Link
+                  to="/dagtochten/boeken/$slotId"
+                  params={{ slotId: s.id }}
+                  className="mt-5 inline-block border border-accent bg-accent px-4 py-2 text-center text-xs uppercase tracking-[0.25em] text-accent-foreground hover:bg-transparent hover:text-accent"
+                >
+                  Boek deze tocht
+                </Link>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
