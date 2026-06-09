@@ -23,7 +23,6 @@ import { Route as LogboekSlugRouteImport } from './routes/logboek_.$slug'
 import { Route as DagtochtenBedanktRouteImport } from './routes/dagtochten.bedankt'
 import { Route as AdminBoekingenRouteImport } from './routes/admin.boekingen'
 import { Route as DagtochtenBoekenSlotIdRouteImport } from './routes/dagtochten.boeken.$slotId'
-import { Route as ApiPublicPaymentsWebhookRouteImport } from './routes/api/public/payments/webhook'
 
 const TrackerRoute = TrackerRouteImport.update({
   id: '/tracker',
@@ -95,12 +94,6 @@ const DagtochtenBoekenSlotIdRoute = DagtochtenBoekenSlotIdRouteImport.update({
   path: '/dagtochten/boeken/$slotId',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicPaymentsWebhookRoute =
-  ApiPublicPaymentsWebhookRouteImport.update({
-    id: '/api/public/payments/webhook',
-    path: '/api/public/payments/webhook',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -117,7 +110,6 @@ export interface FileRoutesByFullPath {
   '/admin/': typeof AdminIndexRoute
   '/dagtochten/': typeof DagtochtenIndexRoute
   '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -134,7 +126,6 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminIndexRoute
   '/dagtochten': typeof DagtochtenIndexRoute
   '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -152,7 +143,6 @@ export interface FileRoutesById {
   '/admin/': typeof AdminIndexRoute
   '/dagtochten/': typeof DagtochtenIndexRoute
   '/dagtochten/boeken/$slotId': typeof DagtochtenBoekenSlotIdRoute
-  '/api/public/payments/webhook': typeof ApiPublicPaymentsWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -171,7 +161,6 @@ export interface FileRouteTypes {
     | '/admin/'
     | '/dagtochten/'
     | '/dagtochten/boeken/$slotId'
-    | '/api/public/payments/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -188,7 +177,6 @@ export interface FileRouteTypes {
     | '/admin'
     | '/dagtochten'
     | '/dagtochten/boeken/$slotId'
-    | '/api/public/payments/webhook'
   id:
     | '__root__'
     | '/'
@@ -205,7 +193,6 @@ export interface FileRouteTypes {
     | '/admin/'
     | '/dagtochten/'
     | '/dagtochten/boeken/$slotId'
-    | '/api/public/payments/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -223,7 +210,6 @@ export interface RootRouteChildren {
   AdminIndexRoute: typeof AdminIndexRoute
   DagtochtenIndexRoute: typeof DagtochtenIndexRoute
   DagtochtenBoekenSlotIdRoute: typeof DagtochtenBoekenSlotIdRoute
-  ApiPublicPaymentsWebhookRoute: typeof ApiPublicPaymentsWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -326,13 +312,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DagtochtenBoekenSlotIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/payments/webhook': {
-      id: '/api/public/payments/webhook'
-      path: '/api/public/payments/webhook'
-      fullPath: '/api/public/payments/webhook'
-      preLoaderRoute: typeof ApiPublicPaymentsWebhookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -351,7 +330,6 @@ const rootRouteChildren: RootRouteChildren = {
   AdminIndexRoute: AdminIndexRoute,
   DagtochtenIndexRoute: DagtochtenIndexRoute,
   DagtochtenBoekenSlotIdRoute: DagtochtenBoekenSlotIdRoute,
-  ApiPublicPaymentsWebhookRoute: ApiPublicPaymentsWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

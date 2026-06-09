@@ -1,6 +1,5 @@
 import { createServerFn } from '@tanstack/react-start';
 import { z } from 'zod';
-import type { StripeEnv } from './stripe';
 
 const PRICE_ADULT_CENTS = 3600;
 const PRICE_CHILD_CENTS = 2900;
@@ -92,13 +91,11 @@ const checkoutSchema = z.object({
   adults: z.number().int().min(0).max(36),
   children: z.number().int().min(0).max(36),
   babies: z.number().int().min(0).max(36),
-  returnUrl: z.string().url(),
-  environment: z.enum(['sandbox', 'live']),
 });
 
-export const createBookingCheckout = createServerFn({ method: 'POST' })
+export const createBookingRequest = createServerFn({ method: 'POST' })
   .inputValidator((data: unknown) => checkoutSchema.parse(data))
-  .handler(async ({ data }): Promise<{ clientSecret: string } | { error: string }> => {
+  .handler(async ({ data }): Promise<{ bookingId: string } | { error: string }> => {
     try {
       const totalPersons = data.adults + data.children + data.babies;
       if (totalPersons < 1) return { error: 'Kies minimaal 1 persoon.' };
@@ -107,7 +104,6 @@ export const createBookingCheckout = createServerFn({ method: 'POST' })
         return { error: 'Een baby moet samen reizen met een kind of volwassene.' };
 
       const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
-      const { createStripeClient, getStripeErrorMessage } = await import('./stripe.server');
 
       const { data: slot, error: slotErr } = await supabaseAdmin
         .from('trip_slots')
@@ -128,7 +124,6 @@ export const createBookingCheckout = createServerFn({ method: 'POST' })
       }
 
       const amountCents = data.adults * PRICE_ADULT_CENTS + data.children * PRICE_CHILD_CENTS;
-      if (amountCents < 50) return { error: 'Selecteer minimaal één betalend ticket.' };
 
       const { data: booking, error: bookErr } = await supabaseAdmin
         .from('bookings')
@@ -148,76 +143,7 @@ export const createBookingCheckout = createServerFn({ method: 'POST' })
         .single();
       if (bookErr || !booking) return { error: bookErr?.message ?? 'Kon boeking niet aanmaken.' };
 
-      const stripe = createStripeClient(data.environment as StripeEnv);
-
-      const lineItems: Array<{
-        price_data: {
-          currency: string;
-          product_data: { name: string };
-          unit_amount: number;
-        };
-        quantity: number;
-      }> = [];
-      if (data.adults > 0) {
-        lineItems.push({
-          price_data: {
-            currency: 'eur',
-            product_data: { name: 'Dagtocht volwassen' },
-            unit_amount: PRICE_ADULT_CENTS,
-          },
-          quantity: data.adults,
-        });
-      }
-      if (data.children > 0) {
-        lineItems.push({
-          price_data: {
-            currency: 'eur',
-            product_data: { name: 'Dagtocht kind (4–14 jaar)' },
-            unit_amount: PRICE_CHILD_CENTS,
-          },
-          quantity: data.children,
-        });
-      }
-
-      const startsAt = new Date(slot.starts_at);
-      const dateLabel = startsAt.toLocaleString('nl-NL', {
-        timeZone: 'Europe/Berlin',
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      try {
-        const session = await stripe.checkout.sessions.create({
-          line_items: lineItems,
-          mode: 'payment',
-          ui_mode: 'embedded_page',
-          return_url: data.returnUrl,
-          customer_email: data.customerEmail,
-          payment_intent_data: {
-            description: `Marie Galante dagtocht — ${dateLabel}`,
-          },
-          metadata: {
-            booking_id: booking.id,
-            slot_id: slot.id,
-          },
-        });
-
-        await supabaseAdmin
-          .from('bookings')
-          .update({ stripe_session_id: session.id })
-          .eq('id', booking.id);
-
-        return { clientSecret: session.client_secret ?? '' };
-      } catch (stripeErr) {
-        await supabaseAdmin
-          .from('bookings')
-          .update({ payment_status: 'failed' })
-          .eq('id', booking.id);
-        return { error: getStripeErrorMessage(stripeErr) };
-      }
+      return { bookingId: booking.id };
     } catch (err) {
       return { error: err instanceof Error ? err.message : 'Onbekende fout' };
     }
